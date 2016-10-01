@@ -1,0 +1,34 @@
+{
+  "name": "eslint-config-tbd",
+  "version": "0.0.0",
+  "description": "TBD.",
+  "author": {
+    "name": "Michael Novotny",
+    "email": "manovotny@gmail.com",
+    "url": "htts://manovotny.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manovotny/eslint-config-tbd.git"
+  },
+  "homepage": "https://github.com/manovotny/eslint-config-tbd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manovotny/eslint-config-tbd/issues"
+  },
+  "keywords": [
+    "babel",
+    "config",
+    "eslint",
+    "react"
+  ],
+  "scripts": {
+    "test": "eslint --format ./node_modules/eslint-formatter-pretty ./*.js ./src/*.js"
+  },
+  "dependencies": {
+    "babel-eslint": "6.1.2",
+    "eslint": "3.7.0",
+    "eslint-formatter-pretty": "1.0.0",
+    "eslint-plugin-react": "6.2.0"
+  }
+}
