@@ -22,6 +22,9 @@
     "eslint",
     "react"
   ],
+  "engines": {
+    "node" : ">=6"
+  },
   "scripts": {
     "test": "eslint --format ./node_modules/eslint-formatter-pretty eslint . --ext .json --ext .js"
   },
@@ -31,6 +34,7 @@
     "eslint-formatter-pretty": "1.0.0",
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-mocha": "4.5.1",
+    "eslint-plugin-node": "2.1.2",
     "eslint-plugin-objects": "1.1.1",
     "eslint-plugin-react": "6.3.0",
     "eslint-plugin-unicorn": "1.0.0"

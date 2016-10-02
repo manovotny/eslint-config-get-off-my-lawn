@@ -1,5 +1,6 @@
 const eslint = require('./src/eslint');
 const mocha = require('./src/mocha');
+const node = require('./src/node');
 const objects = require('./src/objects');
 const react = require('./src/react');
 const unicorn = require('./src/unicorn');
@@ -22,6 +23,7 @@ module.exports = {
     plugins: [
         'json',
         'mocha',
+        'node',
         'objects',
         'react',
         'unicorn'
@@ -29,6 +31,7 @@ module.exports = {
     rules: Object.assign(
         eslint,
         mocha,
+        node,
         objects,
         react,
         unicorn
