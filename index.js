@@ -1,10 +1,7 @@
 const eslint = require('./src/eslint');
+const react = require('./src/react');
 
 module.exports = {
-    ecmaFeatures: {
-        jsx: true,
-        modules: true
-    },
     env: {
         browser: true,
         es6: true,
@@ -12,10 +9,18 @@ module.exports = {
         node: true
     },
     parser: 'babel-eslint',
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true
+        },
+        ecmaVersion: 6,
+        sourceType: 'module'
+    },
     plugins: [
         'react'
     ],
     rules: Object.assign(
-        eslint
+        eslint,
+        react
     )
 };
