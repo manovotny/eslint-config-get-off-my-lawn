@@ -200,17 +200,6 @@ module.exports = {
         }
     ],
     'no-restricted-globals': 'error',
-    'no-restricted-properties': [
-        'error',
-        {
-            'object': 'describe',
-            'property': 'only'
-        },
-        {
-            'object': 'it',
-            'property': 'only'
-        }
-    ],
     'no-return-assign': [
         'error',
         'always'

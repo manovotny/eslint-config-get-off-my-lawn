@@ -1,5 +1,7 @@
 const eslint = require('./src/eslint');
 const react = require('./src/react');
+const mocha = require('./src/mocha');
+const unicorn = require('./src/unicorn');
 
 module.exports = {
     env: {
@@ -17,10 +19,14 @@ module.exports = {
         sourceType: 'module'
     },
     plugins: [
-        'react'
+        'mocha',
+        'react',
+        'unicorn'
     ],
     rules: Object.assign(
         eslint,
-        react
+        react,
+        mocha,
+        unicorn
     )
 };
