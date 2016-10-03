@@ -4,7 +4,7 @@ module.exports = {
     'node/no-missing-import': [
         'error',
         {
-            'allowModules': [
+            allowModules: [
                 'electron'
             ]
         }
@@ -12,7 +12,7 @@ module.exports = {
     'node/no-missing-require': [
         'error',
         {
-            'allowModules': [
+            allowModules: [
                 'electron'
             ]
         }
@@ -21,7 +21,7 @@ module.exports = {
     'node/no-unpublished-import': [
         'error',
         {
-            'allowModules': [
+            allowModules: [
                 'electron'
             ]
         }
@@ -29,7 +29,7 @@ module.exports = {
     'node/no-unpublished-require': [
         'error',
         {
-            'allowModules': [
+            allowModules: [
                 'electron'
             ]
         }

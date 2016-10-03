@@ -2,7 +2,7 @@ module.exports = {
     'unicorn/catch-error-name': [
         'error',
         {
-            'name': 'error'
+            name: 'error'
         }
     ],
     'unicorn/explicit-length-check': 'error',

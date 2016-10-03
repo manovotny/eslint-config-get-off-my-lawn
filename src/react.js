@@ -9,7 +9,7 @@ module.exports = {
     'react/jsx-filename-extension': [
         'error',
         {
-            'extensions': [
+            extensions: [
                 '.js'
             ]
         }
@@ -28,7 +28,7 @@ module.exports = {
     'react/jsx-no-duplicate-props': [
         'error',
         {
-            'ignoreCase': true
+            ignoreCase: true
         }
     ],
     'react/jsx-no-literals': 'error',

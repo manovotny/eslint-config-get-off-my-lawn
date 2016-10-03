@@ -55,8 +55,8 @@ module.exports = {
     'lines-around-directive': [
         'error',
         {
-            'after': 'always',
-            'before': 'never'
+            after: 'always',
+            before: 'never'
         }
     ],
     'max-depth': [
@@ -66,13 +66,13 @@ module.exports = {
     'max-nested-callbacks': [
         'error',
         {
-            'max': 3
+            max: 3
         }
     ],
     'max-params': [
         'error',
         {
-            'max': 3
+            max: 3
         }
     ],
     'max-statements-per-line': 'error',
@@ -96,7 +96,7 @@ module.exports = {
     'no-constant-condition': [
         'error',
         {
-            'checkLoops': false
+            checkLoops: false
         }
     ],
     'no-continue': 'error',
@@ -111,7 +111,7 @@ module.exports = {
     'no-duplicate-imports': [
         'error',
         {
-            'includeExports': true
+            includeExports: true
         }
     ],
     'no-else-return': 'error',
@@ -143,7 +143,7 @@ module.exports = {
     'no-invalid-regexp': [
         'error',
         {
-            'allowConstructorFlags': [
+            allowConstructorFlags: [
                 'u',
                 'y'
             ]
@@ -160,9 +160,9 @@ module.exports = {
     'no-magic-numbers': [
         'error',
         {
-            'enforceConst': true,
-            'ignore': [1],
-            'ignoreArrayIndexes': true
+            enforceConst: true,
+            ignore: [1],
+            ignoreArrayIndexes: true
         }
     ],
     'no-mixed-spaces-and-tabs': 'error',
@@ -171,7 +171,7 @@ module.exports = {
     'no-multiple-empty-lines': [
         'error',
         {
-            'max': 1
+            max: 1
         }
     ],
     'no-nested-ternary': 'error',
@@ -187,7 +187,7 @@ module.exports = {
     'no-param-reassign': [
         'error',
         {
-            'props': true
+            props: true
         }
     ],
     'no-path-concat': 'error',
@@ -196,7 +196,7 @@ module.exports = {
     'no-redeclare': [
         'error',
         {
-            'builtinGlobals': true
+            builtinGlobals: true
         }
     ],
     'no-restricted-globals': 'error',
@@ -208,7 +208,7 @@ module.exports = {
     'no-self-assign': [
         'error',
         {
-            'props': true
+            props: true
         }
     ],
     'no-self-compare': 'error',
@@ -251,9 +251,9 @@ module.exports = {
     'one-var': [
         'error',
         {
-            'const': 'never',
-            'let': 'always',
-            'var': 'always'
+            const: 'never',
+            let: 'always',
+            var: 'always'
         }
     ],
     'one-var-declaration-per-line': [
@@ -274,15 +274,15 @@ module.exports = {
         'error',
         'as-needed',
         {
-            'numbers': true,
-            'unnecessary': false
+            numbers: true,
+            unnecessary: false
         }
     ],
     'quotes': [
         'error',
         'single',
         {
-            'avoidEscape': true
+            avoidEscape: true
         }
     ],
     'radix': [
@@ -295,24 +295,24 @@ module.exports = {
     'semi-spacing': [
         'error',
         {
-            'after': true,
-            'before': false
+            after: true,
+            before: false
         }
     ],
     'sort-keys': [
         'error',
         'asc',
         {
-            'caseSensitive': false,
-            'natural': true
+            caseSensitive: false,
+            natural: true
         }
     ],
     'space-before-blocks': 'error',
     'space-before-function-paren': [
         'error',
         {
-            'anonymous': 'always',
-            'named': 'never'
+            anonymous: 'always',
+            named: 'never'
         }
     ],
     'space-in-parens': 'error',
@@ -320,8 +320,8 @@ module.exports = {
     'space-unary-ops': [
         'error',
         {
-            'nonwords': false,
-            'words': true
+            nonwords: false,
+            words: true
         }
     ],
     'spaced-comment': 'error',
