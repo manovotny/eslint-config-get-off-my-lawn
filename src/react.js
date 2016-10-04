@@ -1,5 +1,10 @@
 module.exports = {
-    'react/display-name': 'error',
+    'react/display-name': [
+        'error',
+        {
+            ignoreTranspilerName: true
+        }
+    ],
     'react/forbid-component-props': 'error',
     'react/forbid-prop-types': 'error',
     'react/jsx-boolean-value': 'error',

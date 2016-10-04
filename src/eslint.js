@@ -46,7 +46,10 @@ module.exports = {
     'handle-callback-err': 'error',
     'indent': [
         'error',
-        4
+        4,
+        {
+            SwitchCase: 1
+        }
     ],
     'jsx-quotes': 'error',
     'key-spacing': 'error',
@@ -224,7 +227,6 @@ module.exports = {
     'no-trailing-spaces': 'error',
     'no-undef': 'error',
     'no-undef-init': 'error',
-    'no-undefined': 'error',
     'no-unexpected-multiline': 'error',
     'no-unmodified-loop-condition': 'error',
     'no-unneeded-ternary': 'error',

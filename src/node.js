@@ -18,22 +18,6 @@ module.exports = {
         }
     ],
     'node/no-unpublished-bin': 'error',
-    'node/no-unpublished-import': [
-        'error',
-        {
-            allowModules: [
-                'electron'
-            ]
-        }
-    ],
-    'node/no-unpublished-require': [
-        'error',
-        {
-            allowModules: [
-                'electron'
-            ]
-        }
-    ],
     'node/no-unsupported-features': 'error',
     'node/shebang': 'error'
 };
