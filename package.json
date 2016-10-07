@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-tbd",
+  "name": "eslint-config-get-off-my-lawn",
   "version": "0.0.0",
   "description": "TBD.",
   "author": {
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manovotny/eslint-config-tbd.git"
+    "url": "git+https://github.com/manovotny/eslint-config-get-off-my-lawn.git"
   },
-  "homepage": "https://github.com/manovotny/eslint-config-tbd",
+  "homepage": "https://github.com/manovotny/eslint-config-get-off-my-lawn",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/manovotny/eslint-config-tbd/issues"
+    "url": "https://github.com/manovotny/eslint-config-get-off-my-lawn/issues"
   },
   "keywords": [
     "babel",
@@ -26,12 +26,11 @@
     "node": ">=6"
   },
   "scripts": {
-    "test": "eslint --format ./node_modules/eslint-formatter-pretty . --ext .json --ext .js"
+    "test": "eslint . --ext .json --ext .js"
   },
   "dependencies": {
     "babel-eslint": "6.1.2",
     "eslint": "3.7.0",
-    "eslint-formatter-pretty": "1.0.0",
     "eslint-plugin-import": "2.0.0",
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-mocha": "4.5.1",

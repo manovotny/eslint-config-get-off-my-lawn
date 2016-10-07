@@ -1,1 +1,1 @@
-# eslint-config-tbd
+# eslint-config-get-off-my-lawn
