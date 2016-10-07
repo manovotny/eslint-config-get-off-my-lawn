@@ -14,7 +14,7 @@ This config also comes with the following plugins, and corresponding rules, bake
 * [eslint](https://www.npmjs.com/package/eslint)
 * [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
 * [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
-* [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha)
+* [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) (which also works well for linting [Jest](https://facebook.github.io/jest/))
 * [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node)
 * [eslint-plugin-objects](https://www.npmjs.com/package/eslint-plugin-objects)
 * [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
