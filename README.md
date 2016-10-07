@@ -30,7 +30,7 @@ $ npm i --save-dev eslint-config-get-off-my-lawn
 
 Create an ESLint config in your `package.json` or `.eslintrc.js` file.
 
-### `package.json`
+### package.json
 
 ```json
 {
@@ -41,7 +41,7 @@ Create an ESLint config in your `package.json` or `.eslintrc.js` file.
 }
 ```
 
-### `.eslintrc.js`
+### .eslintrc.js
 
 ```js
 module.exports = {
