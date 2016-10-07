@@ -2,7 +2,7 @@
 
 > A highly opinionated, [sharable config](http://eslint.org/docs/developer-guide/shareable-configs.html) of [ESLint](http://eslint.org) rules to produce beautiful, readable JavaScript.
 
-![eslint-config-get-off-my-lawn](images/logo.jpg)
+![eslint-config-get-off-my-lawn](assets/logo.jpg)
 
 As developers, we spend more time reading code than writing it. These rules aim to make reading JavaScript a priority.
 
