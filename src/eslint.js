@@ -6,10 +6,7 @@ module.exports = {
         'never'
     ],
     'array-callback-return': 'error',
-    'arrow-body-style': [
-        'error',
-        'always'
-    ],
+    'arrow-body-style': 'error',
     'arrow-parens': 'error',
     'arrow-spacing': 'error',
     'block-scoped-var': 'error',
