@@ -51,6 +51,10 @@ module.exports = {
 };
 ```
 
+## Related
+
+* [stylelint-config-get-off-my-lawn](https://www.npmjs.com/package/stylelint-config-get-off-my-lawn) - A highly opinionated, [sharable config](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md#extends) of [stylelint](http://stylelint.io) rules to produce beautiful, readable CSS and Sass.
+
 ## License
 
 MIT © [Michael Novotny](http://manovotny.com)
