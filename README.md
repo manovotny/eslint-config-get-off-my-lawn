@@ -1,4 +1,4 @@
-# eslint-config-get-off-my-lawn
+# eslint-config-get-off-my-lawn [![Build Status](https://travis-ci.org/manovotny/eslint-config-get-off-my-lawn.svg?branch=master)](https://travis-ci.org/manovotny/eslint-config-get-off-my-lawn)
 
 > A highly opinionated, [sharable config](http://eslint.org/docs/developer-guide/shareable-configs.html) of [ESLint](http://eslint.org) rules to produce beautiful, readable JavaScript.
 
