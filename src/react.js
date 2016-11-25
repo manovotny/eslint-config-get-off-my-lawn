@@ -27,7 +27,6 @@ module.exports = {
     'react/jsx-indent-props': 'error',
     'react/jsx-key': 'error',
     'react/jsx-max-props-per-line': 'error',
-    'react/jsx-no-bind': 'error',
     'react/jsx-no-comment-textnodes': 'error',
     'react/jsx-no-duplicate-props': [
         'error',
