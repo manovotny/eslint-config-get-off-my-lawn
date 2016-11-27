@@ -15,7 +15,6 @@ module.exports = {
     'import/no-mutable-exports': 'error',
     'import/no-named-as-default': 'error',
     'import/no-named-as-default-member': 'error',
-    'import/no-unassigned-import': 'error',
     'import/no-unresolved': 'error',
     'import/no-webpack-loader-syntax': 'error',
     'import/order': [
