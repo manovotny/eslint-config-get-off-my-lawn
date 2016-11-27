@@ -37,7 +37,6 @@ module.exports = {
     ],
     'func-call-spacing': 'error',
     'generator-star-spacing': 'error',
-    'global-require': 'error',
     'guard-for-in': 'error',
     'handle-callback-err': 'error',
     'indent': [
