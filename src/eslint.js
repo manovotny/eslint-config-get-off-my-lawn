@@ -14,7 +14,6 @@ module.exports = {
     'brace-style': 'error',
     'callback-return': 'error',
     'camelcase': 'error',
-    'class-methods-use-this': 'error',
     'comma-dangle': 'error',
     'comma-spacing': 'error',
     'comma-style': 'error',
