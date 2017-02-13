@@ -26,8 +26,7 @@
     "src"
   ],
   "scripts": {
-    "test": "eslint . --ext .json --ext .js",
-    "verify": "npm run test"
+    "test": "eslint . --ext .json --ext .js"
   },
   "dependencies": {
     "babel-eslint": "6.1.2",
