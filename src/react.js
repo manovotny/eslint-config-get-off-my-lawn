@@ -2,7 +2,7 @@ module.exports = {
     'react/display-name': [
         'error',
         {
-            ignoreTranspilerName: true
+            ignoreTranspilerName: false
         }
     ],
     'react/forbid-component-props': 'error',
