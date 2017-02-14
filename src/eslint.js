@@ -125,7 +125,10 @@ module.exports = {
     'no-extra-label': 'error',
     'no-extra-parens': [
         'error',
-        'all'
+        'all',
+        {
+            ignoreJSX: 'multi-line'
+        }
     ],
     'no-extra-semi': 'error',
     'no-fallthrough': 'error',
