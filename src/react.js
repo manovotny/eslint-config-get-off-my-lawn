@@ -22,7 +22,6 @@ module.exports = {
         'error',
         'multiline'
     ],
-    'react/jsx-handler-names': 'error',
     'react/jsx-indent': 'error',
     'react/jsx-indent-props': 'error',
     'react/jsx-key': 'error',
