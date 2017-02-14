@@ -258,7 +258,6 @@ module.exports = {
     ],
     'prefer-const': 'error',
     'prefer-numeric-literals': 'error',
-    'prefer-reflect': 'error',
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',
