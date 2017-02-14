@@ -4,7 +4,12 @@ module.exports = {
     'import/extensions': 'error',
     'import/first': 'error',
     'import/named': 'error',
-    'import/namespace': 'error',
+    'import/namespace': [
+        'error',
+        {
+            allowComputed: true
+        }
+    ],
     'import/newline-after-import': 'error',
     'import/no-absolute-path': 'error',
     'import/no-amd': 'error',
