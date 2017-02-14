@@ -5,7 +5,6 @@ module.exports = {
             ignoreTranspilerName: true
         }
     ],
-    'react/forbid-component-props': 'error',
     'react/jsx-boolean-value': 'error',
     'react/jsx-closing-bracket-location': 'error',
     'react/jsx-curly-spacing': 'error',
