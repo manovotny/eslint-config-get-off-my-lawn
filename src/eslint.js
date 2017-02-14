@@ -125,7 +125,10 @@ module.exports = {
     'no-extra-label': 'error',
     'no-extra-parens': [
         'error',
-        'all'
+        'all',
+        {
+            ignoreJSX: 'multi-line'
+        }
     ],
     'no-extra-semi': 'error',
     'no-fallthrough': 'error',
@@ -147,7 +150,6 @@ module.exports = {
             ]
         }
     ],
-    'no-invalid-this': 'error',
     'no-irregular-whitespace': 'error',
     'no-iterator': 'error',
     'no-label-var': 'error',
@@ -255,7 +257,6 @@ module.exports = {
     ],
     'prefer-const': 'error',
     'prefer-numeric-literals': 'error',
-    'prefer-reflect': 'error',
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',

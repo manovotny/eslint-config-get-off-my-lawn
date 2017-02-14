@@ -2,10 +2,9 @@ module.exports = {
     'react/display-name': [
         'error',
         {
-            ignoreTranspilerName: true
+            ignoreTranspilerName: false
         }
     ],
-    'react/forbid-component-props': 'error',
     'react/jsx-boolean-value': 'error',
     'react/jsx-closing-bracket-location': 'error',
     'react/jsx-curly-spacing': 'error',
@@ -22,7 +21,6 @@ module.exports = {
         'error',
         'multiline'
     ],
-    'react/jsx-handler-names': 'error',
     'react/jsx-indent': 'error',
     'react/jsx-indent-props': 'error',
     'react/jsx-key': 'error',
