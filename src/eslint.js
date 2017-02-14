@@ -147,7 +147,6 @@ module.exports = {
             ]
         }
     ],
-    'no-invalid-this': 'error',
     'no-irregular-whitespace': 'error',
     'no-iterator': 'error',
     'no-label-var': 'error',
