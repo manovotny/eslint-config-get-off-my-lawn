@@ -13,8 +13,9 @@ This config also comes with the following plugins, and corresponding rules, bake
 * [babel-eslint](https://www.npmjs.com/package/babel-eslint)
 * [eslint](https://www.npmjs.com/package/eslint)
 * [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
+* [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
 * [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
-* [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha) (which also works well for linting [Jest](https://facebook.github.io/jest/))
+* [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha)
 * [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node)
 * [eslint-plugin-objects](https://www.npmjs.com/package/eslint-plugin-objects)
 * [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
@@ -36,10 +37,10 @@ Create an ESLint config in your `package.json` or `.eslintrc.js` file.
 
 ```json
 {
-	"name": "my-awesome-project",
-	"eslintConfig": {
-		"extends": "get-off-my-lawn"
-	}
+    "name": "my-awesome-project",
+    "eslintConfig": {
+        "extends": "get-off-my-lawn"
+    }
 }
 ```
 

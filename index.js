@@ -1,5 +1,6 @@
 const eslint = require('./src/eslint');
 const importt = require('./src/import');
+const jest = require('./src/jest');
 const mocha = require('./src/mocha');
 const node = require('./src/node');
 const objects = require('./src/objects');
@@ -10,6 +11,7 @@ module.exports = {
     env: {
         browser: true,
         es6: true,
+        jest: true,
         mocha: true,
         node: true
     },
@@ -24,6 +26,7 @@ module.exports = {
     plugins: [
         'json',
         'import',
+        'jest',
         'mocha',
         'node',
         'objects',
@@ -34,6 +37,7 @@ module.exports = {
         {},
         eslint,
         importt,
+        jest,
         mocha,
         node,
         objects,
