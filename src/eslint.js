@@ -88,7 +88,6 @@ module.exports = {
         'error',
         'always'
     ],
-    'no-confusing-arrow': 'error',
     'no-console': 'error',
     'no-const-assign': 'error',
     'no-constant-condition': [
