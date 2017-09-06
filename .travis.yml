@@ -1,8 +1,14 @@
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.27.5
 branches:
   only:
     - master
     - /^v\d+.\d+.\d+$/
-cache: yarn
+cache:
+  yarn: true
+env:
+  global:
+    - PATH=$HOME/.yarn/bin:$PATH
 language: node_js
 notifications:
   email:
