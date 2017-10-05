@@ -278,6 +278,7 @@ module.exports = {
         'error',
         'as-needed'
     ],
+    'require-await': 'error',
     'require-yield': 'error',
     'rest-spread-spacing': 'error',
     'semi': 'error',
