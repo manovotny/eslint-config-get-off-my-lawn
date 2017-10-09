@@ -19,7 +19,8 @@
     "react"
   ],
   "engines": {
-    "node": ">=6"
+    "node": ">=6",
+    "yarn": ">=1.1.0"
   },
   "main": "index.js",
   "files": [
