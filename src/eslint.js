@@ -195,6 +195,7 @@ module.exports = {
         'error',
         'always'
     ],
+    'no-return-await': 'error',
     'no-script-url': 'error',
     'no-self-assign': [
         'error',
@@ -278,6 +279,7 @@ module.exports = {
         'error',
         'as-needed'
     ],
+    'require-await': 'error',
     'require-yield': 'error',
     'rest-spread-spacing': 'error',
     'semi': 'error',
