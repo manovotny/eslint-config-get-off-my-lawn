@@ -30,7 +30,7 @@
     "test": "eslint . --ext .json --ext .js"
   },
   "dependencies": {
-    "babel-eslint": "7.2.3",
+    "babel-eslint": "8.0.1",
     "eslint": "4.8.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jest": "19.0.1",
