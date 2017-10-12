@@ -1,3 +1,5 @@
+const linebreaks = require('./utils/linebreaks');
+
 /* eslint-disable no-magic-numbers */
 module.exports = {
     'accessor-pairs': 'error',
@@ -5,7 +7,6 @@ module.exports = {
         'error',
         'never'
     ],
-    'array-callback-return': 'error',
     'arrow-body-style': 'error',
     'arrow-parens': 'error',
     'arrow-spacing': 'error',
@@ -35,8 +36,14 @@ module.exports = {
         'error',
         'always'
     ],
+    'for-direction': 'error',
     'func-call-spacing': 'error',
+    'function-paren-newline': [
+        'error',
+        'multiline'
+    ],
     'generator-star-spacing': 'error',
+    'getter-return': 'error',
     'guard-for-in': 'error',
     'handle-callback-err': 'error',
     'indent': [
@@ -50,13 +57,6 @@ module.exports = {
     'key-spacing': 'error',
     'keyword-spacing': 'error',
     'linebreak-style': 'error',
-    'lines-around-directive': [
-        'error',
-        {
-            after: 'always',
-            before: 'never'
-        }
-    ],
     'max-depth': [
         'error',
         2
@@ -76,14 +76,14 @@ module.exports = {
     'max-statements-per-line': 'error',
     'new-cap': 'error',
     'new-parens': 'error',
-    'newline-after-var': 'error',
-    'newline-before-return': 'error',
     'no-alert': 'error',
     'no-array-constructor': 'error',
     'no-bitwise': 'error',
+    'no-buffer-constructor': 'error',
     'no-caller': 'error',
     'no-catch-shadow': 'error',
     'no-class-assign': 'error',
+    'no-compare-neg-zero': 'error',
     'no-cond-assign': [
         'error',
         'always'
@@ -237,6 +237,10 @@ module.exports = {
     'no-warning-comments': 'error',
     'no-whitespace-before-property': 'error',
     'no-with': 'error',
+    'nonblock-statement-body-position': [
+        'error',
+        'below'
+    ],
     'object-curly-spacing': 'error',
     'object-shorthand': 'error',
     'one-var': [
@@ -255,6 +259,7 @@ module.exports = {
         'error',
         'never'
     ],
+    'padding-line-between-statements': linebreaks,
     'prefer-const': 'error',
     'prefer-numeric-literals': 'error',
     'prefer-rest-params': 'error',
@@ -290,6 +295,10 @@ module.exports = {
             before: false
         }
     ],
+    'semi-style': [
+        'error',
+        'last'
+    ],
     'sort-keys': [
         'error',
         'asc',
@@ -303,6 +312,7 @@ module.exports = {
         'error',
         {
             anonymous: 'always',
+            asyncArrow: 'always',
             named: 'never'
         }
     ],
@@ -320,6 +330,7 @@ module.exports = {
         'error',
         'never'
     ],
+    'switch-colon-spacing': 'error',
     'symbol-description': 'error',
     'template-curly-spacing': 'error',
     'unicode-bom': 'error',
