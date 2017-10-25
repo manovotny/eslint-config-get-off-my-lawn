@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "babel-eslint": "8.0.1",
-    "eslint": "4.8.0",
+    "eslint": "4.9.0",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jest": "21.2.0",
     "eslint-plugin-json": "1.2.0",
