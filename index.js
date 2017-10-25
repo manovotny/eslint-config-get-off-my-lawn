@@ -44,5 +44,12 @@ module.exports = {
         objects,
         react,
         unicorn
-    )
+    ),
+    settings: {
+        node: {
+            allowModules: [
+                'electron'
+            ]
+        }
+    }
 };
