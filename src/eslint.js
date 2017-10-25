@@ -57,6 +57,7 @@ module.exports = {
     'key-spacing': 'error',
     'keyword-spacing': 'error',
     'linebreak-style': 'error',
+    'lines-between-class-members': 'error',
     'max-depth': [
         'error',
         2
@@ -74,6 +75,7 @@ module.exports = {
         }
     ],
     'max-statements-per-line': 'error',
+    'multiline-comment-style': 'error',
     'new-cap': 'error',
     'new-parens': 'error',
     'no-alert': 'error',
