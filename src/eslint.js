@@ -1,6 +1,5 @@
 const linebreaks = require('./utils/linebreaks');
 
-/* eslint-disable no-magic-numbers */
 module.exports = {
     'accessor-pairs': 'error',
     'array-bracket-spacing': [
@@ -352,4 +351,3 @@ module.exports = {
         'never'
     ]
 };
-/* eslint-enable no-magic-numbers */
