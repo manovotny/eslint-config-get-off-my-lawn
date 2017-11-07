@@ -1,4 +1,5 @@
 const eslint = require('./src/eslint');
+const eslintComments = require('./src/eslint-comments');
 const imprt = require('./src/import');
 const jsxA11y = require('./src/jsx-a11y');
 const jest = require('./src/jest');
@@ -27,6 +28,7 @@ module.exports = {
         sourceType: 'module'
     },
     plugins: [
+        'eslint-comments',
         'import',
         'jest',
         'json',
@@ -41,6 +43,7 @@ module.exports = {
     rules: Object.assign(
         {},
         eslint,
+        eslintComments,
         imprt,
         jest,
         jsxA11y,
