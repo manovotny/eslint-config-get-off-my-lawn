@@ -1,3 +1,4 @@
+const chaiExpect = require('./src/chai-expect');
 const eslint = require('./src/eslint');
 const eslintComments = require('./src/eslint-comments');
 const imprt = require('./src/import');
@@ -28,6 +29,7 @@ module.exports = {
         sourceType: 'module'
     },
     plugins: [
+        'chai-expect',
         'eslint-comments',
         'import',
         'jest',
@@ -42,6 +44,7 @@ module.exports = {
     ],
     rules: Object.assign(
         {},
+        chaiExpect,
         eslint,
         eslintComments,
         imprt,
