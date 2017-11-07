@@ -35,6 +35,7 @@
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jest": "21.2.0",
     "eslint-plugin-json": "1.2.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
     "eslint-plugin-mocha": "4.11.0",
     "eslint-plugin-node": "5.2.0",
     "eslint-plugin-objects": "1.1.1",

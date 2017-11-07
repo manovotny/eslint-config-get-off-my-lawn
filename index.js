@@ -1,5 +1,6 @@
 const eslint = require('./src/eslint');
-const importt = require('./src/import');
+const imprt = require('./src/import');
+const jsxA11y = require('./src/jsx-a11y');
 const jest = require('./src/jest');
 const mocha = require('./src/mocha');
 const node = require('./src/node');
@@ -25,9 +26,10 @@ module.exports = {
         sourceType: 'module'
     },
     plugins: [
-        'json',
         'import',
         'jest',
+        'json',
+        'jsx-a11y',
         'mocha',
         'node',
         'objects',
@@ -37,8 +39,9 @@ module.exports = {
     rules: Object.assign(
         {},
         eslint,
-        importt,
+        imprt,
         jest,
+        jsxA11y,
         mocha,
         node,
         objects,
