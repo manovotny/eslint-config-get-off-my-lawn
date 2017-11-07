@@ -21,6 +21,7 @@ This config also comes with the following plugins, and corresponding rules, bake
 * [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha)
 * [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node)
 * [eslint-plugin-objects](https://www.npmjs.com/package/eslint-plugin-objects)
+* [eslint-plugin-prefer-object-spread](https://www.npmjs.com/package/eslint-plugin-prefer-object-spread)
 * [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
 * [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security)
 * [eslint-plugin-unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn)

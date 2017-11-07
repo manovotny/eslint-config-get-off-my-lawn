@@ -7,6 +7,7 @@ const jest = require('./src/jest');
 const mocha = require('./src/mocha');
 const node = require('./src/node');
 const objects = require('./src/objects');
+const preferObjectSpread = require('./src/prefer-object-spread');
 const react = require('./src/react');
 const security = require('./src/security');
 const unicorn = require('./src/unicorn');
@@ -38,25 +39,26 @@ module.exports = {
         'mocha',
         'node',
         'objects',
+        'prefer-object-spread',
         'react',
         'security',
         'unicorn'
     ],
-    rules: Object.assign(
-        {},
-        chaiExpect,
-        eslint,
-        eslintComments,
-        imprt,
-        jest,
-        jsxA11y,
-        mocha,
-        node,
-        objects,
-        react,
-        security,
-        unicorn
-    ),
+    rules: {
+        ...chaiExpect,
+        ...eslint,
+        ...eslintComments,
+        ...imprt,
+        ...jest,
+        ...jsxA11y,
+        ...mocha,
+        ...node,
+        ...objects,
+        ...preferObjectSpread,
+        ...react,
+        ...security,
+        ...unicorn
+    },
     settings: {
         node: {
             allowModules: [
