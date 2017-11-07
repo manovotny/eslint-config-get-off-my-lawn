@@ -6,6 +6,7 @@ const mocha = require('./src/mocha');
 const node = require('./src/node');
 const objects = require('./src/objects');
 const react = require('./src/react');
+const security = require('./src/security');
 const unicorn = require('./src/unicorn');
 
 module.exports = {
@@ -34,6 +35,7 @@ module.exports = {
         'node',
         'objects',
         'react',
+        'security',
         'unicorn'
     ],
     rules: Object.assign(
@@ -46,6 +48,7 @@ module.exports = {
         node,
         objects,
         react,
+        security,
         unicorn
     ),
     settings: {
