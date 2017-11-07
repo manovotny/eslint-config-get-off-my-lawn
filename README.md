@@ -15,10 +15,12 @@ This config also comes with the following plugins, and corresponding rules, bake
 * [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
 * [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
 * [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
+* [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
 * [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha)
 * [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node)
 * [eslint-plugin-objects](https://www.npmjs.com/package/eslint-plugin-objects)
 * [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
+* [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security)
 * [eslint-plugin-unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn)
 
 Each and every single rule has been meticulously poured over and purposefully hand picked or excluded.
