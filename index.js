@@ -11,6 +11,7 @@ const preferObjectSpread = require('./src/prefer-object-spread');
 const react = require('./src/react');
 const security = require('./src/security');
 const unicorn = require('./src/unicorn');
+const xss = require('./src/xss');
 
 module.exports = {
     env: {
@@ -42,7 +43,8 @@ module.exports = {
         'prefer-object-spread',
         'react',
         'security',
-        'unicorn'
+        'unicorn',
+        'xss'
     ],
     rules: {
         ...chaiExpect,
@@ -57,7 +59,8 @@ module.exports = {
         ...preferObjectSpread,
         ...react,
         ...security,
-        ...unicorn
+        ...unicorn,
+        ...xss
     },
     settings: {
         node: {
