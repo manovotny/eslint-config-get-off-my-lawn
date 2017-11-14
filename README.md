@@ -17,7 +17,6 @@ This config also comes with the following plugins, and corresponding rules, bake
 * [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
 * [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
 * [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
-* [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha)
 * [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node)
 * [eslint-plugin-objects](https://www.npmjs.com/package/eslint-plugin-objects)
 * [eslint-plugin-prefer-object-spread](https://www.npmjs.com/package/eslint-plugin-prefer-object-spread)
