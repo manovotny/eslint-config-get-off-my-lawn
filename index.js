@@ -3,7 +3,6 @@ const eslintComments = require('./src/eslint-comments');
 const imprt = require('./src/import');
 const jsxA11y = require('./src/jsx-a11y');
 const jest = require('./src/jest');
-const mocha = require('./src/mocha');
 const node = require('./src/node');
 const objects = require('./src/objects');
 const preferObjectSpread = require('./src/prefer-object-spread');
@@ -34,7 +33,6 @@ module.exports = {
         'jest',
         'json',
         'jsx-a11y',
-        'mocha',
         'node',
         'objects',
         'prefer-object-spread',
@@ -48,7 +46,6 @@ module.exports = {
         ...imprt,
         ...jest,
         ...jsxA11y,
-        ...mocha,
         ...node,
         ...objects,
         ...preferObjectSpread,
