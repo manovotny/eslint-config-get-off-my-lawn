@@ -12,7 +12,6 @@ This config also comes with the following plugins, and corresponding rules, bake
 
 * [babel-eslint](https://www.npmjs.com/package/babel-eslint)
 * [eslint](https://www.npmjs.com/package/eslint)
-* [eslint-plugin-chai-expect](https://www.npmjs.com/package/eslint-plugin-chai-expect)
 * [eslint-plugin-eslint-comments](https://www.npmjs.com/package/eslint-plugin-eslint-comments)
 * [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
 * [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
