@@ -8,7 +8,6 @@ module.exports = {
     'mocha/no-return-and-callback': 'error',
     'mocha/no-sibling-hooks': 'error',
     'mocha/no-skipped-tests': 'error',
-    'mocha/no-synchronous-tests': 'error',
     'mocha/no-top-level-hooks': 'error',
     'mocha/valid-test-description': 'error'
 };
