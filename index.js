@@ -11,7 +11,6 @@ const preferObjectSpread = require('./src/prefer-object-spread');
 const react = require('./src/react');
 const security = require('./src/security');
 const unicorn = require('./src/unicorn');
-const xss = require('./src/xss');
 
 module.exports = {
     env: {
@@ -27,7 +26,7 @@ module.exports = {
         ecmaFeatures: {
             jsx: true
         },
-        ecmaVersion: 6,
+        ecmaVersion: 2017,
         sourceType: 'module'
     },
     plugins: [
@@ -43,8 +42,7 @@ module.exports = {
         'prefer-object-spread',
         'react',
         'security',
-        'unicorn',
-        'xss'
+        'unicorn'
     ],
     rules: {
         ...chaiExpect,
@@ -59,8 +57,7 @@ module.exports = {
         ...preferObjectSpread,
         ...react,
         ...security,
-        ...unicorn,
-        ...xss
+        ...unicorn
     },
     settings: {
         node: {
