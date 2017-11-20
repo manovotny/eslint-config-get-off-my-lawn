@@ -1,4 +1,5 @@
 module.exports = {
+    'react/button-has-type': 'error',
     'react/display-name': [
         'error',
         {
@@ -97,6 +98,7 @@ module.exports = {
     'react/jsx-tag-spacing': 'error',
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
+    'react/no-access-state-in-setstate': 'error',
     'react/no-array-index-key': 'error',
     'react/no-children-prop': 'error',
     'react/no-danger': 'error',
@@ -144,7 +146,12 @@ module.exports = {
     'react/require-render-return': 'error',
     'react/self-closing-comp': 'error',
     'react/sort-comp': 'error',
-    'react/sort-prop-types': 'error',
+    'react/sort-prop-types': [
+        'error',
+        {
+            sortShapeProp: true
+        }
+    ],
     'react/style-prop-object': 'error',
     'react/void-dom-elements-no-children': 'error'
 };
