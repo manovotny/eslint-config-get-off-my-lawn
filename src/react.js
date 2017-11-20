@@ -84,12 +84,7 @@ module.exports = {
             ignoreCase: true
         }
     ],
-    'react/jsx-no-literals': [
-        'error',
-        {
-            noStrings: true
-        }
-    ],
+    'react/jsx-no-literals': 'error',
     'react/jsx-no-target-blank': 'error',
     'react/jsx-no-undef': [
         'error',
@@ -102,7 +97,6 @@ module.exports = {
     'react/jsx-tag-spacing': 'error',
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
-    'react/jsx-wrap-multilines': 'error',
     'react/no-array-index-key': 'error',
     'react/no-children-prop': 'error',
     'react/no-danger': 'error',
