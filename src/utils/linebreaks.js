@@ -7,6 +7,11 @@ const blocks = [
     },
     {
         blankLine: 'always',
+        prev: 'block-like',
+        next: '*'
+    },
+    {
+        blankLine: 'always',
         prev: '*',
         next: 'multiline-block-like'
     }
@@ -82,14 +87,6 @@ const dos = [
     }
 ];
 
-const exportz = [
-    {
-        blankLine: 'always',
-        prev: '*',
-        next: 'export'
-    }
-];
-
 const fors = [
     {
         blankLine: 'always',
@@ -156,7 +153,6 @@ module.exports = Array.prototype.concat(
     declarations,
     directives,
     dos,
-    exportz,
     fors,
     functions,
     ifs,
