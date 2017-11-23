@@ -5,6 +5,7 @@ const jsxA11y = require('./src/jsx-a11y');
 const jest = require('./src/jest');
 const node = require('./src/node');
 const objects = require('./src/objects');
+const preferArrow = require('./src/prefer-arrow');
 const preferObjectSpread = require('./src/prefer-object-spread');
 const react = require('./src/react');
 const security = require('./src/security');
@@ -35,6 +36,7 @@ module.exports = {
         'jsx-a11y',
         'node',
         'objects',
+        'prefer-arrow',
         'prefer-object-spread',
         'react',
         'security',
@@ -48,6 +50,7 @@ module.exports = {
         ...jsxA11y,
         ...node,
         ...objects,
+        ...preferArrow,
         ...preferObjectSpread,
         ...react,
         ...security,
