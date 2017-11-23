@@ -39,6 +39,7 @@
     "eslint-plugin-jsx-a11y": "6.0.2",
     "eslint-plugin-node": "5.2.1",
     "eslint-plugin-objects": "1.1.1",
+    "eslint-plugin-prefer-arrow": "1.1.1",
     "eslint-plugin-prefer-object-spread": "1.2.1",
     "eslint-plugin-react": "7.5.1",
     "eslint-plugin-security": "1.4.0",
