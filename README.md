@@ -19,7 +19,6 @@ This config also comes with the following plugins, and corresponding rules, bake
 * [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
 * [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node)
 * [eslint-plugin-objects](https://www.npmjs.com/package/eslint-plugin-objects)
-* [eslint-plugin-prefer-arrow](https://www.npmjs.com/package/eslint-plugin-prefer-arrow)
 * [eslint-plugin-prefer-object-spread](https://www.npmjs.com/package/eslint-plugin-prefer-object-spread)
 * [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
 * [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security)
