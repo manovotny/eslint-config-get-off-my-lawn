@@ -29,7 +29,7 @@ Each and every single rule has been meticulously poured over and purposefully ha
 ## Install
 
 ```
-$ npm i --save-dev eslint-config-get-off-my-lawn
+$ yarn add eslint eslint-config-get-off-my-lawn --dev
 ```
 
 ## Usage
