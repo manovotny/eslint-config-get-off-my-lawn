@@ -8,7 +8,6 @@ module.exports = {
     'unicorn/custom-error-definition': 'error',
     'unicorn/escape-case': 'error',
     'unicorn/new-for-builtins': 'error',
-    'unicorn/no-abusive-eslint-disable': 'error',
     'unicorn/no-array-instanceof': 'error',
     'unicorn/no-hex-escape': 'error',
     'unicorn/no-new-buffer': 'error',
