@@ -22,7 +22,6 @@ module.exports = {
                 'command',
                 'content',
                 'dir',
-                'div',
                 'element',
                 'font',
                 'frame',
