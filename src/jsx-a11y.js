@@ -14,7 +14,16 @@ module.exports = {
     'jsx-a11y/iframe-has-title': 'error',
     'jsx-a11y/img-redundant-alt': 'error',
     'jsx-a11y/interactive-supports-focus': 'error',
-    'jsx-a11y/label-has-for': 'error',
+    'jsx-a11y/label-has-for': [
+        'error',
+        {
+            required: {
+                every: [
+                    'nesting'
+                ]
+            }
+        }
+    ],
     'jsx-a11y/lang': 'error',
     'jsx-a11y/media-has-caption': 'error',
     'jsx-a11y/mouse-events-have-key-events': 'error',
@@ -22,10 +31,8 @@ module.exports = {
     'jsx-a11y/no-autofocus': 'error',
     'jsx-a11y/no-distracting-elements': 'error',
     'jsx-a11y/no-interactive-element-to-noninteractive-role': 'error',
-    'jsx-a11y/no-noninteractive-element-interactions': 'error',
     'jsx-a11y/no-noninteractive-element-to-interactive-role': 'error',
     'jsx-a11y/no-noninteractive-tabindex': 'error',
-    'jsx-a11y/no-onchange': 'error',
     'jsx-a11y/no-redundant-roles': 'error',
     'jsx-a11y/no-static-element-interactions': 'error',
     'jsx-a11y/role-has-required-aria-props': 'error',
