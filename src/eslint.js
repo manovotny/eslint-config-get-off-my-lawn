@@ -37,10 +37,6 @@ module.exports = {
     ],
     'for-direction': 'error',
     'func-call-spacing': 'error',
-    'function-paren-newline': [
-        'error',
-        'multiline'
-    ],
     'generator-star-spacing': 'error',
     'getter-return': 'error',
     'guard-for-in': 'error',
