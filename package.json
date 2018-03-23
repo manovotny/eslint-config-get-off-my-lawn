@@ -33,7 +33,7 @@
     "babel-eslint": "8.2.2",
     "eslint-plugin-eslint-comments": "2.0.2",
     "eslint-plugin-get-off-my-lawn": "1.0.0",
-    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-import": "2.9.0",
     "eslint-plugin-jest": "21.3.2",
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-jsx-a11y": "6.0.2",
