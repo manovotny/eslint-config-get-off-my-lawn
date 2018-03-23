@@ -30,7 +30,7 @@
     "test": "eslint . --ext .json --ext .js"
   },
   "dependencies": {
-    "babel-eslint": "8.0.3",
+    "babel-eslint": "8.2.2",
     "eslint-plugin-eslint-comments": "2.0.1",
     "eslint-plugin-get-off-my-lawn": "1.0.0",
     "eslint-plugin-import": "2.8.0",
