@@ -1017,9 +1017,9 @@ eslint-plugin-security@1.4.0:
   dependencies:
     safe-regex "^1.1.0"
 
-eslint-plugin-unicorn@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-3.0.0.tgz#2d53b4be307a54154d56c4cf494024e1b827e4b2"
+eslint-plugin-unicorn@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-4.0.2.tgz#845de915e7a975f15779466fc92cc01973bbf103"
   dependencies:
     clean-regexp "^1.0.0"
     eslint-ast-utils "^1.0.0"
@@ -1028,6 +1028,7 @@ eslint-plugin-unicorn@3.0.0:
     lodash.kebabcase "^4.0.1"
     lodash.snakecase "^4.0.1"
     lodash.upperfirst "^4.2.0"
+    safe-regex "^1.1.0"
 
 eslint-scope@^3.7.1:
   version "3.7.1"
