@@ -47,6 +47,7 @@ module.exports = {
     ],
     'react/forbid-foreign-prop-types': 'error',
     'react/jsx-boolean-value': 'error',
+    'react/jsx-child-element-spacing': 'error',
     'react/jsx-closing-bracket-location': 'error',
     'react/jsx-closing-tag-location': 'error',
     'react/jsx-curly-spacing': 'error',
@@ -87,7 +88,15 @@ module.exports = {
     ],
     'react/jsx-pascal-case': 'error',
     'react/jsx-sort-props': 'error',
-    'react/jsx-tag-spacing': 'error',
+    'react/jsx-tag-spacing': [
+        'error',
+        {
+            afterOpening: 'never',
+            beforeClosing: 'never',
+            beforeSelfClosing: 'always',
+            closingSlash: 'never'
+        }
+    ],
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
     'react/no-access-state-in-setstate': 'error',
@@ -117,6 +126,7 @@ module.exports = {
     'react/no-render-return-value': 'error',
     'react/no-set-state': 'error',
     'react/no-string-refs': 'error',
+    'react/no-this-in-sfc': 'error',
     'react/no-typos': 'error',
     'react/no-unescaped-entities': 'error',
     'react/no-unknown-property': 'error',
