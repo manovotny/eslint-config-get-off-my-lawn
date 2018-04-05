@@ -58,9 +58,7 @@ module.exports = {
     },
     settings: {
         node: {
-            allowModules: [
-                'electron'
-            ]
+            allowModules: ['electron']
         }
     }
 };
