@@ -18,9 +18,7 @@ module.exports = {
         'error',
         {
             required: {
-                every: [
-                    'nesting'
-                ]
+                every: ['nesting']
             }
         }
     ],

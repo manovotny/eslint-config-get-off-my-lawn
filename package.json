@@ -27,6 +27,9 @@
     "src"
   ],
   "scripts": {
+    "precommit": "npm run pretty-quick",
+    "prettier": "prettier --write \"**/*.{js,json,md}\"",
+    "pretty-quick": "pretty-quick --staged",
     "test": "eslint . --ext .json --ext .js"
   },
   "dependencies": {
@@ -44,10 +47,13 @@
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-unicorn": "4.0.2"
   },
+  "devDependencies": {
+    "eslint": "4.19.1",
+    "husky": "0.14.3",
+    "prettier": "1.11.1",
+    "pretty-quick": "1.4.1"
+  },
   "peerDependencies": {
     "eslint": ">=4.19.1"
-  },
-  "devDependencies": {
-    "eslint": "4.19.1"
   }
 }

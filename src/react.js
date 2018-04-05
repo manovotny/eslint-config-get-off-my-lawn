@@ -55,19 +55,11 @@ module.exports = {
     'react/jsx-filename-extension': [
         'error',
         {
-            extensions: [
-                '.js'
-            ]
+            extensions: ['.js']
         }
     ],
-    'react/jsx-first-prop-new-line': [
-        'error',
-        'multiline'
-    ],
-    'react/jsx-indent': [
-        'error',
-        4
-    ],
+    'react/jsx-first-prop-new-line': ['error', 'multiline'],
+    'react/jsx-indent': ['error', 4],
     'react/jsx-indent-props': 'error',
     'react/jsx-key': 'error',
     'react/jsx-max-props-per-line': 'error',
@@ -105,14 +97,8 @@ module.exports = {
     'react/no-danger': 'error',
     'react/no-danger-with-children': 'error',
     'react/no-deprecated': 'error',
-    'react/no-did-mount-set-state': [
-        'error',
-        'disallow-in-func'
-    ],
-    'react/no-did-update-set-state': [
-        'error',
-        'disallow-in-func'
-    ],
+    'react/no-did-mount-set-state': ['error', 'disallow-in-func'],
+    'react/no-did-update-set-state': ['error', 'disallow-in-func'],
     'react/no-direct-mutation-state': 'error',
     'react/no-find-dom-node': 'error',
     'react/no-is-mounted': 'error',
@@ -132,10 +118,7 @@ module.exports = {
     'react/no-unknown-property': 'error',
     'react/no-unused-prop-types': 'error',
     'react/no-unused-state': 'error',
-    'react/no-will-update-set-state': [
-        'error',
-        'disallow-in-func'
-    ],
+    'react/no-will-update-set-state': ['error', 'disallow-in-func'],
     'react/prefer-es6-class': 'error',
     'react/prefer-stateless-function': [
         'error',
