@@ -6,7 +6,6 @@ module.exports = {
     'node/no-unpublished-bin': 'error',
     'node/no-unpublished-import': 'error',
     'node/no-unpublished-require': 'error',
-    'node/no-unsupported-features': 'error',
     'node/process-exit-as-throw': 'error',
     'node/shebang': 'error'
 };
