@@ -56,6 +56,35 @@ module.exports = {
 };
 ```
 
+## Usage With Prettier
+
+eslint-config-get-off-my-lawn can work seamlessly with [prettier](https://prettier.io/) with the help of [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier).
+
+```
+$ yarn add eslint-config-prettier --dev
+```
+
+Then all that is needed is a slight adjustment to your ESLint config in your `package.json` or `.eslintrc.js` file.
+
+### package.json
+
+```json
+{
+    "name": "my-awesome-project",
+    "eslintConfig": {
+        "extends": ["get-off-my-lawn", "prettier"]
+    }
+}
+```
+
+### .eslintrc.js
+
+```js
+module.exports = {
+    extends: ['get-off-my-lawn', 'prettier']
+};
+```
+
 ## Related
 
 *   [stylelint-config-get-off-my-lawn](https://www.npmjs.com/package/stylelint-config-get-off-my-lawn) - A highly opinionated, [sharable config](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md#extends) of [stylelint](http://stylelint.io) rules to produce beautiful, readable CSS and Sass.
