@@ -43,7 +43,10 @@ Create an ESLint config in your `package.json` or `.eslintrc.js` file.
 {
     "name": "my-awesome-project",
     "eslintConfig": {
-        "extends": "get-off-my-lawn"
+        "extends": "get-off-my-lawn",
+        "rules": {
+            // enable additional rules, override rule options, or disable rules
+        }
     }
 }
 ```
@@ -52,7 +55,10 @@ Create an ESLint config in your `package.json` or `.eslintrc.js` file.
 
 ```js
 module.exports = {
-    extends: 'get-off-my-lawn'
+    extends: 'get-off-my-lawn',
+    rules: {
+        // enable additional rules, override rule options, or disable rules
+    }
 };
 ```
 
@@ -72,7 +78,10 @@ Then all that is needed is a slight adjustment to your ESLint config in your `pa
 {
     "name": "my-awesome-project",
     "eslintConfig": {
-        "extends": ["get-off-my-lawn", "prettier"]
+        "extends": ["get-off-my-lawn", "prettier"],
+        "rules": {
+            // enable additional rules, override rule options, or disable rules
+        }
     }
 }
 ```
@@ -81,7 +90,10 @@ Then all that is needed is a slight adjustment to your ESLint config in your `pa
 
 ```js
 module.exports = {
-    extends: ['get-off-my-lawn', 'prettier']
+    extends: ['get-off-my-lawn', 'prettier'],
+    rules: {
+        // enable additional rules, override rule options, or disable rules
+    }
 };
 ```
 
