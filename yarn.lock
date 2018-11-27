@@ -512,12 +512,12 @@ eslint-module-utils@^2.2.0:
     debug "^2.6.8"
     pkg-dir "^1.0.0"
 
-eslint-plugin-eslint-comments@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-comments/-/eslint-plugin-eslint-comments-2.0.2.tgz#006e1c834beffe6ff3014e84a3ae69acfa539a28"
+eslint-plugin-eslint-comments@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-comments/-/eslint-plugin-eslint-comments-3.0.1.tgz#baafb713584c0de7ee588710720e580bcc28cfbb"
   dependencies:
     escape-string-regexp "^1.0.5"
-    ignore "^3.3.7"
+    ignore "^3.3.8"
 
 eslint-plugin-get-off-my-lawn@1.0.2:
   version "1.0.2"
@@ -888,6 +888,10 @@ iconv-lite@^0.4.17, iconv-lite@~0.4.13:
 ignore@^3.3.3, ignore@^3.3.6, ignore@^3.3.7:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.7.tgz#612289bfb3c220e186a58118618d5be8c1bab021"
+
+ignore@^3.3.8:
+  version "3.3.10"
+  resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
 
 import-modules@1.1.0, import-modules@^1.1.0:
   version "1.1.0"
