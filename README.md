@@ -64,38 +64,9 @@ module.exports = {
 
 ## Usage With Prettier
 
-eslint-config-get-off-my-lawn can work seamlessly with [prettier](https://prettier.io/) with the help of [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier).
+Love eslint-config-get-off-my-lawn? Love [prettier](https://prettier.io/)? Well you're in luck!
 
-```
-$ yarn add eslint-config-prettier --dev
-```
-
-Then all that is needed is a slight adjustment to your ESLint config in your `package.json` or `.eslintrc.js` file.
-
-### package.json
-
-```json
-{
-    "name": "my-awesome-project",
-    "eslintConfig": {
-        "extends": ["get-off-my-lawn", "prettier"],
-        "rules": {
-            // enable additional rules, override rule options, or disable rules
-        }
-    }
-}
-```
-
-### .eslintrc.js
-
-```js
-module.exports = {
-    extends: ['get-off-my-lawn', 'prettier'],
-    rules: {
-        // enable additional rules, override rule options, or disable rules
-    }
-};
-```
+Get the best of both worlds with [eslint-config-get-off-my-lawn-prettier](https://github.com/manovotny/eslint-config-get-off-my-lawn-prettier).
 
 ## Related
 
