@@ -6,7 +6,6 @@ const jsxA11y = require('./src/jsx-a11y');
 const jest = require('./src/jest');
 const node = require('./src/node');
 const objects = require('./src/objects');
-const preferObjectSpread = require('./src/prefer-object-spread');
 const react = require('./src/react');
 const security = require('./src/security');
 const unicorn = require('./src/unicorn');
@@ -14,10 +13,8 @@ const unicorn = require('./src/unicorn');
 module.exports = {
     env: {
         browser: true,
-        es6: true,
         jasmine: true,
         jest: true,
-        mocha: true,
         node: true
     },
     parser: 'babel-eslint',
@@ -25,7 +22,7 @@ module.exports = {
         ecmaFeatures: {
             jsx: true
         },
-        ecmaVersion: 2018,
+        ecmaVersion: 2019,
         sourceType: 'module'
     },
     plugins: [
@@ -51,7 +48,6 @@ module.exports = {
         ...jsxA11y,
         ...node,
         ...objects,
-        ...preferObjectSpread,
         ...react,
         ...security,
         ...unicorn

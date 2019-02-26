@@ -3,6 +3,7 @@ const linebreaks = require('./utils/linebreaks');
 module.exports = {
     'accessor-pairs': 'error',
     'array-bracket-spacing': ['error', 'never'],
+    'array-element-newline': ['error', 'consistent'],
     'arrow-body-style': 'error',
     'arrow-parens': 'error',
     'arrow-spacing': 'error',
@@ -54,16 +55,17 @@ module.exports = {
             max: 3
         }
     ],
+    'max-classes-per-file': 'error',
     'max-statements-per-line': 'error',
     'multiline-comment-style': 'error',
     'new-cap': 'error',
     'new-parens': 'error',
     'no-alert': 'error',
     'no-array-constructor': 'error',
+    'no-async-promise-executor': 'error',
     'no-bitwise': 'error',
     'no-buffer-constructor': 'error',
     'no-caller': 'error',
-    'no-catch-shadow': 'error',
     'no-class-assign': 'error',
     'no-compare-neg-zero': 'error',
     'no-cond-assign': ['error', 'always'],
@@ -129,6 +131,7 @@ module.exports = {
     'no-lone-blocks': 'error',
     'no-lonely-if': 'error',
     'no-loop-func': 'error',
+    'no-misleading-character-class': 'error',
     'no-mixed-spaces-and-tabs': 'error',
     'no-multi-spaces': 'error',
     'no-multi-str': 'error',
@@ -167,15 +170,16 @@ module.exports = {
     'no-return-assign': ['error', 'always'],
     'no-return-await': 'error',
     'no-script-url': 'error',
-    'no-self-assign': [
-        'error',
-        {
-            props: true
-        }
-    ],
+    'no-self-assign': 'error',
     'no-self-compare': 'error',
     'no-sequences': 'error',
-    'no-shadow': 'error',
+    'no-shadow': [
+        'error',
+        {
+            builtinGlobals: true,
+            hoist: 'functions'
+        }
+    ],
     'no-shadow-restricted-names': 'error',
     'no-sparse-arrays': 'error',
     'no-sync': 'error',
@@ -197,6 +201,7 @@ module.exports = {
     'no-unused-vars': 'error',
     'no-use-before-define': 'error',
     'no-useless-call': 'error',
+    'no-useless-catch': 'error',
     'no-useless-computed-key': 'error',
     'no-useless-concat': 'error',
     'no-useless-constructor': 'error',
@@ -223,6 +228,7 @@ module.exports = {
     'padding-line-between-statements': linebreaks,
     'prefer-const': 'error',
     'prefer-numeric-literals': 'error',
+    'prefer-object-spread': 'error',
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',
@@ -242,7 +248,9 @@ module.exports = {
         }
     ],
     radix: ['error', 'as-needed'],
+    'require-atomic-updates': 'error',
     'require-await': 'error',
+    'require-unicode-regexp': 'error',
     'require-yield': 'error',
     'rest-spread-spacing': 'error',
     semi: 'error',
