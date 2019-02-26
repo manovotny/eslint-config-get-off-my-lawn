@@ -34,7 +34,6 @@ module.exports = {
         'jsx-a11y',
         'node',
         'objects',
-        'prefer-object-spread',
         'react',
         'security',
         'unicorn'
