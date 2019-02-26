@@ -3,7 +3,7 @@ const eslintComments = require('./src/eslint-comments');
 const getOffMyLawn = require('./src/get-off-my-lawn');
 const imprt = require('./src/import');
 const jsxA11y = require('./src/jsx-a11y');
-const jest = require('./src/jest');
+const jestRules = require('./src/jest');
 const node = require('./src/node');
 const objects = require('./src/objects');
 const react = require('./src/react');
@@ -43,7 +43,7 @@ module.exports = {
         ...eslintComments,
         ...getOffMyLawn,
         ...imprt,
-        ...jest,
+        ...jestRules,
         ...jsxA11y,
         ...node,
         ...objects,
