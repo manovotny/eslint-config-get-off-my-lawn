@@ -42,6 +42,7 @@ module.exports = {
     'keyword-spacing': 'error',
     'linebreak-style': 'error',
     'lines-between-class-members': 'error',
+    'max-classes-per-file': 'error',
     'max-depth': ['error', 2],
     'max-nested-callbacks': [
         'error',
@@ -55,7 +56,6 @@ module.exports = {
             max: 3
         }
     ],
-    'max-classes-per-file': 'error',
     'max-statements-per-line': 'error',
     'multiline-comment-style': 'error',
     'new-cap': 'error',
