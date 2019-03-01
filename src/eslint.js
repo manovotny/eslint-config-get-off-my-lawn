@@ -198,7 +198,15 @@ module.exports = {
     'no-unsafe-negation': 'error',
     'no-unused-expressions': 'error',
     'no-unused-labels': 'error',
-    'no-unused-vars': 'error',
+    'no-unused-vars': [
+        'error',
+        {
+            args: 'after-used',
+            caughtErrors: 'none',
+            ignoreRestSiblings: true,
+            vars: 'all'
+        }
+    ],
     'no-use-before-define': 'error',
     'no-useless-call': 'error',
     'no-useless-catch': 'error',
