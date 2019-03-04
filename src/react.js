@@ -59,6 +59,7 @@ module.exports = {
         }
     ],
     'react/jsx-first-prop-new-line': ['error', 'multiline'],
+    'react/jsx-fragments': ['error', 'syntax'],
     'react/jsx-indent': ['error', 4],
     'react/jsx-indent-props': 'error',
     'react/jsx-key': 'error',
@@ -78,7 +79,14 @@ module.exports = {
             allowGlobals: true
         }
     ],
+    'react/jsx-one-expression-per-line': [
+        'error',
+        {
+            allow: 'single-child'
+        }
+    ],
     'react/jsx-pascal-case': 'error',
+    'react/jsx-props-no-multi-spaces': 'error',
     'react/jsx-sort-props': 'error',
     'react/jsx-tag-spacing': [
         'error',
@@ -116,6 +124,7 @@ module.exports = {
     'react/no-typos': 'error',
     'react/no-unescaped-entities': 'error',
     'react/no-unknown-property': 'error',
+    'react/no-unsafe': 'error',
     'react/no-unused-prop-types': 'error',
     'react/no-unused-state': 'error',
     'react/no-will-update-set-state': ['error', 'disallow-in-func'],
