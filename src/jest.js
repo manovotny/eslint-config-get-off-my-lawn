@@ -8,6 +8,7 @@ module.exports = {
     ],
     'jest/no-alias-methods': 'error',
     'jest/no-disabled-tests': 'error',
+    'jest/no-empty-title': 'error',
     'jest/no-focused-tests': 'error',
     'jest/no-identical-title': 'error',
     'jest/no-jest-import': 'error',
