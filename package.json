@@ -43,6 +43,7 @@
     },
     "dependencies": {
         "babel-eslint": "10.0.1",
+        "dot-prop": "4.2.0",
         "eslint-plugin-eslint-comments": "3.1.1",
         "eslint-plugin-get-off-my-lawn": "1.0.2",
         "eslint-plugin-import": "2.16.0",
@@ -53,7 +54,8 @@
         "eslint-plugin-objects": "1.1.1",
         "eslint-plugin-react": "7.12.4",
         "eslint-plugin-security": "1.4.0",
-        "eslint-plugin-unicorn": "8.0.1"
+        "eslint-plugin-unicorn": "8.0.1",
+        "read-pkg-up": "5.0.0"
     },
     "devDependencies": {
         "eslint": "5.16.0",
