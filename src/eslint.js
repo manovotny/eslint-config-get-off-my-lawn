@@ -15,7 +15,6 @@ module.exports = {
     'comma-dangle': 'error',
     'comma-spacing': 'error',
     'comma-style': 'error',
-    complexity: ['error', 4],
     'computed-property-spacing': 'error',
     'consistent-return': 'error',
     'consistent-this': ['error', 'self'],
@@ -43,19 +42,6 @@ module.exports = {
     'linebreak-style': 'error',
     'lines-between-class-members': 'error',
     'max-classes-per-file': 'error',
-    'max-depth': ['error', 2],
-    'max-nested-callbacks': [
-        'error',
-        {
-            max: 3
-        }
-    ],
-    'max-params': [
-        'error',
-        {
-            max: 3
-        }
-    ],
     'max-statements-per-line': 'error',
     'multiline-comment-style': 'error',
     'new-cap': 'error',
@@ -223,14 +209,6 @@ module.exports = {
     'nonblock-statement-body-position': ['error', 'below'],
     'object-curly-spacing': 'error',
     'object-shorthand': 'error',
-    'one-var': [
-        'error',
-        {
-            const: 'never',
-            let: 'always',
-            var: 'always'
-        }
-    ],
     'one-var-declaration-per-line': ['error', 'always'],
     'padded-blocks': ['error', 'never'],
     'padding-line-between-statements': linebreaks,
