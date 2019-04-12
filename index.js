@@ -10,6 +10,7 @@ const jestRules = require('./src/jest');
 const node = require('./src/node');
 const objects = require('./src/objects');
 const react = require('./src/react');
+const reactHooks = require('./src/react-hooks');
 const reactNative = require('./src/react-native');
 const security = require('./src/security');
 const unicorn = require('./src/unicorn');
@@ -50,6 +51,7 @@ module.exports = {
         'node',
         'objects',
         'react',
+        'react-hooks',
         'react-native',
         'security',
         'unicorn'
@@ -64,6 +66,7 @@ module.exports = {
         ...node,
         ...objects,
         ...react,
+        ...reactHooks,
         ...reactNative,
         ...security,
         ...unicorn
