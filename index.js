@@ -10,6 +10,7 @@ const jestRules = require('./src/jest');
 const node = require('./src/node');
 const objects = require('./src/objects');
 const react = require('./src/react');
+const reactNative = require('./src/react-native');
 const security = require('./src/security');
 const unicorn = require('./src/unicorn');
 
@@ -28,7 +29,8 @@ module.exports = {
         browser: true,
         jasmine: true,
         jest: true,
-        node: true
+        node: true,
+        'react-native/react-native': true
     },
     parser: 'babel-eslint',
     parserOptions: {
@@ -48,6 +50,7 @@ module.exports = {
         'node',
         'objects',
         'react',
+        'react-native',
         'security',
         'unicorn'
     ],
@@ -61,6 +64,7 @@ module.exports = {
         ...node,
         ...objects,
         ...react,
+        ...reactNative,
         ...security,
         ...unicorn
     },
