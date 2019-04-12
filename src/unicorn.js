@@ -15,7 +15,6 @@ module.exports = {
     'unicorn/no-console-spaces': 'error',
     'unicorn/no-hex-escape': 'error',
     'unicorn/no-new-buffer': 'error',
-    'unicorn/no-process-exit': 'error',
     'unicorn/no-unused-properties': 'error',
     'unicorn/number-literal-case': 'error',
     'unicorn/prefer-add-event-listener': 'error',
