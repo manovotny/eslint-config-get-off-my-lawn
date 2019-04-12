@@ -16,7 +16,6 @@ module.exports = {
     'import/no-amd': 'error',
     'import/no-deprecated': 'error',
     'import/no-duplicates': 'error',
-    'import/no-dynamic-require': 'error',
     'import/no-extraneous-dependencies': 'error',
     'import/no-mutable-exports': 'error',
     'import/no-named-as-default': 'error',
