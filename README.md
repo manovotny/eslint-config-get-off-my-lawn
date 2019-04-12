@@ -21,6 +21,7 @@ This config also comes with the following plugins, and corresponding rules, bake
 -   [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node)
 -   [eslint-plugin-objects](https://www.npmjs.com/package/eslint-plugin-objects)
 -   [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
+-   [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
 -   [eslint-plugin-react-native](https://www.npmjs.com/package/eslint-plugin-react-native)
 -   [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security)
 -   [eslint-plugin-unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn)
