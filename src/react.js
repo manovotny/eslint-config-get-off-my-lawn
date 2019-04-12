@@ -118,7 +118,6 @@ module.exports = {
     ],
     'react/no-redundant-should-component-update': 'error',
     'react/no-render-return-value': 'error',
-    'react/no-set-state': 'error',
     'react/no-string-refs': 'error',
     'react/no-this-in-sfc': 'error',
     'react/no-typos': 'error',
