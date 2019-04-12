@@ -1,4 +1,4 @@
-# eslint-config-get-off-my-lawn [![Build Status](https://travis-ci.org/manovotny/eslint-config-get-off-my-lawn.svg?branch=master)](https://travis-ci.org/manovotny/eslint-config-get-off-my-lawn)
+# eslint-config-get-off-my-lawn
 
 > A highly opinionated, [sharable config](http://eslint.org/docs/developer-guide/shareable-configs.html) of [ESLint](http://eslint.org) rules to produce beautiful, readable JavaScript.
 
@@ -21,6 +21,7 @@ This config also comes with the following plugins, and corresponding rules, bake
 -   [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node)
 -   [eslint-plugin-objects](https://www.npmjs.com/package/eslint-plugin-objects)
 -   [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
+-   [eslint-plugin-react-native](https://www.npmjs.com/package/eslint-plugin-react-native)
 -   [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security)
 -   [eslint-plugin-unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn)
 
