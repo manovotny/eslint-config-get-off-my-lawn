@@ -16,7 +16,6 @@ module.exports = {
     'unicorn/no-for-loop': 'error',
     'unicorn/no-hex-escape': 'error',
     'unicorn/no-new-buffer': 'error',
-    'unicorn/no-process-exit': 'error',
     'unicorn/no-unused-properties': 'error',
     'unicorn/no-zero-fractions': 'error',
     'unicorn/number-literal-case': 'error',
