@@ -134,7 +134,6 @@ module.exports = {
             ignorePureComponents: true
         }
     ],
-    'react/prop-types': 'error',
     'react/react-in-jsx-scope': 'error',
     'react/require-render-return': 'error',
     'react/self-closing-comp': 'error',
