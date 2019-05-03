@@ -67,7 +67,7 @@ module.exports = {
 
 Love eslint-config-get-off-my-lawn? Love [prettier](https://prettier.io/)? Well you're in luck!
 
-Get the best of both worlds with [eslint-config-get-off-my-lawn-prettier](https://github.com/manovotny/eslint-config-get-off-my-lawn-prettier).
+eslint-config-get-off-my-lawn will automatically detect if you're project is using prettier and it will apply [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) to turn off all rules that are unnecessary or might conflict with prettier.
 
 ## Related
 
