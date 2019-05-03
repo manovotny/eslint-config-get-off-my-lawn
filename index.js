@@ -87,10 +87,10 @@ if (detectUsage('react')) {
 if (detectUsage('prettier')) {
     config.rules = {
         ...config.rules,
-        ...require('eslint-config-prettier'),
-        ...require('eslint-config-prettier/babel'),
-        ...require('eslint-config-prettier/react'),
-        ...require('eslint-config-prettier/unicorn')
+        ...require('eslint-config-prettier').rules,
+        ...require('eslint-config-prettier/babel').rules,
+        ...require('eslint-config-prettier/react').rules,
+        ...require('eslint-config-prettier/unicorn').rules
     };
 }
 
