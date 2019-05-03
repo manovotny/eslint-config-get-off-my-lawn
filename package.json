@@ -58,7 +58,8 @@
         "eslint-plugin-react-native": "3.6.0",
         "eslint-plugin-security": "1.4.0",
         "eslint-plugin-unicorn": "8.0.2",
-        "read-pkg-up": "5.0.0"
+        "read-pkg-up": "5.0.0",
+        "semver": "6.0.0"
     },
     "devDependencies": {
         "eslint": "5.16.0",
