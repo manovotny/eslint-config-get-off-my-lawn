@@ -1,5 +1,6 @@
 const dotProp = require('dot-prop');
 const readPkgUp = require('read-pkg-up');
+const semver = require('semver');
 
 const eslint = require('./src/eslint');
 const eslintComments = require('./src/eslint-comments');
@@ -17,7 +18,7 @@ const unicorn = require('./src/unicorn');
 
 const pkg = readPkgUp.sync() || {};
 
-const detectUsage = (dependency) =>
+const getUsage = (dependency) =>
     dotProp.get(pkg, `pkg.dependencies.${dependency}`) || dotProp.get(pkg, `pkg.devDependencies.${dependency}`);
 
 const config = {
@@ -44,11 +45,11 @@ const config = {
     }
 };
 
-if (detectUsage('electron')) {
+if (getUsage('electron')) {
     dotProp.set(config, 'settings.node.allowModules', ['electron']);
 }
 
-if (detectUsage('jest')) {
+if (getUsage('jest')) {
     dotProp.set(config, 'env.jasmine', true);
     dotProp.set(config, 'env.jest', true);
     config.plugins.push('jest');
@@ -58,18 +59,26 @@ if (detectUsage('jest')) {
     };
 }
 
-if (detectUsage('react')) {
+const reactUsage = getUsage('react');
+
+if (reactUsage) {
     dotProp.set(config, 'parserOptions.ecmaFeatures.jsx', true);
     dotProp.set(config, 'settings.react.version', 'detect');
     config.plugins.push('react');
-    config.plugins.push('react-hooks');
     config.rules = {
         ...config.rules,
-        ...react,
-        ...reactHooks
+        ...react
     };
 
-    if (detectUsage('react-native')) {
+    if (semver.gte(reactUsage, '16.8.0')) {
+        config.plugins.push('react-hooks');
+        config.rules = {
+            ...config.rules,
+            ...reactHooks
+        };
+    }
+
+    if (getUsage('react-native')) {
         dotProp.set(config, 'env.react-native/react-native', true);
         config.plugins.push('react-native');
         config.rules = {
@@ -85,7 +94,7 @@ if (detectUsage('react')) {
     }
 }
 
-if (detectUsage('prettier')) {
+if (getUsage('prettier')) {
     config.rules = {
         ...config.rules,
         ...require('eslint-config-prettier').rules,
