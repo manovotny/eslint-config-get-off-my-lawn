@@ -23,6 +23,7 @@ const detectUsage = (dependency) =>
 const config = {
     env: {
         browser: true,
+        es6: true,
         node: true
     },
     parser: 'babel-eslint',
