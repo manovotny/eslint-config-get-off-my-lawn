@@ -19,7 +19,7 @@ const unicorn = require('./src/unicorn');
 const pkg = readPkgUp.sync() || {};
 
 const getUsage = (dependency) =>
-    dotProp.get(pkg, `pkg.dependencies.${dependency}`) || dotProp.get(pkg, `pkg.devDependencies.${dependency}`);
+    dotProp.get(pkg, `package.dependencies.${dependency}`) || dotProp.get(pkg, `package.devDependencies.${dependency}`);
 
 const config = {
     env: {
