@@ -12,6 +12,7 @@ module.exports = {
     'jest/no-focused-tests': 'error',
     'jest/no-identical-title': 'error',
     'jest/no-jest-import': 'error',
+    'jest/no-mocks-import': 'error',
     'jest/no-test-callback': 'error',
     'jest/no-test-prefixes': 'error',
     'jest/no-test-return-statement': 'error',
