@@ -60,7 +60,14 @@ module.exports = {
     ],
     'react/jsx-first-prop-new-line': ['error', 'multiline'],
     'react/jsx-fragments': ['error', 'syntax'],
-    'react/jsx-indent': ['error', 4],
+    'react/jsx-indent': [
+        'error',
+        4,
+        {
+            checkAttributes: true,
+            indentLogicalExpressions: true
+        }
+    ],
     'react/jsx-indent-props': 'error',
     'react/jsx-key': 'error',
     'react/jsx-max-props-per-line': 'error',
@@ -118,7 +125,12 @@ module.exports = {
     ],
     'react/no-redundant-should-component-update': 'error',
     'react/no-render-return-value': 'error',
-    'react/no-string-refs': 'error',
+    'react/no-string-refs': [
+        'error',
+        {
+            noTemplateLiterals: true
+        }
+    ],
     'react/no-this-in-sfc': 'error',
     'react/no-typos': 'error',
     'react/no-unescaped-entities': 'error',
@@ -128,6 +140,7 @@ module.exports = {
     'react/no-unused-state': 'error',
     'react/no-will-update-set-state': ['error', 'disallow-in-func'],
     'react/prefer-es6-class': 'error',
+    'react/prefer-read-only-props': 'error',
     'react/prefer-stateless-function': [
         'error',
         {
@@ -144,6 +157,8 @@ module.exports = {
             sortShapeProp: true
         }
     ],
+    'react/state-in-constructor': ['error', 'always'],
+    'react/static-property-placement': 'error',
     'react/style-prop-object': 'error',
     'react/void-dom-elements-no-children': 'error'
 };
