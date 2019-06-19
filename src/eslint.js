@@ -163,7 +163,6 @@ module.exports = {
     'no-shadow': [
         'error',
         {
-            builtinGlobals: true,
             hoist: 'functions'
         }
     ],
