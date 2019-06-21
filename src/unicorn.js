@@ -6,7 +6,10 @@ module.exports = {
     'unicorn/filename-case': [
         'error',
         {
-            case: 'kebabCase'
+            cases: {
+                kebabCase: true,
+                pascalCase: true
+            }
         }
     ],
     'unicorn/new-for-builtins': 'error',
@@ -20,6 +23,8 @@ module.exports = {
     'unicorn/no-zero-fractions': 'error',
     'unicorn/number-literal-case': 'error',
     'unicorn/prefer-add-event-listener': 'error',
+    'unicorn/prefer-event-key': 'error',
+    'unicorn/prefer-flat-map': 'error',
     'unicorn/prefer-includes': 'error',
     'unicorn/prefer-node-append': 'error',
     'unicorn/prefer-node-remove': 'error',
