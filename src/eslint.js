@@ -239,7 +239,6 @@ module.exports = {
         }
     ],
     radix: ['error', 'as-needed'],
-    'require-atomic-updates': 'error',
     'require-await': 'error',
     'require-unicode-regexp': 'error',
     'require-yield': 'error',
