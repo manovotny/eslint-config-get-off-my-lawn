@@ -7,7 +7,7 @@ const eslintComments = require('./src/eslint-comments');
 const getOffMyLawn = require('./src/get-off-my-lawn');
 const imprt = require('./src/import');
 const jsxA11y = require('./src/jsx-a11y');
-const jestRules = require('./src/jest');
+const jest = require('./src/jest');
 const node = require('./src/node');
 const objects = require('./src/objects');
 const react = require('./src/react');
@@ -55,7 +55,7 @@ if (getUsage('jest')) {
     config.plugins.push('jest');
     config.rules = {
         ...config.rules,
-        ...jestRules
+        ...jest
     };
 }
 
