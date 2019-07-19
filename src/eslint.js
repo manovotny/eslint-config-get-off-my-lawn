@@ -256,7 +256,6 @@ module.exports = {
         'error',
         'asc',
         {
-            caseSensitive: false,
             natural: true
         }
     ],
