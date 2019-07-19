@@ -6,7 +6,7 @@
 
 As developers, we spend more time reading code than writing it. These rules aim to make reading JavaScript a priority.
 
-That means some rules will feel oppressive or "over the top" for many developers, which is fine. If you don't like it, you can get off my lawn! ... Or extend the rules and override them with the ones that bother you. Either way.
+That means some rules will feel oppressive or "over the top" for many developers, which is fine. If you don't like it, you can get off my lawn! ... Or extend the rules and override them with the ones that bother you. Either way. 😊
 
 This config also comes with the following plugins, and corresponding rules, baked in.
 
@@ -27,6 +27,8 @@ This config also comes with the following plugins, and corresponding rules, bake
 -   [eslint-plugin-unicorn](https://www.npmjs.com/package/eslint-plugin-unicorn)
 
 Each and every single rule has been meticulously poured over and purposefully hand picked or excluded.
+
+eslint-config-get-off-my-lawn will automatically enable and disable plugins (and thus rules) based on your `package.json` dependencies. Not using React? Cool. eslint-plugin-jsx-a11y, eslint-plugin-react, eslint-plugin-react-hooks, and eslint-plugin-react-native won't be included. Not using a React version that supports hooks? eslint-plugin-react-hooks will be disabled. Not a React Native project? No problem. Those rules won't be included. I think you get the idea... 😉
 
 ## Install
 
