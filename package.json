@@ -27,8 +27,10 @@
         "src"
     ],
     "scripts": {
+        "lint": "eslint . --ext .js --ext .json",
         "prettier": "prettier --write \"**/*.{js,json,md,yml}\"",
-        "test": "eslint . --ext .js --ext .json"
+        "prettier:check": "prettier --check \"**/*.{js,json,md,yml}\"",
+        "test": "yarn lint && yarn prettier:check"
     },
     "husky": {
         "hooks": {
