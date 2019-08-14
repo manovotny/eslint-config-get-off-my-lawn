@@ -33,5 +33,10 @@ module.exports = {
     'jest/prefer-todo': 'error',
     'jest/require-tothrow-message': 'error',
     'jest/valid-describe': 'error',
-    'jest/valid-expect': 'error'
+    'jest/valid-expect': [
+        'error',
+        {
+            alwaysAwait: true
+        }
+    ]
 };
