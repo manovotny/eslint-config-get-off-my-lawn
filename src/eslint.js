@@ -30,6 +30,7 @@ module.exports = {
     eqeqeq: ['error', 'always'],
     'for-direction': 'error',
     'func-call-spacing': 'error',
+    'function-call-argument-newline': ['error', 'consistent'],
     'generator-star-spacing': 'error',
     'getter-return': 'error',
     'guard-for-in': 'error',
