@@ -60,8 +60,9 @@ if (getUsage('jest')) {
 }
 
 const reactUsage = getUsage('react');
+const reactVersion = reactUsage ? semver.coerce(reactUsage).version : undefined;
 
-if (reactUsage) {
+if (reactVersion) {
     dotProp.set(config, 'parserOptions.ecmaFeatures.jsx', true);
     dotProp.set(config, 'settings.react.version', 'detect');
     config.plugins.push('react');
@@ -70,7 +71,7 @@ if (reactUsage) {
         ...react
     };
 
-    if (semver.gte(reactUsage, '16.8.0')) {
+    if (semver.gte(reactVersion, '16.8.0')) {
         config.plugins.push('react-hooks');
         config.rules = {
             ...config.rules,
