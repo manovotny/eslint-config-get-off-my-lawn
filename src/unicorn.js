@@ -3,15 +3,6 @@ module.exports = {
     'unicorn/custom-error-definition': 'error',
     'unicorn/error-message': 'error',
     'unicorn/escape-case': 'error',
-    'unicorn/filename-case': [
-        'error',
-        {
-            cases: {
-                kebabCase: true,
-                pascalCase: true
-            }
-        }
-    ],
     'unicorn/new-for-builtins': 'error',
     'unicorn/no-abusive-eslint-disable': 'error',
     'unicorn/no-array-instanceof': 'error',
