@@ -4,7 +4,8 @@ jobs:
     prettier:
         runs-on: ubuntu-latest
         steps:
-            - uses: .github/actions/prettier
+            - uses: actions/checkout@v1
+            - uses: ./.github/actions/prettier
     test:
         runs-on: ubuntu-latest
         steps:
