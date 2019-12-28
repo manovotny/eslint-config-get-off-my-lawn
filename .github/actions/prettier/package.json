@@ -1,0 +1,35 @@
+{
+    "name": "prettier",
+    "description": "TODO",
+    "version": "0.0.0",
+    "author": {
+        "name": "Michael Novotny",
+        "email": "manovotny@gmail.com",
+        "url": "https://manovotny.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/manovotny/eslint-config-get-off-my-lawn.git"
+    },
+    "keywords": [
+        "action",
+        "github",
+        "prettier"
+    ],
+    "engines": {
+        "node": ">=8.6.0",
+        "yarn": ">=1.0.0"
+    },
+    "main": "index.js",
+    "scripts": {
+        "build": "ncc build index.js"
+    },
+    "dependencies": {
+        "@actions/core": "1.2.0",
+        "@actions/github": "2.0.0"
+    },
+    "devDependencies": {
+        "@zeit/ncc": "0.20.5"
+    }
+}
