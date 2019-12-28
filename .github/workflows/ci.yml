@@ -4,7 +4,7 @@ jobs:
     prettier:
         runs-on: ubuntu-latest
         steps:
-            - uses: ../actions/prettier
+            - uses: .github/actions/prettier
     test:
         runs-on: ubuntu-latest
         steps:
