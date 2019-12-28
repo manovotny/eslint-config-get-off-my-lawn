@@ -64,6 +64,8 @@
         "semver": "6.3.0"
     },
     "devDependencies": {
+        "@actions/core": "1.2.0",
+        "@actions/github": "2.0.0",
         "eslint": "6.2.1",
         "husky": "3.0.4",
         "lint-staged": "9.2.3",

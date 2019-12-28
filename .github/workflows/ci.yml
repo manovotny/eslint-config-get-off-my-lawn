@@ -1,6 +1,10 @@
 name: ci
 on: pull_request
 jobs:
+    prettier:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: ../actions/prettier
     test:
         runs-on: ubuntu-latest
         steps:
