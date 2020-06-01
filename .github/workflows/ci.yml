@@ -4,14 +4,14 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+            - name: Checkout repo
+              uses: actions/checkout@v1
               with:
                   fetch-depth: 1
-            - name: Setup Node.js
-              uses: actions/setup-node@v1
-              with:
-                  node-version: 12.4.0
-            - name: Installing dependencies
+            - name: Set node version
+              shell: bash -l {0}
+              run: nvm install
+            - name: Instal dependencies
               run: yarn install --frozen-lockfile
-            - name: Running tests
+            - name: Run tests
               run: yarn test
