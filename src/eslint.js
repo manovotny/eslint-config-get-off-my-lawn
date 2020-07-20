@@ -1,7 +1,12 @@
 const linebreaks = require('./utils/linebreaks');
 
 module.exports = {
-    'accessor-pairs': 'error',
+    'accessor-pairs': [
+        'error',
+        {
+            lexicalBindings: true
+        }
+    ],
     'array-bracket-spacing': ['error', 'never'],
     'array-element-newline': ['error', 'consistent'],
     'arrow-body-style': 'error',
@@ -14,7 +19,8 @@ module.exports = {
     camelcase: [
         'error',
         {
-            ignoreDestructuring: true
+            ignoreDestructuring: true,
+            ignoreImports: true
         }
     ],
     'comma-dangle': 'error',
@@ -26,6 +32,8 @@ module.exports = {
     'constructor-super': 'error',
     curly: 'error',
     'default-case': 'error',
+    'default-case-last': 'error',
+    'default-param-last': 'error',
     'eol-last': 'error',
     eqeqeq: ['error', 'always'],
     'for-direction': 'error',
@@ -33,6 +41,7 @@ module.exports = {
     'function-call-argument-newline': ['error', 'consistent'],
     'generator-star-spacing': 'error',
     'getter-return': 'error',
+    'grouped-accessor-pairs': ['error', 'getBeforeSet'],
     'guard-for-in': 'error',
     'handle-callback-err': 'error',
     indent: [
@@ -70,6 +79,7 @@ module.exports = {
             checkLoops: false
         }
     ],
+    'no-constructor-return': 'error',
     'no-continue': 'error',
     'no-control-regex': 'error',
     'no-debugger': 'error',
@@ -77,6 +87,7 @@ module.exports = {
     'no-div-regex': 'error',
     'no-dupe-args': 'error',
     'no-dupe-class-members': 'error',
+    'no-dupe-else-if': 'error',
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
     'no-duplicate-imports': [
@@ -110,6 +121,7 @@ module.exports = {
     'no-implicit-coercion': 'error',
     'no-implicit-globals': 'error',
     'no-implied-eval': 'error',
+    'no-import-assign': 'error',
     'no-inner-declarations': ['error', 'both'],
     'no-invalid-regexp': [
         'error',
@@ -117,6 +129,7 @@ module.exports = {
             allowConstructorFlags: ['u', 'y']
         }
     ],
+    'no-invalid-this': 'error',
     'no-irregular-whitespace': 'error',
     'no-iterator': 'error',
     'no-label-var': 'error',
@@ -124,6 +137,7 @@ module.exports = {
     'no-lone-blocks': 'error',
     'no-lonely-if': 'error',
     'no-loop-func': 'error',
+    'no-loss-of-precision': 'error',
     'no-misleading-character-class': 'error',
     'no-mixed-spaces-and-tabs': 'error',
     'no-multi-spaces': 'error',
@@ -152,6 +166,7 @@ module.exports = {
     ],
     'no-path-concat': 'error',
     'no-process-exit': 'error',
+    'no-promise-executor-return': 'error',
     'no-proto': 'error',
     'no-redeclare': [
         'error',
@@ -166,6 +181,7 @@ module.exports = {
     'no-self-assign': 'error',
     'no-self-compare': 'error',
     'no-sequences': 'error',
+    'no-setter-return': 'error',
     'no-shadow': [
         'error',
         {
@@ -186,8 +202,14 @@ module.exports = {
     'no-unmodified-loop-condition': 'error',
     'no-unneeded-ternary': 'error',
     'no-unreachable': 'error',
+    'no-unreachable-loop': 'error',
     'no-unsafe-finally': 'error',
-    'no-unsafe-negation': 'error',
+    'no-unsafe-negation': [
+        'error',
+        {
+            enforceForOrderingRelations: true
+        }
+    ],
     'no-unused-expressions': 'error',
     'no-unused-labels': 'error',
     'no-unused-vars': [
@@ -200,9 +222,15 @@ module.exports = {
         }
     ],
     'no-use-before-define': 'error',
+    'no-useless-backreference': 'error',
     'no-useless-call': 'error',
     'no-useless-catch': 'error',
-    'no-useless-computed-key': 'error',
+    'no-useless-computed-key': [
+        'error',
+        {
+            enforceForClassMembers: true
+        }
+    ],
     'no-useless-concat': 'error',
     'no-useless-constructor': 'error',
     'no-useless-escape': 'error',
@@ -219,8 +247,10 @@ module.exports = {
     'padded-blocks': ['error', 'never'],
     'padding-line-between-statements': linebreaks,
     'prefer-const': 'error',
+    'prefer-exponentiation-operator': 'error',
     'prefer-numeric-literals': 'error',
     'prefer-object-spread': 'error',
+    'prefer-regex-literals': 'error',
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',
