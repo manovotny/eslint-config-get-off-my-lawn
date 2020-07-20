@@ -4,7 +4,7 @@ module.exports = {
     'accessor-pairs': [
         'error',
         {
-            lexicalBindings: true
+            getWithoutSet: true
         }
     ],
     'array-bracket-spacing': ['error', 'never'],
