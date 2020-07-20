@@ -119,7 +119,12 @@ module.exports = {
     'no-floating-decimal': 'error',
     'no-global-assign': 'error',
     'no-implicit-coercion': 'error',
-    'no-implicit-globals': 'error',
+    'no-implicit-globals': [
+        'error',
+        {
+            lexicalBindings: true
+        }
+    ],
     'no-implied-eval': 'error',
     'no-import-assign': 'error',
     'no-inner-declarations': ['error', 'both'],
