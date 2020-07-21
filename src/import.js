@@ -4,6 +4,7 @@ module.exports = {
     'import/exports-last': 'error',
     'import/extensions': 'error',
     'import/first': 'error',
+    'import/group-exports': 'error',
     'import/named': 'error',
     'import/namespace': [
         'error',
@@ -21,7 +22,19 @@ module.exports = {
     'import/no-named-as-default': 'error',
     'import/no-named-as-default-member': 'error',
     'import/no-self-import': 'error',
-    'import/no-unresolved': 'error',
+    'import/no-unresolved': [
+        'error',
+        {
+            amd: true,
+            commonjs: true
+        }
+    ],
+    'import/no-unused-modules': [
+        'error',
+        {
+            unusedExports: true
+        }
+    ],
     'import/no-useless-path-segments': [
         'error',
         {
