@@ -66,8 +66,8 @@
     "devDependencies": {
         "eslint": "7.5.0",
         "husky": "4.2.5",
-        "lint-staged": "10.2.11",
-        "prettier": "2.0.5"
+        "lint-staged": "10.3.0",
+        "prettier": "2.1.1"
     },
     "peerDependencies": {
         "eslint": ">=7.5.0"
