@@ -7,6 +7,7 @@ const eslint = require('./src/eslint');
 const eslintComments = require('./src/eslint-comments');
 const getOffMyLawn = require('./src/get-off-my-lawn');
 const imprt = require('./src/import');
+const json = require('./src/json');
 const jsxA11y = require('./src/jsx-a11y');
 const jest = require('./src/jest');
 const node = require('./src/node');
@@ -41,6 +42,7 @@ const config = {
         ...eslintComments,
         ...getOffMyLawn,
         ...imprt,
+        ...json,
         ...node,
         ...objects,
         ...security,
