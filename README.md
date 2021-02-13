@@ -61,7 +61,7 @@ module.exports = {
     extends: 'get-off-my-lawn',
     rules: {
         // enable additional rules, override rule options, or disable rules
-    }
+    },
 };
 ```
 
@@ -73,6 +73,7 @@ eslint-config-get-off-my-lawn will automatically detect if your project is using
 
 ## Related
 
+-   [prettier-config-get-off-my-lawn](https://www.npmjs.com/package/prettier-config-get-off-my-lawn) - A highly opinionated, [sharable config](https://prettier.io/docs/en/configuration.html#sharing-configurations) of Prettier rules to produce beautiful, readable code.
 -   [stylelint-config-get-off-my-lawn](https://www.npmjs.com/package/stylelint-config-get-off-my-lawn) - A highly opinionated, [sharable config](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md#extends) of [stylelint](http://stylelint.io) rules to produce beautiful, readable CSS and Sass.
 
 ## License

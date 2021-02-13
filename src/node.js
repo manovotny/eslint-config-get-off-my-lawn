@@ -16,5 +16,5 @@ module.exports = {
     'node/prefer-global/url': ['error', 'always'],
     'node/prefer-global/url-search-params': ['error', 'always'],
     'node/process-exit-as-throw': 'error',
-    'node/shebang': 'error'
+    'node/shebang': 'error',
 };

@@ -27,5 +27,5 @@ module.exports = {
     'jsx-a11y/role-has-required-aria-props': 'error',
     'jsx-a11y/role-supports-aria-props': 'error',
     'jsx-a11y/scope': 'error',
-    'jsx-a11y/tabindex-no-positive': 'error'
+    'jsx-a11y/tabindex-no-positive': 'error',
 };

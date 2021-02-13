@@ -9,8 +9,8 @@ module.exports = {
     'import/namespace': [
         'error',
         {
-            allowComputed: true
-        }
+            allowComputed: true,
+        },
     ],
     'import/newline-after-import': 'error',
     'import/no-absolute-path': 'error',
@@ -26,26 +26,26 @@ module.exports = {
         'error',
         {
             amd: true,
-            commonjs: true
-        }
+            commonjs: true,
+        },
     ],
     'import/no-unused-modules': [
         'error',
         {
-            unusedExports: true
-        }
+            unusedExports: true,
+        },
     ],
     'import/no-useless-path-segments': [
         'error',
         {
-            noUselessIndex: true
-        }
+            noUselessIndex: true,
+        },
     ],
     'import/no-webpack-loader-syntax': 'error',
     'import/order': [
         'error',
         {
-            'newlines-between': 'always'
-        }
-    ]
+            'newlines-between': 'always',
+        },
+    ],
 };

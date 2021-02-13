@@ -3,8 +3,8 @@ module.exports = {
     'react/display-name': [
         'error',
         {
-            ignoreTranspilerName: false
-        }
+            ignoreTranspilerName: false,
+        },
     ],
     'react/forbid-elements': [
         'error',
@@ -41,9 +41,9 @@ module.exports = {
                 'spacer',
                 'strike',
                 'tt',
-                'xmp'
-            ]
-        }
+                'xmp',
+            ],
+        },
     ],
     'react/forbid-foreign-prop-types': 'error',
     'react/jsx-boolean-value': 'error',
@@ -56,8 +56,8 @@ module.exports = {
     'react/jsx-filename-extension': [
         'error',
         {
-            extensions: ['.js']
-        }
+            extensions: ['.js'],
+        },
     ],
     'react/jsx-first-prop-new-line': ['error', 'multiline'],
     'react/jsx-fragments': ['error', 'syntax'],
@@ -66,8 +66,8 @@ module.exports = {
         4,
         {
             checkAttributes: true,
-            indentLogicalExpressions: true
-        }
+            indentLogicalExpressions: true,
+        },
     ],
     'react/jsx-indent-props': 'error',
     'react/jsx-key': 'error',
@@ -76,22 +76,22 @@ module.exports = {
     'react/jsx-no-duplicate-props': [
         'error',
         {
-            ignoreCase: true
-        }
+            ignoreCase: true,
+        },
     ],
     'react/jsx-no-literals': 'error',
     'react/jsx-no-target-blank': 'error',
     'react/jsx-no-undef': [
         'error',
         {
-            allowGlobals: true
-        }
+            allowGlobals: true,
+        },
     ],
     'react/jsx-one-expression-per-line': [
         'error',
         {
-            allow: 'single-child'
-        }
+            allow: 'single-child',
+        },
     ],
     'react/jsx-pascal-case': 'error',
     'react/jsx-props-no-multi-spaces': 'error',
@@ -102,8 +102,8 @@ module.exports = {
             afterOpening: 'never',
             beforeClosing: 'never',
             beforeSelfClosing: 'always',
-            closingSlash: 'never'
-        }
+            closingSlash: 'never',
+        },
     ],
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
@@ -123,8 +123,8 @@ module.exports = {
     'react/no-string-refs': [
         'error',
         {
-            noTemplateLiterals: true
-        }
+            noTemplateLiterals: true,
+        },
     ],
     'react/no-this-in-sfc': 'error',
     'react/no-typos': 'error',
@@ -139,8 +139,8 @@ module.exports = {
     'react/prefer-stateless-function': [
         'error',
         {
-            ignorePureComponents: true
-        }
+            ignorePureComponents: true,
+        },
     ],
     'react/react-in-jsx-scope': 'error',
     'react/require-render-return': 'error',
@@ -149,11 +149,11 @@ module.exports = {
     'react/sort-prop-types': [
         'error',
         {
-            sortShapeProp: true
-        }
+            sortShapeProp: true,
+        },
     ],
     'react/state-in-constructor': ['error', 'always'],
     'react/static-property-placement': 'error',
     'react/style-prop-object': 'error',
-    'react/void-dom-elements-no-children': 'error'
+    'react/void-dom-elements-no-children': 'error',
 };

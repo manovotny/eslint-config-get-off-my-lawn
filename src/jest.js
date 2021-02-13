@@ -3,8 +3,8 @@ module.exports = {
         'error',
         {
             fn: 'test',
-            withinDescribe: 'test'
-        }
+            withinDescribe: 'test',
+        },
     ],
     'jest/no-alias-methods': 'error',
     'jest/no-commented-out-tests': 'error',
@@ -36,7 +36,7 @@ module.exports = {
     'jest/valid-expect': [
         'error',
         {
-            alwaysAwait: true
-        }
-    ]
+            alwaysAwait: true,
+        },
+    ],
 };

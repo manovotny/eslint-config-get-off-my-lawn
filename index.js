@@ -26,12 +26,12 @@ const config = {
     env: {
         browser: true,
         es6: true,
-        node: true
+        node: true,
     },
     parser: 'babel-eslint',
     parserOptions: {
         ecmaVersion: 2021,
-        sourceType: 'module'
+        sourceType: 'module',
     },
     plugins: ['eslint-comments', 'get-off-my-lawn', 'import', 'json', 'node', 'objects', 'security', 'unicorn'],
     rules: {
@@ -42,8 +42,8 @@ const config = {
         ...node,
         ...objects,
         ...security,
-        ...unicorn
-    }
+        ...unicorn,
+    },
 };
 
 if (getUsage('electron')) {
@@ -56,7 +56,7 @@ if (getUsage('jest')) {
     config.plugins.push('jest');
     config.rules = {
         ...config.rules,
-        ...jest
+        ...jest,
     };
 }
 
@@ -69,14 +69,14 @@ if (reactVersion) {
     config.plugins.push('react');
     config.rules = {
         ...config.rules,
-        ...react
+        ...react,
     };
 
     if (semver.gte(reactVersion, '16.8.0')) {
         config.plugins.push('react-hooks');
         config.rules = {
             ...config.rules,
-            ...reactHooks
+            ...reactHooks,
         };
     }
 
@@ -85,13 +85,13 @@ if (reactVersion) {
         config.plugins.push('react-native');
         config.rules = {
             ...config.rules,
-            ...reactNative
+            ...reactNative,
         };
     } else {
         config.plugins.push('jsx-a11y');
         config.rules = {
             ...config.rules,
-            ...jsxA11y
+            ...jsxA11y,
         };
     }
 }
@@ -102,7 +102,7 @@ if (getUsage('prettier')) {
         ...require('eslint-config-prettier').rules,
         ...require('eslint-config-prettier/babel').rules,
         ...require('eslint-config-prettier/react').rules,
-        ...require('eslint-config-prettier/unicorn').rules
+        ...require('eslint-config-prettier/unicorn').rules,
     };
 }
 
