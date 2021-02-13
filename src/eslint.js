@@ -160,6 +160,7 @@ module.exports = {
     'no-new-require': 'error',
     'no-new-symbol': 'error',
     'no-new-wrappers': 'error',
+    'no-nonoctal-decimal-escape': 'error',
     'no-obj-calls': 'error',
     'no-octal': 'error',
     'no-octal-escape': 'error',
@@ -213,6 +214,12 @@ module.exports = {
         'error',
         {
             enforceForOrderingRelations: true,
+        },
+    ],
+    'no-unsafe-optional-chaining': [
+        'error',
+        {
+            disallowArithmeticOperators: true,
         },
     ],
     'no-unused-expressions': 'error',

@@ -65,12 +65,12 @@
     },
     "devDependencies": {
         "@zeit/git-hooks": "0.1.4",
-        "eslint": "7.8.1",
+        "eslint": "7.20.0",
         "lint-staged": "10.5.4",
         "prettier": "2.2.1",
         "prettier-config-get-off-my-lawn": "1.0.0"
     },
     "peerDependencies": {
-        "eslint": ">=7.8.1"
+        "eslint": ">=7.20.0"
     }
 }
