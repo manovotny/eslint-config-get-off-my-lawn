@@ -15,7 +15,6 @@ module.exports = {
     'block-scoped-var': 'error',
     'block-spacing': 'error',
     'brace-style': 'error',
-    'callback-return': 'error',
     camelcase: [
         'error',
         {
@@ -43,7 +42,6 @@ module.exports = {
     'getter-return': 'error',
     'grouped-accessor-pairs': ['error', 'getBeforeSet'],
     'guard-for-in': 'error',
-    'handle-callback-err': 'error',
     indent: [
         'error',
         4,
@@ -157,7 +155,6 @@ module.exports = {
     'no-new': 'error',
     'no-new-func': 'error',
     'no-new-object': 'error',
-    'no-new-require': 'error',
     'no-new-symbol': 'error',
     'no-new-wrappers': 'error',
     'no-nonoctal-decimal-escape': 'error',
@@ -170,8 +167,6 @@ module.exports = {
             props: true,
         },
     ],
-    'no-path-concat': 'error',
-    'no-process-exit': 'error',
     'no-promise-executor-return': 'error',
     'no-proto': 'error',
     'no-redeclare': [
@@ -196,7 +191,6 @@ module.exports = {
     ],
     'no-shadow-restricted-names': 'error',
     'no-sparse-arrays': 'error',
-    'no-sync': 'error',
     'no-tabs': 'error',
     'no-template-curly-in-string': 'error',
     'no-this-before-super': 'error',
