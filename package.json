@@ -55,7 +55,7 @@
         "eslint-plugin-node": "11.1.0",
         "eslint-plugin-objects": "1.1.1",
         "eslint-plugin-react": "7.22.0",
-        "eslint-plugin-react-hooks": "2.0.1",
+        "eslint-plugin-react-hooks": "4.2.0",
         "eslint-plugin-react-native": "3.7.0",
         "eslint-plugin-security": "1.4.0",
         "eslint-plugin-unicorn": "10.0.0",
