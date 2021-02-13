@@ -46,6 +46,13 @@ module.exports = {
         },
     ],
     'react/forbid-foreign-prop-types': 'error',
+    'react/function-component-definition': [
+        'error',
+        {
+            namedComponents: 'arrow-function',
+            unnamedComponents: 'arrow-function',
+        },
+    ],
     'react/jsx-boolean-value': 'error',
     'react/jsx-child-element-spacing': 'error',
     'react/jsx-closing-bracket-location': 'error',
@@ -70,9 +77,15 @@ module.exports = {
         },
     ],
     'react/jsx-indent-props': 'error',
-    'react/jsx-key': 'error',
+    'react/jsx-key': [
+        'error',
+        {
+            checkKeyMustBeforeSpread: true,
+        },
+    ],
     'react/jsx-max-props-per-line': 'error',
     'react/jsx-no-comment-textnodes': 'error',
+    'react/jsx-no-constructed-context-values': 'error',
     'react/jsx-no-duplicate-props': [
         'error',
         {
@@ -80,13 +93,28 @@ module.exports = {
         },
     ],
     'react/jsx-no-literals': 'error',
-    'react/jsx-no-target-blank': 'error',
+    'react/jsx-no-script-url': [
+        'error',
+        [
+            {
+                name: 'Link',
+                props: ['to'],
+            },
+        ],
+    ],
+    'react/jsx-no-target-blank': [
+        'error',
+        {
+            warnOnSpreadAttributes: true,
+        },
+    ],
     'react/jsx-no-undef': [
         'error',
         {
             allowGlobals: true,
         },
     ],
+    'react/jsx-no-useless-fragment': 'error',
     'react/jsx-one-expression-per-line': [
         'error',
         {
@@ -95,6 +123,7 @@ module.exports = {
     ],
     'react/jsx-pascal-case': 'error',
     'react/jsx-props-no-multi-spaces': 'error',
+    'react/jsx-sort-default-props': 'error',
     'react/jsx-sort-props': 'error',
     'react/jsx-tag-spacing': [
         'error',
@@ -108,6 +137,7 @@ module.exports = {
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
     'react/no-access-state-in-setstate': 'error',
+    'react/no-adjacent-inline-elements': 'error',
     'react/no-array-index-key': 'error',
     'react/no-children-prop': 'error',
     'react/no-danger': 'error',
