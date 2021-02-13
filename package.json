@@ -42,7 +42,8 @@
         ]
     },
     "dependencies": {
-        "babel-eslint": "10.0.2",
+        "@babel/core": "7.12.16",
+        "@babel/eslint-parser": "7.12.16",
         "dot-prop": "5.1.1",
         "eslint-config-prettier": "6.1.0",
         "eslint-plugin-eslint-comments": "3.2.0",
@@ -58,6 +59,7 @@
         "eslint-plugin-react-native": "3.7.0",
         "eslint-plugin-security": "1.4.0",
         "eslint-plugin-unicorn": "10.0.0",
+        "find-up": "5.0.0",
         "read-pkg-up": "7.0.1",
         "semver": "7.3.2"
     },

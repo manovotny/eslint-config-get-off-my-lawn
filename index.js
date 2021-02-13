@@ -1,4 +1,5 @@
 const dotProp = require('dot-prop');
+const findUp = require('find-up');
 const readPkgUp = require('read-pkg-up');
 const semver = require('semver');
 
@@ -18,7 +19,7 @@ const unicorn = require('./src/unicorn');
 
 const pkg = readPkgUp.sync() || {};
 
-const getUsage = (dependency) =>
+const packageJsonContains = (dependency) =>
     dotProp.get(pkg, `packageJson.dependencies.${dependency}`) ||
     dotProp.get(pkg, `packageJson.devDependencies.${dependency}`);
 
@@ -28,9 +29,10 @@ const config = {
         es6: true,
         node: true,
     },
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
     parserOptions: {
         ecmaVersion: 2021,
+        requireConfigFile: false,
         sourceType: 'module',
     },
     plugins: ['eslint-comments', 'get-off-my-lawn', 'import', 'json', 'node', 'objects', 'security', 'unicorn'],
@@ -46,11 +48,17 @@ const config = {
     },
 };
 
-if (getUsage('electron')) {
+const babelConfigFiles = findUp.sync(['.babelrc', '.babelrc.json', 'babel.config.json']);
+
+if (babelConfigFiles) {
+    dotProp.set(config, 'parserOptions.babelOptions.configFile', babelConfigFiles);
+}
+
+if (packageJsonContains('electron')) {
     dotProp.set(config, 'settings.node.allowModules', ['electron']);
 }
 
-if (getUsage('jest')) {
+if (packageJsonContains('jest')) {
     dotProp.set(config, 'env.jasmine', true);
     dotProp.set(config, 'env.jest', true);
     config.plugins.push('jest');
@@ -60,7 +68,7 @@ if (getUsage('jest')) {
     };
 }
 
-const reactUsage = getUsage('react');
+const reactUsage = packageJsonContains('react');
 const reactVersion = reactUsage ? semver.coerce(reactUsage).version : undefined;
 
 if (reactVersion) {
@@ -80,7 +88,7 @@ if (reactVersion) {
         };
     }
 
-    if (getUsage('react-native')) {
+    if (packageJsonContains('react-native')) {
         dotProp.set(config, 'env.react-native/react-native', true);
         config.plugins.push('react-native');
         config.rules = {
@@ -96,7 +104,7 @@ if (reactVersion) {
     }
 }
 
-if (getUsage('prettier')) {
+if (packageJsonContains('prettier')) {
     config.rules = {
         ...config.rules,
         ...require('eslint-config-prettier').rules,
