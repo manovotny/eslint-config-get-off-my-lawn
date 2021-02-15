@@ -10,7 +10,7 @@ That means some rules will feel oppressive or "over the top" for many developers
 
 This config also comes with the following plugins, and corresponding rules, baked in.
 
--   [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser)
+-   [@babel/eslint-plugin](https://www.npmjs.com/package/@babel/eslint-plugin)
 -   [eslint](https://www.npmjs.com/package/eslint)
 -   [eslint-plugin-eslint-comments](https://www.npmjs.com/package/eslint-plugin-eslint-comments)
 -   [eslint-plugin-get-off-my-lawn](https://www.npmjs.com/package/eslint-plugin-get-off-my-lawn)

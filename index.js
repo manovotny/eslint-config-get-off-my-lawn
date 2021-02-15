@@ -3,6 +3,7 @@ const findUp = require('find-up');
 const readPkgUp = require('read-pkg-up');
 const semver = require('semver');
 
+const babel = require('./src/babel');
 const eslint = require('./src/eslint');
 const eslintComments = require('./src/eslint-comments');
 const getOffMyLawn = require('./src/get-off-my-lawn');
@@ -24,6 +25,15 @@ const packageJsonContains = (dependency) =>
     dotProp.get(pkg, `packageJson.dependencies.${dependency}`) ||
     dotProp.get(pkg, `packageJson.devDependencies.${dependency}`);
 
+const usesBabelConfig = findUp.sync(['.babelrc', '.babelrc.json', 'babel.config.json']);
+const usesElectron = packageJsonContains('electron');
+const usesJest = packageJsonContains('jets');
+const usesNext = packageJsonContains('next');
+const usesPrettier = packageJsonContains('prettier');
+const usesReact = packageJsonContains('react');
+const usesReactNative = packageJsonContains('react-native');
+const reactVersion = usesReact ? semver.coerce(usesReact).version : undefined;
+
 const config = {
     env: {
         browser: true,
@@ -32,12 +42,24 @@ const config = {
     },
     parser: '@babel/eslint-parser',
     parserOptions: {
+        allowImportExportEverywhere: true,
         ecmaVersion: 2021,
         requireConfigFile: false,
         sourceType: 'module',
     },
-    plugins: ['eslint-comments', 'get-off-my-lawn', 'import', 'json', 'node', 'objects', 'security', 'unicorn'],
+    plugins: [
+        '@babel',
+        'eslint-comments',
+        'get-off-my-lawn',
+        'import',
+        'json',
+        'node',
+        'objects',
+        'security',
+        'unicorn',
+    ],
     rules: {
+        ...babel,
         ...eslint,
         ...eslintComments,
         ...getOffMyLawn,
@@ -50,17 +72,11 @@ const config = {
     },
 };
 
-const babelConfigFiles = findUp.sync(['.babelrc', '.babelrc.json', 'babel.config.json']);
-
-if (babelConfigFiles) {
-    dotProp.set(config, 'parserOptions.babelOptions.configFile', babelConfigFiles);
-}
-
-if (packageJsonContains('electron')) {
+if (usesElectron) {
     dotProp.set(config, 'settings.node.allowModules', ['electron']);
 }
 
-if (packageJsonContains('jest')) {
+if (usesJest) {
     dotProp.set(config, 'env.jasmine', true);
     dotProp.set(config, 'env.jest', true);
     config.plugins.push('jest');
@@ -70,10 +86,7 @@ if (packageJsonContains('jest')) {
     };
 }
 
-const reactUsage = packageJsonContains('react');
-const reactVersion = reactUsage ? semver.coerce(reactUsage).version : undefined;
-
-if (reactVersion) {
+if (usesReact) {
     dotProp.set(config, 'parserOptions.ecmaFeatures.jsx', true);
     dotProp.set(config, 'settings.react.version', 'detect');
     config.plugins.push('react');
@@ -90,7 +103,7 @@ if (reactVersion) {
         };
     }
 
-    if (packageJsonContains('react-native')) {
+    if (usesReactNative) {
         dotProp.set(config, 'env.react-native/react-native', true);
         config.plugins.push('react-native');
         config.rules = {
@@ -106,7 +119,16 @@ if (reactVersion) {
     }
 }
 
-if (packageJsonContains('prettier')) {
+if (usesBabelConfig) {
+    dotProp.set(config, 'parserOptions.babelOptions.configFile', usesBabelConfig);
+    dotProp.set(config, 'parserOptions.requireConfigFile', true);
+} else if (usesNext) {
+    dotProp.set(config, 'parserOptions.babelOptions.presets', ['next/babel']);
+} else if (usesReact) {
+    dotProp.set(config, 'parserOptions.babelOptions.presets', ['@babel/preset-react']);
+}
+
+if (usesPrettier) {
     config.rules = {
         ...config.rules,
         ...require('eslint-config-prettier').rules,
