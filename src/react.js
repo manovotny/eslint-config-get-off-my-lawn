@@ -57,6 +57,13 @@ module.exports = {
     'react/jsx-child-element-spacing': 'error',
     'react/jsx-closing-bracket-location': 'error',
     'react/jsx-closing-tag-location': 'error',
+    'react/jsx-curly-brace-presence': [
+        'error',
+        {
+            children: 'always',
+            props: 'never',
+        },
+    ],
     'react/jsx-curly-newline': 'error',
     'react/jsx-curly-spacing': 'error',
     'react/jsx-equals-spacing': 'error',
@@ -92,7 +99,6 @@ module.exports = {
             ignoreCase: true,
         },
     ],
-    'react/jsx-no-literals': 'error',
     'react/jsx-no-script-url': [
         'error',
         [
