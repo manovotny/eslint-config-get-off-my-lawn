@@ -132,20 +132,19 @@ const whiles = [
 ];
 /* eslint-enable */
 
-module.exports = Array.prototype.concat(
-    'error',
-    blocks,
-    breaks,
-    classes,
-    continues,
-    declarations,
-    directives,
-    dos,
-    fors,
-    functions,
-    ifs,
-    returns,
-    switches,
-    tries,
-    whiles
-);
+module.exports = [
+    ...blocks,
+    ...breaks,
+    ...classes,
+    ...continues,
+    ...declarations,
+    ...directives,
+    ...dos,
+    ...fors,
+    ...functions,
+    ...ifs,
+    ...returns,
+    ...switches,
+    ...tries,
+    ...whiles,
+];

@@ -250,7 +250,7 @@ module.exports = {
     'object-shorthand': 'error',
     'one-var-declaration-per-line': ['error', 'always'],
     'padded-blocks': ['error', 'never'],
-    'padding-line-between-statements': linebreaks,
+    'padding-line-between-statements': ['error', ...linebreaks],
     'prefer-const': 'error',
     'prefer-exponentiation-operator': 'error',
     'prefer-named-capture-group': 'error',
