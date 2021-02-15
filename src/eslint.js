@@ -56,7 +56,6 @@ module.exports = {
     'lines-between-class-members': 'error',
     'max-classes-per-file': 'error',
     'max-statements-per-line': 'error',
-    'multiline-comment-style': 'error',
     'new-cap': 'error',
     'new-parens': 'error',
     'no-alert': 'error',
