@@ -7,6 +7,15 @@ module.exports = {
     'unicorn/empty-brace-spaces': 'error',
     'unicorn/error-message': 'error',
     'unicorn/escape-case': 'error',
+    'unicorn/filename-case': [
+        'error',
+        {
+            cases: {
+                kebabCase: true,
+                pascalCase: true,
+            },
+        },
+    ],
     'unicorn/new-for-builtins': 'error',
     'unicorn/no-abusive-eslint-disable': 'error',
     'unicorn/no-array-push-push': 'error',
