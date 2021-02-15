@@ -253,6 +253,7 @@ module.exports = {
     'padding-line-between-statements': linebreaks,
     'prefer-const': 'error',
     'prefer-exponentiation-operator': 'error',
+    'prefer-named-capture-group': 'error',
     'prefer-numeric-literals': 'error',
     'prefer-object-spread': 'error',
     'prefer-regex-literals': 'error',
