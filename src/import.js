@@ -29,12 +29,6 @@ module.exports = {
             commonjs: true,
         },
     ],
-    'import/no-unused-modules': [
-        'error',
-        {
-            unusedExports: true,
-        },
-    ],
     'import/no-useless-path-segments': [
         'error',
         {
