@@ -24,6 +24,7 @@ module.exports = {
     'node/prefer-global/text-encoder': ['error', 'always'],
     'node/prefer-global/url': ['error', 'always'],
     'node/prefer-global/url-search-params': ['error', 'always'],
+    'node/prefer-promises/dns': 'error',
     'node/prefer-promises/fs': 'error',
     'node/process-exit-as-throw': 'error',
     'node/shebang': 'error',
