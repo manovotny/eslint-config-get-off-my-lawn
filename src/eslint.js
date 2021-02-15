@@ -174,6 +174,17 @@ module.exports = {
         },
     ],
     'no-restricted-globals': 'error',
+    'no-restricted-imports': [
+        'error',
+        {
+            paths: [
+                {
+                    message: 'Use `date-fns` instead.',
+                    name: 'moment',
+                },
+            ],
+        },
+    ],
     'no-return-assign': ['error', 'always'],
     'no-return-await': 'error',
     'no-script-url': 'error',
