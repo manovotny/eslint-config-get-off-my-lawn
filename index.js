@@ -27,7 +27,7 @@ const packageJsonContains = (dependency) =>
 
 const usesBabelConfig = findUp.sync(['.babelrc', '.babelrc.json', 'babel.config.json']);
 const usesElectron = packageJsonContains('electron');
-const usesJest = packageJsonContains('jets');
+const usesJest = packageJsonContains('jest');
 const usesNext = packageJsonContains('next');
 const usesPrettier = packageJsonContains('prettier');
 const usesReact = packageJsonContains('react');
