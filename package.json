@@ -28,15 +28,15 @@
     ],
     "scripts": {
         "lint": "eslint . --ext .js --ext .json",
-        "prettier": "prettier --write \"**/*.{js,json,md,yml}\"",
-        "prettier:check": "prettier --check \"**/*.{js,json,md,yml}\"",
+        "prettier": "prettier --write \"**/*.{html,js,json,md,mdx,mjs,yaml,yml}\"",
+        "prettier:check": "prettier --check \"**/*.{html,js,json,md,mdx,mjs,yaml,yml}\"",
         "test": "yarn lint && yarn prettier:check"
     },
     "git": {
         "pre-commit": "lint-staged"
     },
     "lint-staged": {
-        "*.{js,json,md,yml}": [
+        "*.{html,js,json,md,mdx,mjs,yaml,yml}": [
             "prettier --write",
             "git add"
         ]
