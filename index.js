@@ -63,6 +63,7 @@ const config = {
         'security',
         'unicorn',
     ],
+    reportUnusedDisableDirectives: true,
     rules: {
         ...babel,
         ...eslint,
