@@ -1,3 +1,5 @@
+const confusingBrowserGlobals = require('confusing-browser-globals');
+
 const linebreaks = require('./utils/linebreaks');
 
 module.exports = {
@@ -173,7 +175,7 @@ module.exports = {
             builtinGlobals: true,
         },
     ],
-    'no-restricted-globals': 'error',
+    'no-restricted-globals': ['error', ...confusingBrowserGlobals],
     'no-restricted-imports': [
         'error',
         {
