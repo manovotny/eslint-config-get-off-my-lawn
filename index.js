@@ -37,8 +37,10 @@ const reactVersion = usesReact ? semver.coerce(usesReact).version : undefined;
 const config = {
     env: {
         browser: true,
-        es6: true,
+        commonjs: true,
+        es2021: true,
         node: true,
+        'shared-node-browser': true,
     },
     parser: '@babel/eslint-parser',
     parserOptions: {
