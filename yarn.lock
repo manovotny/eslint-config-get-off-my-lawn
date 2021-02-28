@@ -810,10 +810,10 @@ eslint-plugin-eslint-comments@3.2.0:
     escape-string-regexp "^1.0.5"
     ignore "^5.0.5"
 
-eslint-plugin-get-off-my-lawn@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-get-off-my-lawn/-/eslint-plugin-get-off-my-lawn-1.1.0.tgz#22ee287064a4e8e876cd7c537c320c377ab8509d"
-  integrity sha512-A3V7hB5uPZOx2MgqD5Ls0ZMXwaTuYFcGIcSPeoCRwtMW4unMGdXkDmyN1bsUCt2cVP84kPE/iAssQ88occxbQQ==
+eslint-plugin-get-off-my-lawn@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-get-off-my-lawn/-/eslint-plugin-get-off-my-lawn-1.1.2.tgz#6513cfd29c3116ab2ddb891a3596c883acb19a96"
+  integrity sha512-O3ciS33fEZyflv7GlN7Quq9DYs3ekPbfrfsef89E4camSJKh1PQpH3/S38FImMb4Wk0IkTatySIpsj05yk2Zkg==
   dependencies:
     dot-prop "6.0.1"
     import-modules "2.1.0"
