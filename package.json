@@ -47,7 +47,7 @@
         "@babel/eslint-plugin": "7.13.0",
         "confusing-browser-globals": "1.0.10",
         "dot-prop": "6.0.1",
-        "eslint-config-prettier": "7.2.0",
+        "eslint-config-prettier": "8.1.0",
         "eslint-plugin-eslint-comments": "3.2.0",
         "eslint-plugin-get-off-my-lawn": "1.1.2",
         "eslint-plugin-import": "2.22.1",
