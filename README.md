@@ -65,6 +65,12 @@ module.exports = {
 };
 ```
 
+Once your rules are configured, we recommend running the following command in your `package.json` as an [npm script](https://docs.npmjs.com/cli/v7/using-npm/scripts).
+
+```
+eslint . --ext .js --ext .json
+```
+
 ## Usage With Prettier
 
 Love eslint-config-get-off-my-lawn? Love [prettier](https://prettier.io/)? Well you're in luck!
