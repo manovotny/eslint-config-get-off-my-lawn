@@ -45,7 +45,6 @@
         "@babel/core": "7.12.16",
         "@babel/eslint-parser": "7.12.16",
         "@babel/eslint-plugin": "7.12.13",
-        "@rushstack/eslint-patch": "1.0.6",
         "confusing-browser-globals": "1.0.10",
         "dot-prop": "6.0.1",
         "eslint-config-prettier": "7.2.0",

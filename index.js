@@ -1,6 +1,3 @@
-// This is a workaround for: https://github.com/eslint/eslint/issues/3458
-require('@rushstack/eslint-patch/modern-module-resolution');
-
 const dotProp = require('dot-prop');
 const findUp = require('find-up');
 const readPkgUp = require('read-pkg-up');
