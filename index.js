@@ -6,7 +6,6 @@ const findUp = require('find-up');
 const readPkgUp = require('read-pkg-up');
 const semver = require('semver');
 
-const babel = require('./src/babel');
 const eslint = require('./src/eslint');
 const eslintComments = require('./src/eslint-comments');
 const getOffMyLawn = require('./src/get-off-my-lawn');
@@ -52,20 +51,9 @@ const config = {
         requireConfigFile: false,
         sourceType: 'module',
     },
-    plugins: [
-        '@babel',
-        'eslint-comments',
-        'get-off-my-lawn',
-        'import',
-        'json',
-        'node',
-        'objects',
-        'security',
-        'unicorn',
-    ],
+    plugins: ['eslint-comments', 'get-off-my-lawn', 'import', 'json', 'node', 'objects', 'security', 'unicorn'],
     reportUnusedDisableDirectives: true,
     rules: {
-        ...babel,
         ...eslint,
         ...eslintComments,
         ...getOffMyLawn,
