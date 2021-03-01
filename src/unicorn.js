@@ -34,6 +34,7 @@ module.exports = {
         },
     ],
     'unicorn/no-object-as-default-parameter': 'error',
+    'unicorn/no-process-exit': 'error',
     'unicorn/no-this-assignment': 'error',
     'unicorn/no-unused-properties': 'error',
     'unicorn/no-zero-fractions': 'error',
