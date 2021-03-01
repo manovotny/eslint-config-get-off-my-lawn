@@ -6,7 +6,12 @@ module.exports = {
             withinDescribe: 'test',
         },
     ],
-    'jest/expect-expect': 'error',
+    'jest/expect-expect': [
+        'error',
+        {
+            assertFunctionNames: ['assert*', 'expect*'],
+        },
+    ],
     'jest/no-alias-methods': 'error',
     'jest/no-commented-out-tests': 'error',
     'jest/no-conditional-expect': 'error',
