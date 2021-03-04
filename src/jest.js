@@ -9,7 +9,7 @@ module.exports = {
     'jest/expect-expect': [
         'error',
         {
-            assertFunctionNames: ['assert*', 'expect*'],
+            assertFunctionNames: ['**.assert*', '**.expect*', 'assert*', 'expect*'],
         },
     ],
     'jest/no-alias-methods': 'error',
