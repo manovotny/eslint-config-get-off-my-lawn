@@ -10,7 +10,6 @@ That means some rules will feel oppressive or "over the top" for many developers
 
 This config also comes with the following plugins, and corresponding rules, baked in.
 
--   [babel-eslint](https://www.npmjs.com/package/babel-eslint)
 -   [eslint](https://www.npmjs.com/package/eslint)
 -   [eslint-plugin-eslint-comments](https://www.npmjs.com/package/eslint-plugin-eslint-comments)
 -   [eslint-plugin-get-off-my-lawn](https://www.npmjs.com/package/eslint-plugin-get-off-my-lawn)
@@ -61,8 +60,14 @@ module.exports = {
     extends: 'get-off-my-lawn',
     rules: {
         // enable additional rules, override rule options, or disable rules
-    }
+    },
 };
+```
+
+Once your rules are configured, we recommend running the following command in your `package.json` as an [npm script](https://docs.npmjs.com/cli/v7/using-npm/scripts).
+
+```
+eslint . --ext .js --ext .json
 ```
 
 ## Usage With Prettier
@@ -73,6 +78,7 @@ eslint-config-get-off-my-lawn will automatically detect if your project is using
 
 ## Related
 
+-   [prettier-config-get-off-my-lawn](https://www.npmjs.com/package/prettier-config-get-off-my-lawn) - A highly opinionated, [sharable config](https://prettier.io/docs/en/configuration.html#sharing-configurations) of Prettier rules to produce beautiful, readable code.
 -   [stylelint-config-get-off-my-lawn](https://www.npmjs.com/package/stylelint-config-get-off-my-lawn) - A highly opinionated, [sharable config](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md#extends) of [stylelint](http://stylelint.io) rules to produce beautiful, readable CSS and Sass.
 
 ## License

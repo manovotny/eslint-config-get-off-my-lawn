@@ -6,5 +6,5 @@ module.exports = {
     'security/detect-no-csrf-before-method-override': 'error',
     'security/detect-possible-timing-attacks': 'error',
     'security/detect-pseudoRandomBytes': 'error',
-    'security/detect-unsafe-regex': 'error'
+    'security/detect-unsafe-regex': 'error',
 };

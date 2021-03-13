@@ -4,12 +4,13 @@ module.exports = {
     'import/exports-last': 'error',
     'import/extensions': 'error',
     'import/first': 'error',
+    'import/group-exports': 'error',
     'import/named': 'error',
     'import/namespace': [
         'error',
         {
-            allowComputed: true
-        }
+            allowComputed: true,
+        },
     ],
     'import/newline-after-import': 'error',
     'import/no-absolute-path': 'error',
@@ -21,18 +22,24 @@ module.exports = {
     'import/no-named-as-default': 'error',
     'import/no-named-as-default-member': 'error',
     'import/no-self-import': 'error',
-    'import/no-unresolved': 'error',
+    'import/no-unresolved': [
+        'error',
+        {
+            amd: true,
+            commonjs: true,
+        },
+    ],
     'import/no-useless-path-segments': [
         'error',
         {
-            noUselessIndex: true
-        }
+            noUselessIndex: true,
+        },
     ],
     'import/no-webpack-loader-syntax': 'error',
     'import/order': [
         'error',
         {
-            'newlines-between': 'always'
-        }
-    ]
+            'newlines-between': 'always',
+        },
+    ],
 };

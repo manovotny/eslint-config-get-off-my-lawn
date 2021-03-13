@@ -3,149 +3,148 @@ const blocks = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'block-like'
+        next: 'block-like',
     },
     {
         blankLine: 'always',
         prev: 'block-like',
-        next: '*'
+        next: '*',
     },
     {
         blankLine: 'always',
         prev: '*',
-        next: 'multiline-block-like'
-    }
+        next: 'multiline-block-like',
+    },
 ];
 
 const breaks = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'break'
-    }
+        next: 'break',
+    },
 ];
 
 const classes = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'class'
-    }
+        next: 'class',
+    },
 ];
 
 const continues = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'continue'
-    }
+        next: 'continue',
+    },
 ];
 
 const declarations = [
     {
         blankLine: 'always',
         prev: ['const', 'let', 'var'],
-        next: '*'
+        next: '*',
     },
     {
         blankLine: 'any',
         prev: ['const', 'let', 'var'],
-        next: ['const', 'let', 'var']
-    }
+        next: ['const', 'let', 'var'],
+    },
 ];
 
 const directives = [
     {
         blankLine: 'always',
         prev: 'directive',
-        next: '*'
+        next: '*',
     },
     {
         blankLine: 'any',
         prev: 'directive',
-        next: 'directive'
-    }
+        next: 'directive',
+    },
 ];
 
 const dos = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'do'
-    }
+        next: 'do',
+    },
 ];
 
 const fors = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'for'
-    }
+        next: 'for',
+    },
 ];
 
 const functions = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'function'
-    }
+        next: 'function',
+    },
 ];
 
 const ifs = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'if'
-    }
+        next: 'if',
+    },
 ];
 
 const returns = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'return'
-    }
+        next: 'return',
+    },
 ];
 
 const switches = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'switch'
-    }
+        next: 'switch',
+    },
 ];
 
 const tries = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'try'
-    }
+        next: 'try',
+    },
 ];
 
 const whiles = [
     {
         blankLine: 'always',
         prev: '*',
-        next: 'while'
-    }
+        next: 'while',
+    },
 ];
 /* eslint-enable */
 
-module.exports = Array.prototype.concat(
-    'error',
-    blocks,
-    breaks,
-    classes,
-    continues,
-    declarations,
-    directives,
-    dos,
-    fors,
-    functions,
-    ifs,
-    returns,
-    switches,
-    tries,
-    whiles
-);
+module.exports = [
+    ...blocks,
+    ...breaks,
+    ...classes,
+    ...continues,
+    ...declarations,
+    ...directives,
+    ...dos,
+    ...fors,
+    ...functions,
+    ...ifs,
+    ...returns,
+    ...switches,
+    ...tries,
+    ...whiles,
+];

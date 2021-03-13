@@ -1,0 +1,40 @@
+name: image-optimization
+on:
+    pull_request:
+        paths:
+            - '**.jpg'
+            - '**.jpeg'
+            - '**.png'
+            - '**.webp'
+    push:
+        branches:
+            - main
+        paths:
+            - '**.jpg'
+            - '**.jpeg'
+            - '**.png'
+            - '**.webp'
+    workflow_dispatch:
+        schedule:
+            - cron: '00 23 * * 0'
+jobs:
+    image-optimization:
+        runs-on: ubuntu-latest
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v2
+            - name: Optimize images
+              id: images
+              uses: calibreapp/image-actions@main
+              with:
+                  compressOnly: ${{ github.event_name != 'pull_request' }}
+                  githubToken: ${{ secrets.GITHUB_TOKEN }}
+            - name: Create pull request
+              if: github.event_name != 'pull_request' && steps.images.outputs.markdown != ''
+              uses: peter-evans/create-pull-request@v3
+              with:
+                  title: Optimizes images.
+                  branch-suffix: timestamp
+                  commit-message: Optimizes images.
+                  body: ${{ steps.images.outputs.markdown }}
