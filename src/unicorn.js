@@ -69,7 +69,7 @@ module.exports = {
         'error',
         {
             patterns: {
-                '^http:\\/\\/': {
+                '(?!(?=.*(localhost|0.0.0.0|127.0.0.1)))^http:': {
                     message: 'Please use `https` for better security.`.',
                     suggest: 'https://',
                 },
