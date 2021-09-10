@@ -4,7 +4,7 @@ describe('unicorn/string-content', () => {
     const patterns = Object.entries(unicorn['unicorn/string-content'][1].patterns);
 
     patterns.forEach(([key, value]) => {
-        if (value.suggest === 'https://') {
+        if (value.suggest === 'https:') {
             const regex = new RegExp(key, 'u');
 
             describe('https', () => {
