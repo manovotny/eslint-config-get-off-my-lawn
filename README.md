@@ -31,6 +31,14 @@ eslint-config-get-off-my-lawn will automatically enable and disable plugins (and
 
 ## Install
 
+### NPM
+
+```
+$ npm i eslint eslint-config-get-off-my-lawn --save-dev
+```
+
+### Yarn
+
 ```
 $ yarn add eslint eslint-config-get-off-my-lawn --dev
 ```

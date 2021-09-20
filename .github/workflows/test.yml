@@ -17,27 +17,14 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: ${{ steps.nvm.outputs.version }}
-            - name: Cache yarn version
-              id: yarn-cache
-              uses: actions/cache@v2
-              with:
-                  path: '**/.yarn'
-                  key: yarn-cache-${{ hashFiles('**/.yvmrc') }}
-            - name: Read yarn version
-              id: yvm
-              if: steps.yarn-cache.outputs.cache-hit != 'true'
-              run: echo "::set-output name=version::$(cat .yvmrc)"
-            - name: Set yarn version
-              if: steps.yarn-cache.outputs.cache-hit != 'true'
-              run: yarn policies set-version ${{ steps.yvm.outputs.version }}
             - name: Cache node_modules
               id: node-modules-cache
               uses: actions/cache@v2
               with:
                   path: '**/node_modules'
-                  key: node-modules-cache-${{ hashFiles('**/yarn.lock') }}
+                  key: node-modules-cache-${{ hashFiles('**/package-lock.json') }}
             - name: Install dependencies
               if: steps.node-modules-cache.outputs.cache-hit != 'true'
-              run: yarn install --frozen-lockfile
+              run: npm ci
             - name: Run tests
-              run: yarn test
+              run: npm test
