@@ -20,35 +20,22 @@ jobs:
                   always-auth: true
                   node-version: ${{ steps.nvm.outputs.version }}
                   registry-url: 'https://registry.npmjs.org'
-            - name: Cache yarn version
-              id: yarn-cache
-              uses: actions/cache@v2
-              with:
-                  path: '**/.yarn'
-                  key: yarn-cache-${{ hashFiles('**/.yvmrc') }}
-            - name: Read yarn version
-              id: yvm
-              if: steps.yarn-cache.outputs.cache-hit != 'true'
-              run: echo "::set-output name=version::$(cat .yvmrc)"
-            - name: Set yarn version
-              if: steps.yarn-cache.outputs.cache-hit != 'true'
-              run: yarn policies set-version ${{ steps.yvm.outputs.version }}
             - name: Cache node_modules
               id: node-modules-cache
               uses: actions/cache@v2
               with:
                   path: '**/node_modules'
-                  key: node-modules-cache-${{ hashFiles('**/yarn.lock') }}
+                  key: node-modules-cache-${{ hashFiles('**/package-lock.json') }}
             - name: Install dependencies
               if: steps.node-modules-cache.outputs.cache-hit != 'true'
-              run: yarn install --frozen-lockfile
+              run: npm ci
             - name: Publish version
               if: steps.release.outputs.tag == ''
-              run: yarn publish --new-version ${{ steps.release.outputs.version }}
+              run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
             - name: Publish version with tag
               if: steps.release.outputs.tag != ''
-              run: yarn publish --new-version ${{ steps.release.outputs.version }} --tag ${{ steps.release.outputs.tag }}
+              run: npm publish --tag ${{ steps.release.outputs.tag }}
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
