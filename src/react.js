@@ -111,6 +111,7 @@ module.exports = {
     'react/jsx-no-target-blank': [
         'error',
         {
+            forms: true,
             warnOnSpreadAttributes: true,
         },
     ],
@@ -154,6 +155,7 @@ module.exports = {
     'react/no-direct-mutation-state': 'error',
     'react/no-find-dom-node': 'error',
     'react/no-is-mounted': 'error',
+    'react/no-namespace': 'error',
     'react/no-redundant-should-component-update': 'error',
     'react/no-render-return-value': 'error',
     'react/no-string-refs': [
@@ -167,6 +169,7 @@ module.exports = {
     'react/no-unescaped-entities': 'error',
     'react/no-unknown-property': 'error',
     'react/no-unsafe': 'error',
+    'react/no-unstable-nested-components': 'error',
     'react/no-unused-prop-types': 'error',
     'react/no-unused-state': 'error',
     'react/no-will-update-set-state': ['error', 'disallow-in-func'],

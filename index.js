@@ -111,6 +111,10 @@ if (usesReact) {
             ...jsxA11y,
         };
     }
+
+    if (usesNext) {
+        dotProp.set(config, 'settings.linkComponents', ['Link']);
+    }
 }
 
 if (usesBabelConfig) {
