@@ -18,9 +18,11 @@ module.exports = {
     'import/no-deprecated': 'error',
     'import/no-duplicates': 'error',
     'import/no-extraneous-dependencies': 'error',
+    'import/no-import-module-exports': 'error',
     'import/no-mutable-exports': 'error',
     'import/no-named-as-default': 'error',
     'import/no-named-as-default-member': 'error',
+    'import/no-relative-packages': 'error',
     'import/no-self-import': 'error',
     'import/no-unresolved': [
         'error',
@@ -40,6 +42,7 @@ module.exports = {
         'error',
         {
             'newlines-between': 'always',
+            warnOnUnassignedImports: true,
         },
     ],
 };
