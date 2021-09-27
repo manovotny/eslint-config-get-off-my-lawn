@@ -24,7 +24,7 @@ module.exports = {
             ignoreImports: true,
         },
     ],
-    'comma-dangle': 'error',
+    'comma-dangle': ['error', 'always'],
     'comma-spacing': 'error',
     'comma-style': 'error',
     'computed-property-spacing': 'error',
@@ -117,7 +117,12 @@ module.exports = {
     'no-fallthrough': 'error',
     'no-floating-decimal': 'error',
     'no-global-assign': 'error',
-    'no-implicit-coercion': 'error',
+    'no-implicit-coercion': [
+        'error',
+        {
+            disallowTemplateShorthand: true,
+        },
+    ],
     'no-implicit-globals': [
         'error',
         {
@@ -144,6 +149,7 @@ module.exports = {
     'no-loss-of-precision': 'error',
     'no-misleading-character-class': 'error',
     'no-mixed-spaces-and-tabs': 'error',
+    'no-multi-assign': 'error',
     'no-multi-spaces': 'error',
     'no-multi-str': 'error',
     'no-multiple-empty-lines': [
