@@ -71,7 +71,7 @@
     "devDependencies": {
         "@zeit/git-hooks": "0.1.4",
         "eslint": "7.32.0",
-        "jest": "27.2.2",
+        "jest": "27.2.3",
         "lint-staged": "11.1.2",
         "npm-check": "5.9.2",
         "prettier": "2.4.1",
