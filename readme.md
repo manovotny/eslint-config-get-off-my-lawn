@@ -75,8 +75,15 @@ module.exports = {
 Once your rules are configured, we recommend running the following command in your `package.json` as an [npm script](https://docs.npmjs.com/cli/v7/using-npm/scripts).
 
 ```
-eslint . --ext .js --ext .json
+eslint . --ext .js,.json
 ```
+
+Supported extensions:
+
+-   `.js`
+-   `.json`
+-   `.json5`
+-   `.jsonc`
 
 ## Usage With Prettier
 

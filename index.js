@@ -10,7 +10,7 @@ const eslint = require('./src/eslint');
 const eslintComments = require('./src/eslint-comments');
 const getOffMyLawn = require('./src/get-off-my-lawn');
 const imprt = require('./src/import');
-const json = require('./src/json');
+const jsonc = require('./src/jsonc');
 const jsxA11y = require('./src/jsx-a11y');
 const jest = require('./src/jest');
 const node = require('./src/node');
@@ -44,6 +44,22 @@ const config = {
         node: true,
         'shared-node-browser': true,
     },
+    overrides: [
+        {
+            files: ['*.json'],
+            parser: 'jsonc-eslint-parser',
+            rules: jsonc.json,
+        },
+        {
+            files: ['*.json5'],
+            parser: 'jsonc-eslint-parser',
+            rules: jsonc.json5,
+        },
+        {
+            files: ['*.jsonc'],
+            parser: 'jsonc-eslint-parser',
+        },
+    ],
     parser: '@babel/eslint-parser',
     parserOptions: {
         allowImportExportEverywhere: true,
@@ -51,14 +67,14 @@ const config = {
         requireConfigFile: false,
         sourceType: 'module',
     },
-    plugins: ['eslint-comments', 'get-off-my-lawn', 'import', 'json', 'node', 'objects', 'security', 'unicorn'],
+    plugins: ['eslint-comments', 'get-off-my-lawn', 'import', 'jsonc', 'node', 'objects', 'security', 'unicorn'],
     reportUnusedDisableDirectives: true,
     rules: {
         ...eslint,
         ...eslintComments,
         ...getOffMyLawn,
         ...imprt,
-        ...json,
+        ...jsonc.default,
         ...node,
         ...objects,
         ...security,
@@ -129,6 +145,7 @@ if (usesBabelConfig) {
 if (usesPrettier) {
     config.rules = {
         ...config.rules,
+        ...require('eslint-plugin-jsonc').configs.prettier.rules,
         ...require('eslint-config-prettier').rules,
     };
 }
