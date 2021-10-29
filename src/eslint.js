@@ -35,6 +35,7 @@ module.exports = {
     'default-case': 'error',
     'default-case-last': 'error',
     'default-param-last': 'error',
+    'dot-location': ['error', 'property'],
     'eol-last': 'error',
     eqeqeq: ['error', 'always'],
     'for-direction': 'error',
