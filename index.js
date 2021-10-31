@@ -142,6 +142,15 @@ if (usesBabelConfig) {
     dotProp.set(config, 'parserOptions.babelOptions.presets', ['@babel/preset-react']);
 }
 
+if (semver.gte(process.version, '14.18.0')) {
+    config.rules['unicorn/prefer-node-protocol'] = [
+        'error',
+        {
+            checkRequire: true,
+        },
+    ];
+}
+
 if (usesPrettier) {
     config.rules = {
         ...config.rules,
