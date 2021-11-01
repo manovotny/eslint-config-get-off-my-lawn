@@ -236,6 +236,7 @@ module.exports = {
     ],
     'no-unused-expressions': 'error',
     'no-unused-labels': 'error',
+    'no-unused-private-class-members': 'error',
     'no-unused-vars': [
         'error',
         {
