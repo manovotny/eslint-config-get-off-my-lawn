@@ -8,7 +8,7 @@ describe('unicorn/string-content', () => {
             const regex = new RegExp(key, 'u');
 
             describe('https', () => {
-                /* eslint-disable unicorn/string-content */
+                /* eslint-disable-next-line unicorn/string-content */
                 ['http://test.com', 'http://test.com/path', 'http://www.test.com', 'http://www.test.com/path'].forEach(
                     (url) => {
                         test(`invalid url: ${url}`, () => {
@@ -18,7 +18,6 @@ describe('unicorn/string-content', () => {
                         });
                     }
                 );
-                /* eslint-enable */
 
                 [
                     'http://localhost',
