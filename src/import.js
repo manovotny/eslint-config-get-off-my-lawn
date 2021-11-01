@@ -28,6 +28,8 @@ module.exports = {
         'error',
         {
             amd: true,
+            caseSensitive: true,
+            caseSensitiveStrict: true,
             commonjs: true,
         },
     ],
