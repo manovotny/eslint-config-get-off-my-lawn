@@ -49,7 +49,7 @@
         "@rushstack/eslint-patch": "1.0.9",
         "confusing-browser-globals": "1.0.10",
         "dot-prop": "6.0.1",
-        "eslint-config-prettier": "8.1.0",
+        "eslint-config-prettier": "8.3.0",
         "eslint-plugin-eslint-comments": "3.2.0",
         "eslint-plugin-get-off-my-lawn": "2.0.0",
         "eslint-plugin-import": "2.25.2",
