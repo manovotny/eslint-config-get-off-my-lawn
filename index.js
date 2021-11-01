@@ -63,7 +63,7 @@ const config = {
     parser: '@babel/eslint-parser',
     parserOptions: {
         allowImportExportEverywhere: true,
-        ecmaVersion: 2021,
+        ecmaVersion: 'latest',
         requireConfigFile: false,
         sourceType: 'module',
     },
