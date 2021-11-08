@@ -70,7 +70,7 @@ module.exports = {
     'react/jsx-filename-extension': [
         'error',
         {
-            extensions: ['.js'],
+            extensions: ['.jsx'],
         },
     ],
     'react/jsx-first-prop-new-line': ['error', 'multiline'],
