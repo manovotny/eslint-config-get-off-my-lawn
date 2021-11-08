@@ -113,6 +113,15 @@ if (usesReact) {
         };
     }
 
+    // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
+    if (semver.gte(reactVersion, '17.0.0')) {
+        config.rules = {
+            ...config.rules,
+            'react/jsx-uses-react': 'off',
+            'react/react-in-jsx-scope': 'off',
+        };
+    }
+
     if (usesReactNative) {
         dotProp.set(config, 'env.react-native/react-native', true);
         config.plugins.push('react-native');
