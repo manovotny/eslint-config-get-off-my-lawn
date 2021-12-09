@@ -56,7 +56,6 @@ module.exports = {
     'key-spacing': 'error',
     'keyword-spacing': 'error',
     'linebreak-style': 'error',
-    'lines-between-class-members': 'error',
     'max-classes-per-file': 'error',
     'max-statements-per-line': 'error',
     'new-cap': 'error',
