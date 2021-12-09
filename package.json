@@ -51,7 +51,7 @@
         "dot-prop": "6.0.1",
         "eslint-config-prettier": "8.3.0",
         "eslint-plugin-eslint-comments": "3.2.0",
-        "eslint-plugin-get-off-my-lawn": "2.0.0",
+        "eslint-plugin-get-off-my-lawn": "3.0.0",
         "eslint-plugin-import": "2.25.2",
         "eslint-plugin-jest": "25.2.2",
         "eslint-plugin-jsonc": "1.7.0",
