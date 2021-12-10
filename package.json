@@ -71,7 +71,7 @@
     "devDependencies": {
         "@vercel/git-hooks": "1.0.0",
         "eslint": "8.4.1",
-        "jest": "27.4.3",
+        "jest": "27.4.4",
         "lint-staged": "12.1.2",
         "npm-check": "5.9.2",
         "prettier": "2.5.1",
