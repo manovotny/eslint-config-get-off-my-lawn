@@ -62,7 +62,7 @@
         "eslint-plugin-react-hooks": "4.3.0",
         "eslint-plugin-react-native": "3.11.0",
         "eslint-plugin-security": "1.4.0",
-        "eslint-plugin-unicorn": "37.0.1",
+        "eslint-plugin-unicorn": "39.0.0",
         "find-up": "5.0.0",
         "read-pkg-up": "7.0.1",
         "semver": "7.3.5",
