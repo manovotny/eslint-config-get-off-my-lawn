@@ -15,7 +15,7 @@ This config also comes with the following plugins, and corresponding rules, bake
 -   [eslint-plugin-get-off-my-lawn](https://www.npmjs.com/package/eslint-plugin-get-off-my-lawn)
 -   [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
 -   [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
--   [eslint-plugin-json](https://www.npmjs.com/package/eslint-plugin-json)
+-   [eslint-plugin-jsonc](https://www.npmjs.com/package/eslint-plugin-jsonc)
 -   [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
 -   [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node)
 -   [eslint-plugin-objects](https://www.npmjs.com/package/eslint-plugin-objects)
