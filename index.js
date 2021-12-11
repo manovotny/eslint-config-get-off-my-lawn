@@ -13,6 +13,7 @@ const imprt = require('./src/import');
 const jsonc = require('./src/jsonc');
 const jsxA11y = require('./src/jsx-a11y');
 const jest = require('./src/jest');
+const jestFormatting = require('./src/jest-formatting');
 const node = require('./src/node');
 const objects = require('./src/objects');
 const react = require('./src/react');
@@ -89,10 +90,11 @@ if (usesElectron) {
 if (usesJest) {
     dotProp.set(config, 'env.jasmine', true);
     dotProp.set(config, 'env.jest', true);
-    config.plugins.push('jest');
+    config.plugins.push('jest', 'jest-formatting');
     config.rules = {
         ...config.rules,
         ...jest,
+        ...jestFormatting,
     };
 }
 
