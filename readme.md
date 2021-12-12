@@ -18,6 +18,7 @@ This config also comes with the following plugins, and corresponding rules, bake
 -   [eslint-plugin-jest-formatting](https://www.npmjs.com/package/eslint-plugin-jest-formatting)
 -   [eslint-plugin-jsonc](https://www.npmjs.com/package/eslint-plugin-jsonc)
 -   [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
+-   [eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next)
 -   [eslint-plugin-node](https://www.npmjs.com/package/eslint-plugin-node)
 -   [eslint-plugin-objects](https://www.npmjs.com/package/eslint-plugin-objects)
 -   [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)

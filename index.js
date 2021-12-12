@@ -14,6 +14,7 @@ const jsonc = require('./src/jsonc');
 const jsxA11y = require('./src/jsx-a11y');
 const jest = require('./src/jest');
 const jestFormatting = require('./src/jest-formatting');
+const next = require('./src/next');
 const node = require('./src/node');
 const objects = require('./src/objects');
 const react = require('./src/react');
@@ -141,6 +142,11 @@ if (usesReact) {
 
     if (usesNext) {
         dotProp.set(config, 'settings.linkComponents', ['Link']);
+        config.plugins.push('next');
+        config.rules = {
+            ...config.rules,
+            ...next,
+        };
     }
 }
 
