@@ -43,12 +43,12 @@
         "*": "prettier --write --ignore-unknown"
     },
     "dependencies": {
-        "@babel/core": "7.16.0",
-        "@babel/eslint-parser": "7.16.3",
-        "@babel/preset-react": "7.16.0",
+        "@babel/core": "7.16.5",
+        "@babel/eslint-parser": "7.16.5",
+        "@babel/preset-react": "7.16.5",
         "@next/eslint-plugin-next": "12.0.7",
         "@rushstack/eslint-patch": "1.1.0",
-        "confusing-browser-globals": "1.0.10",
+        "confusing-browser-globals": "1.0.11",
         "dot-prop": "6.0.1",
         "eslint-config-prettier": "8.3.0",
         "eslint-plugin-eslint-comments": "3.2.0",
@@ -68,12 +68,12 @@
         "find-up": "5.0.0",
         "read-pkg-up": "7.0.1",
         "semver": "7.3.5",
-        "typescript": "4.5.3"
+        "typescript": "4.5.4"
     },
     "devDependencies": {
         "@vercel/git-hooks": "1.0.0",
         "eslint": "8.4.1",
-        "jest": "27.4.4",
+        "jest": "27.4.5",
         "lint-staged": "12.1.2",
         "npm-check": "5.9.2",
         "prettier": "2.5.1",
