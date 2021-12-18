@@ -142,7 +142,7 @@ if (usesReact) {
 
     if (usesNext) {
         dotProp.set(config, 'settings.linkComponents', ['Link']);
-        config.plugins.push('next');
+        config.plugins.push('@next/next');
         config.rules = {
             ...config.rules,
             ...next,
