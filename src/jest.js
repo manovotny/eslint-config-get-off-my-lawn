@@ -28,7 +28,6 @@ module.exports = {
     'jest/no-restricted-matchers': [
         'error',
         {
-            resolves: 'Use `expect(await promise)` instead.',
             toBeFalsy: 'Use `.toBe(false)` instead.',
             toBeTruthy: 'Use `.toBe(true)` instead.',
         },
