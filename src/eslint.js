@@ -36,6 +36,7 @@ module.exports = {
     'default-case-last': 'error',
     'default-param-last': 'error',
     'dot-location': ['error', 'property'],
+    'dot-notation': 'error',
     'eol-last': 'error',
     eqeqeq: ['error', 'always'],
     'for-direction': 'error',
@@ -260,7 +261,12 @@ module.exports = {
     'no-useless-escape': 'error',
     'no-useless-rename': 'error',
     'no-var': 'error',
-    'no-void': 'error',
+    'no-void': [
+        'error',
+        {
+            allowAsStatement: true,
+        },
+    ],
     'no-warning-comments': 'error',
     'no-whitespace-before-property': 'error',
     'no-with': 'error',

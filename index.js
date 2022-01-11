@@ -1,10 +1,11 @@
 // This is a workaround for: https://github.com/eslint/eslint/issues/3458
 require('@rushstack/eslint-patch/modern-module-resolution');
 
+const {cwd} = require('node:process');
+
 const dotProp = require('dot-prop');
-const findUp = require('find-up');
-const readPkgUp = require('read-pkg-up');
 const semver = require('semver');
+const prettier = require('eslint-config-prettier').rules;
 
 const eslint = require('./src/eslint');
 const eslintComments = require('./src/eslint-comments');
@@ -21,22 +22,17 @@ const react = require('./src/react');
 const reactHooks = require('./src/react-hooks');
 const reactNative = require('./src/react-native');
 const security = require('./src/security');
+const typescript = require('./src/typescript');
 const unicorn = require('./src/unicorn');
+const {locate, pkg} = require('./src/utils/files');
 
-const pkg = readPkgUp.sync() || {};
-
-const packageJsonContains = (dependency) =>
-    dotProp.get(pkg, `packageJson.dependencies.${dependency}`) ||
-    dotProp.get(pkg, `packageJson.devDependencies.${dependency}`);
-
-const usesBabelConfig = findUp.sync(['.babelrc', '.babelrc.json', 'babel.config.json']);
-const usesElectron = packageJsonContains('electron');
-const usesJest = packageJsonContains('jest');
-const usesNext = packageJsonContains('next');
-const usesPrettier = packageJsonContains('prettier');
-const usesReact = packageJsonContains('react');
-const usesReactNative = packageJsonContains('react-native');
-const reactVersion = usesReact ? semver.coerce(usesReact).version : undefined;
+const babelConfig = locate(['.babelrc', '.babelrc.json', 'babel.config.json']);
+const electronDependency = pkg.dependencies?.electron || pkg.devDependencies?.electron;
+const jestDependency = pkg.dependencies?.jest || pkg.devDependencies?.jest;
+const nextDependency = pkg.dependencies?.next || pkg.devDependencies?.next;
+const prettierDependency = pkg.dependencies?.prettier || pkg.devDependencies?.prettier;
+const reactDependency = pkg.dependencies?.react || pkg.devDependencies?.react;
+const reactNativeDependency = pkg.dependencies?.['react-native'] || pkg.devDependencies?.['react-native'];
 
 const config = {
     env: {
@@ -61,6 +57,19 @@ const config = {
             files: ['*.jsonc'],
             parser: 'jsonc-eslint-parser',
         },
+        {
+            files: ['*.ts', '*.tsx'],
+            parser: '@typescript-eslint/parser',
+            parserOptions: {
+                project: ['./tsconfig.json'],
+                tsconfigRootDir: cwd(),
+            },
+            plugins: ['@typescript-eslint'],
+            rules: {
+                ...typescript,
+                ...prettier,
+            },
+        },
     ],
     parser: '@babel/eslint-parser',
     parserOptions: {
@@ -84,11 +93,11 @@ const config = {
     },
 };
 
-if (usesElectron) {
+if (electronDependency) {
     dotProp.set(config, 'settings.node.allowModules', ['electron']);
 }
 
-if (usesJest) {
+if (jestDependency) {
     dotProp.set(config, 'env.jasmine', true);
     dotProp.set(config, 'env.jest', true);
     config.plugins.push('jest', 'jest-formatting');
@@ -99,7 +108,7 @@ if (usesJest) {
     };
 }
 
-if (usesReact) {
+if (reactDependency) {
     dotProp.set(config, 'parserOptions.ecmaFeatures.jsx', true);
     dotProp.set(config, 'settings.react.version', 'detect');
     config.plugins.push('react');
@@ -108,7 +117,7 @@ if (usesReact) {
         ...react,
     };
 
-    if (semver.gte(reactVersion, '16.8.0')) {
+    if (semver.gte(reactDependency, '16.8.0')) {
         config.plugins.push('react-hooks');
         config.rules = {
             ...config.rules,
@@ -117,7 +126,7 @@ if (usesReact) {
     }
 
     // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
-    if (semver.gte(reactVersion, '17.0.0')) {
+    if (semver.gte(reactDependency, '17.0.0')) {
         config.rules = {
             ...config.rules,
             'react/jsx-uses-react': 'off',
@@ -125,7 +134,7 @@ if (usesReact) {
         };
     }
 
-    if (usesReactNative) {
+    if (reactNativeDependency) {
         dotProp.set(config, 'env.react-native/react-native', true);
         config.plugins.push('react-native');
         config.rules = {
@@ -140,7 +149,7 @@ if (usesReact) {
         };
     }
 
-    if (usesNext) {
+    if (nextDependency) {
         dotProp.set(config, 'settings.linkComponents', ['Link']);
         config.plugins.push('@next/next');
         config.rules = {
@@ -150,12 +159,12 @@ if (usesReact) {
     }
 }
 
-if (usesBabelConfig) {
-    dotProp.set(config, 'parserOptions.babelOptions.configFile', usesBabelConfig);
+if (babelConfig) {
+    dotProp.set(config, 'parserOptions.babelOptions.configFile', babelConfig);
     dotProp.set(config, 'parserOptions.requireConfigFile', true);
-} else if (usesNext) {
+} else if (nextDependency) {
     dotProp.set(config, 'parserOptions.babelOptions.presets', ['next/babel']);
-} else if (usesReact) {
+} else if (reactDependency) {
     dotProp.set(config, 'parserOptions.babelOptions.presets', ['@babel/preset-react']);
 }
 
@@ -168,11 +177,11 @@ if (semver.gte(process.version, '14.18.0')) {
     ];
 }
 
-if (usesPrettier) {
+if (prettierDependency) {
     config.rules = {
         ...config.rules,
         ...require('eslint-plugin-jsonc').configs.prettier.rules,
-        ...require('eslint-config-prettier').rules,
+        ...prettier,
     };
 }
 
