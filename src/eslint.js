@@ -279,6 +279,7 @@ module.exports = {
     'prefer-const': 'error',
     'prefer-exponentiation-operator': 'error',
     'prefer-numeric-literals': 'error',
+    'prefer-object-has-own': 'error',
     'prefer-object-spread': 'error',
     'prefer-regex-literals': 'error',
     'prefer-rest-params': 'error',
