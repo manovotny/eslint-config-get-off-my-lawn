@@ -13,10 +13,27 @@
         "url": "git+https://github.com/manovotny/eslint-config-get-off-my-lawn.git"
     },
     "keywords": [
+        "a11y",
+        "accessibility",
         "babel",
         "config",
         "eslint",
-        "react"
+        "eslint-config",
+        "eslint-plugin",
+        "eslintconfig",
+        "eslintplugin",
+        "json",
+        "json5",
+        "jsonc",
+        "lint",
+        "linter",
+        "next",
+        "node",
+        "react",
+        "react-hooks",
+        "react-native",
+        "jest",
+        "security"
     ],
     "engines": {
         "node": ">=12.20.0"
