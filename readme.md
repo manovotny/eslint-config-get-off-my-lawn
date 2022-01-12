@@ -84,9 +84,12 @@ eslint . --ext .js,.json
 Supported extensions:
 
 -   `.js`
+-   `.jsx`
 -   `.json`
 -   `.json5`
 -   `.jsonc`
+-   `.ts`
+-   `.tsx`
 
 ## Usage With Prettier
 
