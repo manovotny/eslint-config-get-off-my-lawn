@@ -7,6 +7,7 @@ module.exports = {
     '@next/next/no-css-tags': 'error',
     '@next/next/no-document-import-in-page': 'error',
     '@next/next/no-duplicate-head': 'error',
+    '@next/next/no-head-element': 'error',
     '@next/next/no-head-import-in-document': 'error',
     '@next/next/no-html-link-for-pages': 'error',
     '@next/next/no-img-element': 'error',
