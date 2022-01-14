@@ -5,7 +5,9 @@ const {existsSync, readJsonSync} = require('fs-extra');
 
 const locate = (paths) => {
     for (const path of paths) {
-        if (existsSync(join(cwd(), path))) return path;
+        if (existsSync(join(cwd(), path))) {
+            return path;
+        }
     }
 
     return undefined;

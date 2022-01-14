@@ -1,7 +1,7 @@
 const unicorn = require('./unicorn');
 
 describe('unicorn/string-content', () => {
-    const patterns = Object.entries(unicorn['unicorn/string-content'][1].patterns);
+    const patterns = Object.entries(unicorn.rules['unicorn/string-content'][1].patterns);
 
     patterns.forEach(([key, value]) => {
         if (value.suggest === 'https:') {
