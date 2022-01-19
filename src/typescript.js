@@ -5,6 +5,7 @@ const semver = require('semver');
 const imprt = require('eslint-plugin-import/config/typescript');
 
 const eslint = require('./eslint');
+const prettier = require('./prettier');
 const {pkg, tsconfig} = require('./utils/files');
 
 const typescriptDependency = pkg.dependencies?.typescript || pkg.devDependencies?.typescript;
@@ -17,6 +18,11 @@ const modifiedRulesToSupportTypeScript = {
     'default-param-last': 'off',
     'dot-notation': 'off',
     'func-call-spacing': 'off',
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
+    'import/named': 'off',
+    'import/namespace': 'off',
+    'import/default': 'off',
+    'import/no-named-as-default-member': 'off',
     indent: 'off',
     'keyword-spacing': 'off',
     'no-array-constructor': 'off',
@@ -34,6 +40,8 @@ const modifiedRulesToSupportTypeScript = {
     'no-return-await': 'off',
     'no-shadow': 'off',
     'no-throw-literal': 'off',
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/docs/linting/TROUBLESHOOTING.md#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
+    'no-undef': 'off',
     'no-unused-expressions': 'off',
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
@@ -258,7 +266,14 @@ let config = {
         ],
         '@typescript-eslint/unified-signatures': 'error',
     },
-    settings: imprt.settings,
+    settings: {
+        ...imprt.settings,
+        'import/resolver': {
+            typescript: {
+                alwaysTryTypes: true,
+            },
+        },
+    },
 };
 
 if (typescriptDependency && semver.gte(typescriptDependency, '3.4.0')) {
@@ -317,6 +332,14 @@ if (tsconfig.compilerOptions?.strict === false || tsconfig.compilerOptions?.stri
                 },
             ],
         },
+    });
+}
+
+// Since rules from `overrides` come after the base rules specified in the ESLint
+// config, we need to reapply the prettier rules.
+if (prettier.rules) {
+    config = mergeAndConcat(config, {
+        rules: prettier.rules,
     });
 }
 

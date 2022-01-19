@@ -69,6 +69,7 @@
         "@typescript-eslint/parser": "5.9.1",
         "confusing-browser-globals": "1.0.11",
         "eslint-config-prettier": "8.3.0",
+        "eslint-import-resolver-typescript": "2.5.0",
         "eslint-plugin-eslint-comments": "3.2.0",
         "eslint-plugin-get-off-my-lawn": "3.0.0",
         "eslint-plugin-import": "2.25.4",
