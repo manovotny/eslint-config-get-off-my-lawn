@@ -19,9 +19,9 @@ const modifiedRulesToSupportTypeScript = {
     'dot-notation': 'off',
     'func-call-spacing': 'off',
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
+    'import/default': 'off',
     'import/named': 'off',
     'import/namespace': 'off',
-    'import/default': 'off',
     'import/no-named-as-default-member': 'off',
     indent: 'off',
     'keyword-spacing': 'off',
