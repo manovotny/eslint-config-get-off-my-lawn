@@ -245,6 +245,11 @@ let config = {
     },
     settings: {
         ...imprt.settings,
+        'import/resolver': {
+            node: {
+                extensions: ['.js', '.jsx'],
+            },
+        },
         react: {
             version: 'detect',
         },
