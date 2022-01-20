@@ -1,3 +1,7 @@
+const jsonc = require('eslint-plugin-jsonc');
+
+const prettier = require('./prettier');
+
 const rules = {
     'jsonc/array-bracket-newline': 'error',
     'jsonc/array-bracket-spacing': ['error', 'never'],
@@ -61,6 +65,8 @@ const json5Only = {
     'jsonc/no-nan': 'error',
 };
 
+const prettierRules = prettier.rules ? jsonc.configs.prettier.rules : {};
+
 module.exports = {
     ignorePatterns: ['package-lock.json'],
     overrides: [
@@ -70,6 +76,7 @@ module.exports = {
             rules: {
                 ...rules,
                 ...jsonOnly,
+                ...prettierRules,
             },
         },
         {
@@ -78,12 +85,16 @@ module.exports = {
             rules: {
                 ...rules,
                 ...json5Only,
+                ...prettierRules,
             },
         },
         {
             files: ['*.jsonc'],
             parser: 'jsonc-eslint-parser',
-            rules,
+            rules: {
+                ...rules,
+                ...prettierRules,
+            },
         },
     ],
     plugins: ['jsonc'],
