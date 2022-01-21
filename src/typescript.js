@@ -252,7 +252,6 @@ let config = {
         '@typescript-eslint/sort-type-union-intersection-members': 'error',
         '@typescript-eslint/space-before-function-paren': eslint.rules['space-before-function-paren'],
         '@typescript-eslint/space-infix-ops': eslint.rules['space-infix-ops'],
-        '@typescript-eslint/strict-boolean-expressions': 'error',
         '@typescript-eslint/triple-slash-reference': 'error',
         '@typescript-eslint/type-annotation-spacing': 'error',
         // you should turn the original rule off *only* for test files
