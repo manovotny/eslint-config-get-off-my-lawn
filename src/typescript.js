@@ -8,6 +8,7 @@ const eslint = require('./eslint');
 const prettier = require('./prettier');
 const {pkg, tsconfig} = require('./utils/files');
 
+const reactDependency = pkg.dependencies?.react || pkg.devDependencies?.react;
 const typescriptDependency = pkg.dependencies?.typescript || pkg.devDependencies?.typescript;
 
 const modifiedRulesToSupportTypeScript = {
@@ -49,13 +50,6 @@ const modifiedRulesToSupportTypeScript = {
     'object-curly-spacing': 'off',
     'padding-line-between-statements': 'off',
     quotes: 'off',
-    // Adds React TypeScript extension.
-    'react/jsx-filename-extension': [
-        'error',
-        {
-            extensions: ['.tsx'],
-        },
-    ],
     'require-await': 'off',
     semi: 'off',
     'space-before-function-paren': 'off',
@@ -69,6 +63,16 @@ const modifiedRulesToSupportTypeScript = {
         },
     ],
 };
+
+if (reactDependency) {
+    // Adds React TypeScript extension.
+    modifiedRulesToSupportTypeScript['react/jsx-filename-extension'] = [
+        'error',
+        {
+            extensions: ['.jsx', '.tsx'],
+        },
+    ];
+}
 
 let config = {
     files: ['*.ts', '*.tsx'],
