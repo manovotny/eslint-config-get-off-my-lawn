@@ -4,10 +4,10 @@ const find = (dependency) => pkg.dependencies?.[dependency] || pkg.devDependenci
 
 module.exports = {
     electron: find('electron'),
+    graphql: find('graphql'),
     jest: find('jest'),
     next: find('next'),
     prettier: find('prettier'),
-    graphql: find('graphql'),
     react: find('react'),
     reactNative: find('react-native'),
     typescript: find('typescript'),
