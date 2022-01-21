@@ -6,7 +6,7 @@ const imprt = require('eslint-plugin-import/config/typescript');
 
 const eslint = require('./eslint');
 const prettier = require('./prettier');
-const {react, typescript} = require('./utils/dependencies');
+const {jest, react, typescript} = require('./utils/dependencies');
 const {tsconfig} = require('./utils/files');
 
 const modifiedRulesToSupportTypeScript = {
@@ -256,9 +256,6 @@ let config = {
         '@typescript-eslint/space-infix-ops': eslint.rules['space-infix-ops'],
         '@typescript-eslint/triple-slash-reference': 'error',
         '@typescript-eslint/type-annotation-spacing': 'error',
-        // you should turn the original rule off *only* for test files
-        // '@typescript-eslint/unbound-method': 'off',
-        // 'jest/unbound-method': 'error',
         '@typescript-eslint/unbound-method': [
             'error',
             {
@@ -341,6 +338,27 @@ if (tsconfig.compilerOptions?.strict === false || tsconfig.compilerOptions?.stri
 if (prettier.rules) {
     config = mergeAndConcat(config, {
         rules: prettier.rules,
+    });
+}
+
+const overrides = [config];
+
+if (jest) {
+    overrides.push({
+        files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+        rules: {
+            // If you're working with `jest`, you can use eslint-plugin-jest's version of this rule
+            // to lint your test files, which knows when it's ok to pass an unbound method to
+            // `expect` calls.
+            // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/unbound-method.md
+            '@typescript-eslint/unbound-method': 'off',
+            'jest/unbound-method': [
+                'error',
+                {
+                    ignoreStatic: true,
+                },
+            ],
+        },
     });
 }
 
