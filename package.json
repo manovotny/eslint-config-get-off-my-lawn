@@ -1,7 +1,7 @@
 {
     "name": "eslint-config-get-off-my-lawn",
     "description": "A highly opinionated, sharable config of ESLint rules to produce beautiful, readable JavaScript.",
-    "version": "7.0.0-beta.5",
+    "version": "7.0.0-beta.6",
     "author": {
         "name": "Michael Novotny",
         "email": "manovotny@gmail.com",
