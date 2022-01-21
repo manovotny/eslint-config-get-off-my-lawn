@@ -7,6 +7,7 @@ module.exports = {
     jest: find('jest'),
     next: find('next'),
     prettier: find('prettier'),
+    graphql: find('graphql'),
     react: find('react'),
     reactNative: find('react-native'),
     typescript: find('typescript'),

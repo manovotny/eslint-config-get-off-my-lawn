@@ -1,6 +1,8 @@
 const {mergeAndConcat} = require('merge-anything');
 const semver = require('semver');
 
+const {graphql} = require('./utils/dependencies');
+
 const nodeVersion = process.version;
 
 let config = {
@@ -123,6 +125,12 @@ if (semver.gte(nodeVersion, '14.18.0')) {
             ],
         },
     });
+}
+
+if (graphql) {
+    // The use of `null` is a GraphQL standard / best practice.
+    // https://github.com/manovotny/eslint-config-get-off-my-lawn/issues/154
+    delete config.rules['unicorn/no-null'];
 }
 
 module.exports = config;
