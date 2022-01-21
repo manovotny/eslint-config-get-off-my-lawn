@@ -87,13 +87,13 @@
         "fs-extra": "10.0.0",
         "merge-anything": "4.0.2",
         "semver": "7.3.5",
-        "typescript": "4.5.4"
+        "typescript": "4.5.5"
     },
     "devDependencies": {
         "@vercel/git-hooks": "1.0.0",
         "eslint": "8.7.0",
         "jest": "27.4.7",
-        "lint-staged": "12.2.1",
+        "lint-staged": "12.2.2",
         "npm-check": "5.9.2",
         "prettier": "2.5.1",
         "prettier-config-get-off-my-lawn": "1.0.0"
