@@ -2,9 +2,7 @@ const {mergeAndConcat} = require('merge-anything');
 const semver = require('semver');
 const imprt = require('eslint-plugin-import/config/react');
 
-const {pkg} = require('./utils/files');
-
-const reactDependency = pkg.dependencies?.react || pkg.devDependencies?.react;
+const {react} = require('./utils/dependencies');
 
 let config = {
     parserOptions: {
@@ -256,7 +254,7 @@ let config = {
     },
 };
 
-if (reactDependency && semver.gte(reactDependency, '16.8.0')) {
+if (react && semver.gte(react, '16.8.0')) {
     config = mergeAndConcat(config, {
         plugins: ['react-hooks'],
         rules: {
@@ -267,7 +265,7 @@ if (reactDependency && semver.gte(reactDependency, '16.8.0')) {
 }
 
 // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
-if (reactDependency && semver.gte(reactDependency, '17.0.0')) {
+if (react && semver.gte(react, '17.0.0')) {
     config = mergeAndConcat(config, {
         rules: {
             'react/jsx-uses-react': 'off',
@@ -276,4 +274,4 @@ if (reactDependency && semver.gte(reactDependency, '17.0.0')) {
     });
 }
 
-module.exports = reactDependency ? config : {};
+module.exports = react ? config : {};

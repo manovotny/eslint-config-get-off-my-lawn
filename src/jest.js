@@ -1,6 +1,4 @@
-const {pkg} = require('./utils/files');
-
-const jestDependency = pkg.dependencies?.jest || pkg.devDependencies?.jest;
+const {jest} = require('./utils/dependencies');
 
 const config = {
     env: {
@@ -75,4 +73,4 @@ const config = {
     },
 };
 
-module.exports = jestDependency ? config : {};
+module.exports = jest ? config : {};

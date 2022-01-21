@@ -1,8 +1,6 @@
 const imprt = require('eslint-plugin-import/config/electron');
 
-const {pkg} = require('./utils/files');
-
-const electronDependency = pkg.dependencies?.electron || pkg.devDependencies?.electron;
+const {electron} = require('./utils/dependencies');
 
 const config = {
     settings: {
@@ -13,4 +11,4 @@ const config = {
     },
 };
 
-module.exports = electronDependency ? config : {};
+module.exports = electron ? config : {};

@@ -1,8 +1,7 @@
-const {locate, pkg} = require('./utils/files');
+const {next, react} = require('./utils/dependencies');
+const {locate} = require('./utils/files');
 
 const babelConfig = locate(['.babelrc', '.babelrc.json', 'babel.config.json']);
-const nextDependency = pkg.dependencies?.next || pkg.devDependencies?.next;
-const reactDependency = pkg.dependencies?.react || pkg.devDependencies?.react;
 
 let config = {};
 
@@ -15,7 +14,7 @@ if (babelConfig) {
             requireConfigFile: true,
         },
     };
-} else if (nextDependency) {
+} else if (next) {
     config = {
         parserOptions: {
             babelOptions: {
@@ -23,7 +22,7 @@ if (babelConfig) {
             },
         },
     };
-} else if (reactDependency) {
+} else if (react) {
     config = {
         parserOptions: {
             babelOptions: {

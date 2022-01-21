@@ -1,8 +1,6 @@
 const imprt = require('eslint-plugin-import/config/react-native');
 
-const {pkg} = require('./utils/files');
-
-const reactNativeDependency = pkg.dependencies?.['react-native'] || pkg.devDependencies?.['react-native'];
+const {reactNative} = require('./utils/dependencies');
 
 const config = {
     env: {
@@ -19,4 +17,4 @@ const config = {
     },
 };
 
-module.exports = reactNativeDependency ? config : {};
+module.exports = reactNative ? config : {};

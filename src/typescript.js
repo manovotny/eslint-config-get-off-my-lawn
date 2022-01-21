@@ -6,10 +6,8 @@ const imprt = require('eslint-plugin-import/config/typescript');
 
 const eslint = require('./eslint');
 const prettier = require('./prettier');
-const {pkg, tsconfig} = require('./utils/files');
-
-const reactDependency = pkg.dependencies?.react || pkg.devDependencies?.react;
-const typescriptDependency = pkg.dependencies?.typescript || pkg.devDependencies?.typescript;
+const {react, typescript} = require('./utils/dependencies');
+const {tsconfig} = require('./utils/files');
 
 const modifiedRulesToSupportTypeScript = {
     ...imprt.rules,
@@ -64,7 +62,7 @@ const modifiedRulesToSupportTypeScript = {
     ],
 };
 
-if (reactDependency) {
+if (react) {
     // Adds React TypeScript extension.
     modifiedRulesToSupportTypeScript['react/jsx-filename-extension'] = [
         'error',
@@ -279,7 +277,7 @@ let config = {
     },
 };
 
-if (typescriptDependency && semver.gte(typescriptDependency, '3.4.0')) {
+if (typescript && semver.gte(typescript, '3.4.0')) {
     config = mergeAndConcat(config, {
         rules: {
             '@typescript-eslint/prefer-as-const': 'error',
@@ -287,7 +285,7 @@ if (typescriptDependency && semver.gte(typescriptDependency, '3.4.0')) {
     });
 }
 
-if (typescriptDependency && semver.gte(typescriptDependency, '3.7.0')) {
+if (typescript && semver.gte(typescript, '3.7.0')) {
     config = mergeAndConcat(config, {
         rules: {
             '@typescript-eslint/prefer-nullish-coalescing': 'error',
@@ -296,7 +294,7 @@ if (typescriptDependency && semver.gte(typescriptDependency, '3.7.0')) {
     });
 }
 
-if (typescriptDependency && semver.gte(typescriptDependency, '3.8.0')) {
+if (typescript && semver.gte(typescript, '3.8.0')) {
     config = mergeAndConcat(config, {
         rules: {
             '@typescript-eslint/consistent-type-exports': [
@@ -315,7 +313,7 @@ if (typescriptDependency && semver.gte(typescriptDependency, '3.8.0')) {
     });
 }
 
-if (typescriptDependency && semver.gte(typescriptDependency, '3.9.0')) {
+if (typescript && semver.gte(typescript, '3.9.0')) {
     config = mergeAndConcat(config, {
         rules: {
             '@typescript-eslint/prefer-ts-expect-error': 'error',

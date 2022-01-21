@@ -1,8 +1,8 @@
-const prettier = require('eslint-config-prettier');
+const config = require('eslint-config-prettier');
 
+const {prettier} = require('./utils/dependencies');
 const {locate, pkg} = require('./utils/files');
 
-const prettierDependency = pkg.dependencies?.prettier || pkg.devDependencies?.prettier;
 const prettierConfig =
     pkg.prettier ||
     locate([
@@ -18,4 +18,4 @@ const prettierConfig =
         '.prettierrc.toml',
     ]);
 
-module.exports = prettierDependency || prettierConfig ? prettier : {};
+module.exports = prettier || prettierConfig ? config : {};

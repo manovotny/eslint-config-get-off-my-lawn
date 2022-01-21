@@ -1,6 +1,4 @@
-const {pkg} = require('./utils/files');
-
-const nextDependency = pkg.dependencies?.next || pkg.devDependencies?.next;
+const {next} = require('./utils/dependencies');
 
 const config = {
     plugins: ['@next/next'],
@@ -31,4 +29,4 @@ const config = {
     },
 };
 
-module.exports = nextDependency ? config : {};
+module.exports = next ? config : {};
