@@ -1,4 +1,4 @@
-const {cwd} = require('node:process');
+const {cwd} = require('process');
 
 const {mergeAndConcat} = require('merge-anything');
 const semver = require('semver');

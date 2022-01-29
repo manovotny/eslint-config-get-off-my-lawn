@@ -1,5 +1,5 @@
-const {join} = require('node:path');
-const {cwd} = require('node:process');
+const {join} = require('path');
+const {cwd} = require('process');
 
 const {existsSync, readJsonSync} = require('fs-extra');
 

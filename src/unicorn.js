@@ -1,11 +1,14 @@
-const {mergeAndConcat} = require('merge-anything');
+const process = require('process');
+
 const semver = require('semver');
 
+const {pkg} = require('./utils/files');
 const {graphql} = require('./utils/dependencies');
 
 const nodeVersion = process.version;
+const nodeEnginesVersion = pkg.engines?.node ? semver.minVersion(pkg.engines.node).version : undefined;
 
-let config = {
+const config = {
     plugins: ['unicorn'],
     rules: {
         'unicorn/better-regex': 'error',
@@ -80,6 +83,12 @@ let config = {
         'unicorn/prefer-keyboard-event-key': 'error',
         'unicorn/prefer-math-trunc': 'error',
         'unicorn/prefer-negative-index': 'error',
+        'unicorn/prefer-node-protocol': [
+            'error',
+            {
+                checkRequire: semver.gte(nodeVersion, '14.18.0') && semver.gte(nodeEnginesVersion, '14.18.0'),
+            },
+        ],
         'unicorn/prefer-number-properties': 'error',
         'unicorn/prefer-object-from-entries': 'error',
         'unicorn/prefer-optional-catch-binding': 'error',
@@ -113,19 +122,6 @@ let config = {
         'unicorn/throw-new-error': 'error',
     },
 };
-
-if (semver.gte(nodeVersion, '14.18.0')) {
-    config = mergeAndConcat(config, {
-        rules: {
-            'unicorn/prefer-node-protocol': [
-                'error',
-                {
-                    checkRequire: true,
-                },
-            ],
-        },
-    });
-}
 
 if (graphql) {
     // The use of `null` is a GraphQL standard / best practice.
