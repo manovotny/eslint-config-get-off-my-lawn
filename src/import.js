@@ -1,4 +1,6 @@
-module.exports = {
+const {pkg} = require('./utils/files');
+
+const config = {
     plugins: ['import'],
     rules: {
         'import/default': 'error',
@@ -51,3 +53,11 @@ module.exports = {
         ],
     },
 };
+
+if (pkg.type !== 'module') {
+    // Supporting this interally until the issue is fixed natively.
+    // https://github.com/import-js/eslint-plugin-import/issues/2104
+    delete config.rules['import/extensions'];
+}
+
+module.exports = config;
