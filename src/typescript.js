@@ -1,13 +1,13 @@
 const {cwd} = require('process');
 
-const {mergeAndConcat} = require('merge-anything');
 const semver = require('semver');
 const imprt = require('eslint-plugin-import/config/typescript');
 
 const eslint = require('./eslint');
-const prettier = require('./prettier');
-const {jest, react, typescript} = require('./utils/dependencies');
+const {jest, prettier, react, typescript} = require('./utils/dependencies');
 const {tsconfig} = require('./utils/files');
+
+const prettierRules = prettier ? require('./prettier').rules : {};
 
 const modifiedRulesToSupportTypeScript = {
     ...imprt.rules,
@@ -48,6 +48,12 @@ const modifiedRulesToSupportTypeScript = {
     'object-curly-spacing': 'off',
     'padding-line-between-statements': 'off',
     quotes: 'off',
+    'react/jsx-filename-extension': [
+        'error',
+        {
+            extensions: ['.jsx', '.tsx'],
+        },
+    ],
     'require-await': 'off',
     semi: 'off',
     'space-before-function-paren': 'off',
@@ -62,17 +68,7 @@ const modifiedRulesToSupportTypeScript = {
     ],
 };
 
-if (react) {
-    // Adds React TypeScript extension.
-    modifiedRulesToSupportTypeScript['react/jsx-filename-extension'] = [
-        'error',
-        {
-            extensions: ['.jsx', '.tsx'],
-        },
-    ];
-}
-
-let config = {
+const config = {
     files: ['*.ts', '*.tsx'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -100,6 +96,18 @@ let config = {
             },
         ],
         '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+        '@typescript-eslint/consistent-type-exports': [
+            'error',
+            {
+                fixMixedExportsWithInlineTypeSpecifier: false,
+            },
+        ],
+        '@typescript-eslint/consistent-type-imports': [
+            'error',
+            {
+                prefer: 'type-imports',
+            },
+        ],
         '@typescript-eslint/default-param-last': eslint.rules['default-param-last'],
         '@typescript-eslint/dot-notation': eslint.rules['dot-notation'],
         '@typescript-eslint/explicit-function-return-type': 'error',
@@ -189,6 +197,13 @@ let config = {
                 allowThrowingUnknown: false,
             },
         ],
+        '@typescript-eslint/no-unnecessary-boolean-literal-compare': [
+            'error',
+            {
+                allowComparingNullableBooleansToFalse: true,
+                allowComparingNullableBooleansToTrue: false,
+            },
+        ],
         '@typescript-eslint/no-unnecessary-condition': 'error',
         '@typescript-eslint/no-unnecessary-qualifier': 'error',
         '@typescript-eslint/no-unnecessary-type-arguments': 'error',
@@ -221,6 +236,7 @@ let config = {
                 prev: '*',
             },
         ],
+        '@typescript-eslint/prefer-as-const': 'error',
         '@typescript-eslint/prefer-enum-initializers': 'error',
         '@typescript-eslint/prefer-for-of': 'error',
         '@typescript-eslint/prefer-function-type': 'error',
@@ -228,11 +244,14 @@ let config = {
         '@typescript-eslint/prefer-includes': 'error',
         '@typescript-eslint/prefer-literal-enum-member': 'error',
         '@typescript-eslint/prefer-namespace-keyword': 'error',
+        '@typescript-eslint/prefer-nullish-coalescing': 'error',
+        '@typescript-eslint/prefer-optional-chain': 'error',
         '@typescript-eslint/prefer-readonly': 'error',
         '@typescript-eslint/prefer-reduce-type-parameter': 'error',
         '@typescript-eslint/prefer-return-this-type': 'error',
         // Possible conflict with `unicorn/prefer-string-starts-ends-with`?
         '@typescript-eslint/prefer-string-starts-ends-with': 'error',
+        '@typescript-eslint/prefer-ts-expect-error': 'error',
         '@typescript-eslint/promise-function-async': 'error',
         '@typescript-eslint/quotes': eslint.rules.quotes,
         '@typescript-eslint/require-array-sort-compare': [
@@ -263,6 +282,9 @@ let config = {
             },
         ],
         '@typescript-eslint/unified-signatures': 'error',
+        // Since rules from `overrides` come after the base rules specified in the ESLint
+        // config, we need to reapply the prettier rules.
+        ...prettierRules,
     },
     settings: {
         ...imprt.settings,
@@ -274,71 +296,39 @@ let config = {
     },
 };
 
-if (typescript && semver.gte(typescript, '3.4.0')) {
-    config = mergeAndConcat(config, {
-        rules: {
-            '@typescript-eslint/prefer-as-const': 'error',
-        },
-    });
+if (!react) {
+    // Need to remove if React isn't used, otherwise ESLint will error.
+    delete config.rules['react/jsx-filename-extension'];
 }
 
-if (typescript && semver.gte(typescript, '3.7.0')) {
-    config = mergeAndConcat(config, {
-        rules: {
-            '@typescript-eslint/prefer-nullish-coalescing': 'error',
-            '@typescript-eslint/prefer-optional-chain': 'error',
-        },
-    });
+if (typescript && semver.lt(typescript, '3.4.0')) {
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-as-const.md#when-not-to-use-it
+    delete config.rules['@typescript-eslint/prefer-as-const'];
 }
 
-if (typescript && semver.gte(typescript, '3.8.0')) {
-    config = mergeAndConcat(config, {
-        rules: {
-            '@typescript-eslint/consistent-type-exports': [
-                'error',
-                {
-                    fixMixedExportsWithInlineTypeSpecifier: false,
-                },
-            ],
-            '@typescript-eslint/consistent-type-imports': [
-                'error',
-                {
-                    prefer: 'type-imports',
-                },
-            ],
-        },
-    });
+if (typescript && semver.lt(typescript, '3.7.0')) {
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-nullish-coalescing.md#when-not-to-use-it
+    delete config.rules['@typescript-eslint/prefer-nullish-coalescing'];
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-optional-chain.md#when-not-to-use-it
+    delete config.rules['@typescript-eslint/prefer-optional-chain'];
 }
 
-if (typescript && semver.gte(typescript, '3.9.0')) {
-    config = mergeAndConcat(config, {
-        rules: {
-            '@typescript-eslint/prefer-ts-expect-error': 'error',
-        },
-    });
+if (typescript && semver.lt(typescript, '3.8.0')) {
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-type-exports.md#when-not-to-use-it
+    delete config.rules['@typescript-eslint/consistent-type-exports'];
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-type-imports.md#when-not-to-use-it
+    delete config.rules['@typescript-eslint/consistent-type-imports'];
 }
 
-if (tsconfig.compilerOptions?.strict === false || tsconfig.compilerOptions?.strictNullChecks === false) {
-    config = mergeAndConcat(config, {
-        rules: {
-            // Warning: Do not use this rule when `strictNullChecks` is disabled.
-            '@typescript-eslint/no-unnecessary-boolean-literal-compare': [
-                'error',
-                {
-                    allowComparingNullableBooleansToFalse: true,
-                    allowComparingNullableBooleansToTrue: false,
-                },
-            ],
-        },
-    });
+if (typescript && semver.lt(typescript, '3.9.0')) {
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-ts-expect-error.md#when-not-to-use-it
+    delete config.rules['@typescript-eslint/prefer-ts-expect-error'];
 }
 
-// Since rules from `overrides` come after the base rules specified in the ESLint
-// config, we need to reapply the prettier rules.
-if (prettier.rules) {
-    config = mergeAndConcat(config, {
-        rules: prettier.rules,
-    });
+if (!tsconfig.compilerOptions?.strict && !tsconfig.compilerOptions?.strictNullChecks) {
+    // Warning: Do not use this rule when `strictNullChecks` is disabled.
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-unnecessary-boolean-literal-compare.md#rule-details
+    delete config.rules['@typescript-eslint/no-unnecessary-boolean-literal-compare'];
 }
 
 const overrides = [config];
@@ -363,5 +353,5 @@ if (jest) {
 }
 
 module.exports = {
-    overrides: [config],
+    overrides,
 };

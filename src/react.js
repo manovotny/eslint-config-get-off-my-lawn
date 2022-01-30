@@ -1,16 +1,15 @@
-const {mergeAndConcat} = require('merge-anything');
 const semver = require('semver');
 const imprt = require('eslint-plugin-import/config/react');
 
 const {react} = require('./utils/dependencies');
 
-let config = {
+const config = {
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
     },
-    plugins: ['jsx-a11y', 'react'],
+    plugins: ['jsx-a11y', 'react', 'react-hooks'],
     rules: {
         'jsx-a11y/accessible-emoji': 'error',
         'jsx-a11y/alt-text': 'error',
@@ -240,6 +239,8 @@ let config = {
         'react/static-property-placement': 'error',
         'react/style-prop-object': 'error',
         'react/void-dom-elements-no-children': 'error',
+        'react-hooks/exhaustive-deps': 'error',
+        'react-hooks/rules-of-hooks': 'error',
     },
     settings: {
         ...imprt.settings,
@@ -254,24 +255,19 @@ let config = {
     },
 };
 
-if (react && semver.gte(react, '16.8.0')) {
-    config = mergeAndConcat(config, {
-        plugins: ['react-hooks'],
-        rules: {
-            'react-hooks/exhaustive-deps': 'error',
-            'react-hooks/rules-of-hooks': 'error',
-        },
-    });
+// React version when hooks were added.
+// https://reactjs.org/docs/hooks-intro.html
+if (react && semver.lt(react, '16.8.0')) {
+    config.plugins = config.plugins.filter((plugin) => plugin !== 'react-hooks');
+    delete config.rules['react-hooks/exhaustive-deps'];
+    delete config.rules['react-hooks/rules-of-hooks'];
 }
 
+// React versionm when this is handled automatically.
 // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
-if (react && semver.gte(react, '17.0.0')) {
-    config = mergeAndConcat(config, {
-        rules: {
-            'react/jsx-uses-react': 'off',
-            'react/react-in-jsx-scope': 'off',
-        },
-    });
+if (react && semver.lt(react, '17.0.0')) {
+    delete config.rules['react/jsx-uses-react'];
+    delete config.rules['react/react-in-jsx-scope'];
 }
 
 module.exports = react ? config : {};
