@@ -41,7 +41,7 @@
     "main": "index.js",
     "files": [
         "src",
-        "!*.test.js"
+        "!**/*.test.js"
     ],
     "scripts": {
         "check": "npm-check -u",
