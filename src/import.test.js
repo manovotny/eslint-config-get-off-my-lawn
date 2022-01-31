@@ -5,8 +5,16 @@ describe('import', () => {
         });
 
         [
-            {expectedConfiguration: 'never', expectedExtensions: {mjs: 'ignorePackages'}, mockType: undefined},
-            {expectedConfiguration: 'ignorePackages', expectedExtensions: {cjs: 'never'}, mockType: 'module'},
+            {
+                expectedConfiguration: 'never',
+                expectedExtensions: {mjs: 'ignorePackages'},
+                mockType: undefined,
+            },
+            {
+                expectedConfiguration: 'ignorePackages',
+                expectedExtensions: {cjs: 'never'},
+                mockType: 'module',
+            },
         ].forEach(({expectedConfiguration, expectedExtensions, mockType}) => {
             test(`packageJson.type: ${mockType}`, () => {
                 jest.doMock('./utils/files/contents', () => ({
