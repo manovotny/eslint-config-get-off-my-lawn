@@ -6,7 +6,13 @@ const config = {
         'import/default': 'error',
         'import/export': 'error',
         'import/exports-last': 'error',
-        'import/extensions': 'error',
+        'import/extensions': [
+            'error',
+            'never',
+            {
+                mjs: 'ignorePackages',
+            },
+        ],
         'import/first': 'error',
         'import/group-exports': 'error',
         'import/named': 'error',
@@ -54,10 +60,16 @@ const config = {
     },
 };
 
-if (packageJson.type !== 'module') {
+if (packageJson.type === 'module') {
     // Supporting this interally until the issue is fixed natively.
     // https://github.com/import-js/eslint-plugin-import/issues/2104
-    delete config.rules['import/extensions'];
+    config.rules['import/extensions'] = [
+        'error',
+        'ignorePackages',
+        {
+            cjs: 'never',
+        },
+    ];
 }
 
 module.exports = config;
