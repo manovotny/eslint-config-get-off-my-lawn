@@ -1,5 +1,5 @@
 const {next, react} = require('./utils/dependencies');
-const {locate} = require('./utils/files');
+const locate = require('./utils/files/locate');
 
 const babelConfig = locate(['.babelrc', '.babelrc.json', 'babel.config.json']);
 

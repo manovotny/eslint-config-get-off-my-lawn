@@ -2,11 +2,11 @@ const process = require('process');
 
 const semver = require('semver');
 
-const {pkg} = require('./utils/files');
+const {packageJson} = require('./utils/files/contents');
 const {graphql} = require('./utils/dependencies');
 
 const nodeVersion = process.version;
-const nodeEnginesVersion = pkg.engines?.node ? semver.minVersion(pkg.engines.node).version : undefined;
+const nodeEnginesVersion = packageJson.engines?.node ? semver.minVersion(packageJson.engines.node).version : undefined;
 
 const config = {
     plugins: ['unicorn'],

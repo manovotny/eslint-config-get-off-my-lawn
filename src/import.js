@@ -1,4 +1,4 @@
-const {pkg} = require('./utils/files');
+const {packageJson} = require('./utils/files/contents');
 
 const config = {
     plugins: ['import'],
@@ -54,7 +54,7 @@ const config = {
     },
 };
 
-if (pkg.type !== 'module') {
+if (packageJson.type !== 'module') {
     // Supporting this interally until the issue is fixed natively.
     // https://github.com/import-js/eslint-plugin-import/issues/2104
     delete config.rules['import/extensions'];

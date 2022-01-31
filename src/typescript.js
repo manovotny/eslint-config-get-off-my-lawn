@@ -5,7 +5,7 @@ const imprt = require('eslint-plugin-import/config/typescript');
 
 const eslint = require('./eslint');
 const {jest, prettier, react, typescript} = require('./utils/dependencies');
-const {tsconfig} = require('./utils/files');
+const {tsConfig} = require('./utils/files/contents');
 
 const prettierRules = prettier ? require('./prettier').rules : {};
 
@@ -325,7 +325,7 @@ if (typescript && semver.lt(typescript, '3.9.0')) {
     delete config.rules['@typescript-eslint/prefer-ts-expect-error'];
 }
 
-if (!tsconfig.compilerOptions?.strict && !tsconfig.compilerOptions?.strictNullChecks) {
+if (!tsConfig.compilerOptions?.strict && !tsConfig.compilerOptions?.strictNullChecks) {
     // Warning: Do not use this rule when `strictNullChecks` is disabled.
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-unnecessary-boolean-literal-compare.md#rule-details
     delete config.rules['@typescript-eslint/no-unnecessary-boolean-literal-compare'];
@@ -352,6 +352,4 @@ if (jest) {
     });
 }
 
-module.exports = {
-    overrides,
-};
+module.exports = typescript ? {overrides} : {};

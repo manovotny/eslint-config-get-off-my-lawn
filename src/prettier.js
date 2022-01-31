@@ -1,10 +1,11 @@
 const config = require('eslint-config-prettier');
 
 const {prettier} = require('./utils/dependencies');
-const {locate, pkg} = require('./utils/files');
+const {packageJson} = require('./utils/files/contents');
+const locate = require('./utils/files/locate');
 
 const prettierConfig =
-    pkg.prettier ||
+    packageJson.prettier ||
     locate([
         '.prettierrc',
         '.prettierrc.json',
