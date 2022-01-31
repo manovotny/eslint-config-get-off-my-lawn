@@ -263,9 +263,9 @@ if (react && semver.lt(react, '16.8.0')) {
     delete config.rules['react-hooks/rules-of-hooks'];
 }
 
-// React versionm when this is handled automatically.
-// https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
-if (react && semver.lt(react, '17.0.0')) {
+// React versions where JSX transform is automatically handled.
+// https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html
+if (react && semver.satisfies(react, '>=17.0.0 || ^16.14.0 || ^15.7.0 || ^0.14.10')) {
     delete config.rules['react/jsx-uses-react'];
     delete config.rules['react/react-in-jsx-scope'];
 }
