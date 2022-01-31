@@ -5,7 +5,7 @@ const imprt = require('eslint-plugin-import/config/typescript');
 
 const eslint = require('./eslint');
 const {jest, prettier, react, typescript} = require('./utils/dependencies');
-const {tsConfig} = require('./utils/files/contents');
+const {jestConfig, tsConfig} = require('./utils/files/contents');
 
 const prettierRules = prettier ? require('./prettier').rules : {};
 
@@ -334,8 +334,10 @@ if (!tsConfig.compilerOptions?.strict && !tsConfig.compilerOptions?.strictNullCh
 const overrides = [config];
 
 if (jest) {
+    const testMatch = jestConfig?.testMatch || ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'];
+
     overrides.push({
-        files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+        files: testMatch,
         rules: {
             // If you're working with `jest`, you can use eslint-plugin-jest's version of this rule
             // to lint your test files, which knows when it's ok to pass an unbound method to
