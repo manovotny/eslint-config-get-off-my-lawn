@@ -1,6 +1,58 @@
-const unicorn = require('./unicorn');
+describe('unicorn/prefer-node-protocol', () => {
+    beforeEach(() => {
+        jest.resetModules();
+    });
+
+    [
+        {
+            expectedCheckRequire: true,
+            mockEnginesVersion: undefined,
+            mockProcessVersion: '14.19.0',
+        },
+        {
+            expectedCheckRequire: true,
+            mockEnginesVersion: undefined,
+            mockProcessVersion: '14.18.0',
+        },
+        {
+            expectedCheckRequire: false,
+            mockEnginesVersion: undefined,
+            mockProcessVersion: '14.17.9',
+        },
+        {
+            expectedCheckRequire: false,
+            mockEnginesVersion: '10.0.0',
+            mockProcessVersion: '14.19.0',
+        },
+        {
+            expectedCheckRequire: false,
+            mockEnginesVersion: '>=12.20.0',
+            mockProcessVersion: '14.19.0',
+        },
+        {
+            expectedCheckRequire: true,
+            mockEnginesVersion: '^16.0.0',
+            mockProcessVersion: '14.19.0',
+        },
+    ].forEach(({expectedCheckRequire, mockEnginesVersion, mockProcessVersion}) => {
+        test(`engines: ${mockEnginesVersion}; process: ${mockProcessVersion}`, () => {
+            jest.doMock('process', () => ({
+                version: mockProcessVersion,
+            }));
+            jest.doMock('./utils/files/contents', () => ({
+                packageJson: {engines: {node: mockEnginesVersion}},
+            }));
+
+            const {rules} = require('./unicorn');
+            const [, {checkRequire}] = rules['unicorn/prefer-node-protocol'];
+
+            expect(checkRequire).toBe(expectedCheckRequire);
+        });
+    });
+});
 
 describe('unicorn/string-content', () => {
+    const unicorn = require('./unicorn');
     const patterns = Object.entries(unicorn.rules['unicorn/string-content'][1].patterns);
 
     patterns.forEach(([key, value]) => {

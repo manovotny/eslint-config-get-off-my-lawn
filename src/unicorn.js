@@ -86,7 +86,9 @@ const config = {
         'unicorn/prefer-node-protocol': [
             'error',
             {
-                checkRequire: semver.gte(nodeVersion, '14.18.0') && semver.gte(nodeEnginesVersion, '14.18.0'),
+                checkRequire: nodeEnginesVersion
+                    ? semver.gte(nodeEnginesVersion, '14.18.0')
+                    : semver.gte(nodeVersion, '14.18.0'),
             },
         ],
         'unicorn/prefer-number-properties': 'error',
