@@ -3,7 +3,7 @@ const process = require('process');
 const semver = require('semver');
 
 const {packageJson} = require('./utils/files/contents');
-const {graphql} = require('./utils/dependencies');
+const {graphql, next} = require('./utils/dependencies');
 
 const nodeVersion = process.version;
 const nodeEnginesVersion = packageJson.engines?.node ? semver.minVersion(packageJson.engines.node).version : undefined;
@@ -124,6 +124,12 @@ const config = {
         'unicorn/throw-new-error': 'error',
     },
 };
+
+if (next) {
+    // Known issue with node protocol and Next.js.
+    // https://github.com/vercel/next.js/issues/28774
+    delete config.rules['unicorn/prefer-node-protocol'];
+}
 
 if (graphql) {
     // The use of `null` is a GraphQL standard / best practice.
