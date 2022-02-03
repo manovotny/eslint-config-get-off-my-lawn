@@ -1,136 +1,134 @@
-/* eslint-disable sort-keys */
 const blocks = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'block-like',
-    },
-    {
-        blankLine: 'always',
-        prev: 'block-like',
-        next: '*',
-    },
-    {
-        blankLine: 'always',
         prev: '*',
+    },
+    {
+        blankLine: 'always',
+        next: '*',
+        prev: 'block-like',
+    },
+    {
+        blankLine: 'always',
         next: 'multiline-block-like',
+        prev: '*',
     },
 ];
 
 const breaks = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'break',
+        prev: '*',
     },
 ];
 
 const classes = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'class',
+        prev: '*',
     },
 ];
 
 const continues = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'continue',
+        prev: '*',
     },
 ];
 
 const declarations = [
     {
         blankLine: 'always',
-        prev: ['const', 'let', 'var'],
         next: '*',
+        prev: ['const', 'let', 'var'],
     },
     {
         blankLine: 'any',
-        prev: ['const', 'let', 'var'],
         next: ['const', 'let', 'var'],
+        prev: ['const', 'let', 'var'],
     },
 ];
 
 const directives = [
     {
         blankLine: 'always',
-        prev: 'directive',
         next: '*',
+        prev: 'directive',
     },
     {
         blankLine: 'any',
-        prev: 'directive',
         next: 'directive',
+        prev: 'directive',
     },
 ];
 
 const dos = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'do',
+        prev: '*',
     },
 ];
 
 const fors = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'for',
+        prev: '*',
     },
 ];
 
 const functions = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'function',
+        prev: '*',
     },
 ];
 
 const ifs = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'if',
+        prev: '*',
     },
 ];
 
 const returns = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'return',
+        prev: '*',
     },
 ];
 
 const switches = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'switch',
+        prev: '*',
     },
 ];
 
 const tries = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'try',
+        prev: '*',
     },
 ];
 
 const whiles = [
     {
         blankLine: 'always',
-        prev: '*',
         next: 'while',
+        prev: '*',
     },
 ];
-/* eslint-enable */
 
 module.exports = [
     ...blocks,

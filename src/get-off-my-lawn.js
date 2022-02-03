@@ -1,4 +1,7 @@
 module.exports = {
-    'get-off-my-lawn/prefer-arrow-functions': 'error',
-    'get-off-my-lawn/prefer-length-truthiness': 'error',
+    plugins: ['get-off-my-lawn'],
+    rules: {
+        'get-off-my-lawn/prefer-arrow-functions': 'error',
+        'get-off-my-lawn/prefer-length-truthiness': 'error',
+    },
 };

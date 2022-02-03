@@ -1,7 +1,7 @@
 {
     "name": "eslint-config-get-off-my-lawn",
     "description": "A highly opinionated, sharable config of ESLint rules to produce beautiful, readable JavaScript.",
-    "version": "6.0.3",
+    "version": "7.0.0",
     "author": {
         "name": "Michael Novotny",
         "email": "manovotny@gmail.com",
@@ -13,28 +13,45 @@
         "url": "git+https://github.com/manovotny/eslint-config-get-off-my-lawn.git"
     },
     "keywords": [
+        "a11y",
+        "accessibility",
         "babel",
         "config",
         "eslint",
-        "react"
+        "eslint-config",
+        "eslint-plugin",
+        "eslintconfig",
+        "eslintplugin",
+        "json",
+        "json5",
+        "jsonc",
+        "lint",
+        "linter",
+        "next",
+        "node",
+        "react",
+        "react-hooks",
+        "react-native",
+        "jest",
+        "security"
     ],
     "engines": {
-        "node": ">=10.0.0"
+        "node": ">=12.20.0"
     },
     "main": "index.js",
     "files": [
         "src",
-        "!*.test.js"
+        "!**/*.test.js"
     ],
     "scripts": {
+        "check": "npm-check -u",
         "coverage": "npm run unit -- --coverage",
         "lint": "eslint . --ext .js,.json",
         "lint-staged": "lint-staged",
         "prettier": "prettier --write --ignore-unknown .",
         "prettier:check": "prettier --check --ignore-unknown .",
         "test": "npm run lint && npm run prettier:check && npm run coverage",
-        "unit": "jest",
-        "update": "npm-check -u"
+        "unit": "jest"
     },
     "git": {
         "pre-commit": "lint-staged"
@@ -43,41 +60,45 @@
         "*": "prettier --write --ignore-unknown"
     },
     "dependencies": {
-        "@babel/core": "7.13.10",
-        "@babel/eslint-parser": "7.13.10",
-        "@babel/preset-react": "7.14.5",
-        "@rushstack/eslint-patch": "1.0.6",
-        "confusing-browser-globals": "1.0.10",
-        "dot-prop": "6.0.1",
-        "eslint-config-prettier": "8.1.0",
+        "@babel/core": "7.17.0",
+        "@babel/eslint-parser": "7.17.0",
+        "@babel/preset-react": "7.16.7",
+        "@next/eslint-plugin-next": "12.0.10",
+        "@rushstack/eslint-patch": "1.1.0",
+        "@typescript-eslint/eslint-plugin": "5.10.2",
+        "@typescript-eslint/parser": "5.10.2",
+        "confusing-browser-globals": "1.0.11",
+        "eslint-config-prettier": "8.3.0",
+        "eslint-import-resolver-typescript": "2.5.0",
         "eslint-plugin-eslint-comments": "3.2.0",
-        "eslint-plugin-get-off-my-lawn": "1.1.2",
-        "eslint-plugin-import": "2.22.1",
-        "eslint-plugin-jest": "24.2.1",
-        "eslint-plugin-json": "2.1.2",
-        "eslint-plugin-jsx-a11y": "6.4.1",
+        "eslint-plugin-get-off-my-lawn": "3.0.0",
+        "eslint-plugin-import": "2.25.4",
+        "eslint-plugin-jest": "26.0.0",
+        "eslint-plugin-jest-formatting": "3.1.0",
+        "eslint-plugin-jsonc": "2.1.0",
+        "eslint-plugin-jsx-a11y": "6.5.1",
         "eslint-plugin-node": "11.1.0",
         "eslint-plugin-objects": "1.1.1",
-        "eslint-plugin-react": "7.22.0",
-        "eslint-plugin-react-hooks": "4.2.0",
-        "eslint-plugin-react-native": "3.10.0",
+        "eslint-plugin-react": "7.28.0",
+        "eslint-plugin-react-hooks": "4.3.0",
+        "eslint-plugin-react-native": "4.0.0",
         "eslint-plugin-security": "1.4.0",
-        "eslint-plugin-unicorn": "28.0.2",
-        "find-up": "5.0.0",
-        "read-pkg-up": "7.0.1",
-        "semver": "7.3.4",
-        "typescript": "4.2.3"
+        "eslint-plugin-unicorn": "40.1.0",
+        "fs-extra": "10.0.0",
+        "merge-anything": "4.0.5",
+        "semver": "7.3.5",
+        "typescript": "4.5.5"
     },
     "devDependencies": {
-        "@zeit/git-hooks": "0.1.4",
-        "eslint": "7.22.0",
-        "jest": "26.6.3",
-        "lint-staged": "10.5.4",
+        "@vercel/git-hooks": "1.0.0",
+        "eslint": "8.8.0",
+        "jest": "27.4.7",
+        "lint-staged": "12.3.3",
         "npm-check": "5.9.2",
-        "prettier": "2.2.1",
+        "prettier": "2.5.1",
         "prettier-config-get-off-my-lawn": "1.0.0"
     },
     "peerDependencies": {
-        "eslint": ">=7.22.0"
+        "eslint": ">=8.7.0"
     }
 }
