@@ -11,7 +11,7 @@ describe('unicorn', () => {
 
             const {rules} = require('./unicorn');
 
-            expect(rules['unicorn/no-null']).toBe(undefined);
+            expect(rules['unicorn/no-null']).toBeUndefined();
         });
     });
 
@@ -70,7 +70,7 @@ describe('unicorn', () => {
 
             const {rules} = require('./unicorn');
 
-            expect(rules['unicorn/prefer-node-protocol']).toBe(undefined);
+            expect(rules['unicorn/prefer-node-protocol']).toBeUndefined();
         });
     });
 
@@ -83,7 +83,7 @@ describe('unicorn', () => {
                 const regex = new RegExp(key, 'u');
 
                 describe('https', () => {
-                    /* eslint-disable-next-line unicorn/string-content */
+                    /* eslint-disable unicorn/string-content */
                     [
                         'http://test.com',
                         'http://test.com/path',
@@ -96,6 +96,7 @@ describe('unicorn', () => {
                             expect(result).toBe(true);
                         });
                     });
+                    /* eslint-enable */
 
                     [
                         'http://localhost',
