@@ -19,23 +19,15 @@ describe('unicorn', () => {
         [
             {
                 expectedCheckRequire: false,
-                mockEnginesVersion: undefined,
+                mockEnginesVersion: '12.20.0',
             },
             {
                 expectedCheckRequire: false,
-                mockEnginesVersion: '10.0.0',
-            },
-            {
-                expectedCheckRequire: false,
-                mockEnginesVersion: '>=12.20.0',
+                mockEnginesVersion: '14.17.0',
             },
             {
                 expectedCheckRequire: true,
                 mockEnginesVersion: '~14.18.0',
-            },
-            {
-                expectedCheckRequire: false,
-                mockEnginesVersion: '^15.0.0',
             },
             {
                 expectedCheckRequire: true,
@@ -51,6 +43,51 @@ describe('unicorn', () => {
                 const [, {checkRequire}] = rules['unicorn/prefer-node-protocol'];
 
                 expect(checkRequire).toBe(expectedCheckRequire);
+            });
+        });
+
+        [
+            {
+                expectedToHaveRuleDefined: false,
+                mockEnginesVersion: undefined,
+            },
+            {
+                expectedToHaveRuleDefined: false,
+                mockEnginesVersion: '^10.0.0',
+            },
+            {
+                expectedToHaveRuleDefined: false,
+                mockEnginesVersion: '12.19.0',
+            },
+            {
+                expectedToHaveRuleDefined: false,
+                mockEnginesVersion: '13.0.0',
+            },
+            {
+                expectedToHaveRuleDefined: false,
+                mockEnginesVersion: '14.13.0',
+            },
+            {
+                expectedToHaveRuleDefined: true,
+                mockEnginesVersion: '14.13.1',
+            },
+            {
+                expectedToHaveRuleDefined: false,
+                mockEnginesVersion: '^15.0.0',
+            },
+            {
+                expectedToHaveRuleDefined: true,
+                mockEnginesVersion: '16.0.0',
+            },
+        ].forEach(({expectedToHaveRuleDefined, mockEnginesVersion}) => {
+            test(`to have rule defined; engines: ${mockEnginesVersion}`, () => {
+                jest.doMock('./utils/files/contents', () => ({
+                    packageJson: {engines: {node: mockEnginesVersion}},
+                }));
+
+                const {rules} = require('./unicorn');
+
+                expect(Object.hasOwn(rules, 'unicorn/prefer-node-protocol')).toBe(expectedToHaveRuleDefined);
             });
         });
 
