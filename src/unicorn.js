@@ -1,12 +1,19 @@
-const process = require('process');
-
 const semver = require('semver');
 
 const {packageJson} = require('./utils/files/contents');
 const {graphql, next} = require('./utils/dependencies');
 
-const nodeVersion = process.version;
 const nodeEnginesVersion = packageJson.engines?.node ? semver.minVersion(packageJson.engines.node).version : undefined;
+
+// https://nodejs.org/api/esm.html#node-imports
+// Known issue with node protocol and Next.js: https://github.com/vercel/next.js/issues/28774
+const nodeVersionSupportsNodeProtocolInImports = Boolean(
+    !next
+    //&& nodeEnginesVersion && semver.satisfies(nodeEnginesVersion, '^12.20.0 || ^14.13.1 || >=16.0.0')
+);
+const nodeVersionSupportsNodeProtocolInRequires = Boolean(
+    nodeEnginesVersion && semver.satisfies(nodeEnginesVersion, '^14.18.0 || >=16.0.0')
+);
 
 const config = {
     plugins: ['unicorn'],
@@ -86,9 +93,7 @@ const config = {
         'unicorn/prefer-node-protocol': [
             'error',
             {
-                checkRequire: nodeEnginesVersion
-                    ? semver.gte(nodeEnginesVersion, '14.18.0')
-                    : semver.gte(nodeVersion, '14.18.0'),
+                checkRequire: nodeVersionSupportsNodeProtocolInRequires,
             },
         ],
         'unicorn/prefer-number-properties': 'error',
@@ -125,9 +130,7 @@ const config = {
     },
 };
 
-if (next) {
-    // Known issue with node protocol and Next.js.
-    // https://github.com/vercel/next.js/issues/28774
+if (!nodeVersionSupportsNodeProtocolInImports) {
     delete config.rules['unicorn/prefer-node-protocol'];
 }
 

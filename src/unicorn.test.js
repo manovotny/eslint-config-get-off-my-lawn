@@ -18,40 +18,31 @@ describe('unicorn', () => {
     describe('prefer-node-protocol', () => {
         [
             {
-                expectedCheckRequire: true,
-                mockEnginesVersion: undefined,
-                mockProcessVersion: '14.19.0',
-            },
-            {
-                expectedCheckRequire: true,
-                mockEnginesVersion: undefined,
-                mockProcessVersion: '14.18.0',
-            },
-            {
                 expectedCheckRequire: false,
                 mockEnginesVersion: undefined,
-                mockProcessVersion: '14.17.9',
             },
             {
                 expectedCheckRequire: false,
                 mockEnginesVersion: '10.0.0',
-                mockProcessVersion: '14.19.0',
             },
             {
                 expectedCheckRequire: false,
                 mockEnginesVersion: '>=12.20.0',
-                mockProcessVersion: '14.19.0',
+            },
+            {
+                expectedCheckRequire: true,
+                mockEnginesVersion: '~14.18.0',
+            },
+            {
+                expectedCheckRequire: false,
+                mockEnginesVersion: '^15.0.0',
             },
             {
                 expectedCheckRequire: true,
                 mockEnginesVersion: '^16.0.0',
-                mockProcessVersion: '14.19.0',
             },
-        ].forEach(({expectedCheckRequire, mockEnginesVersion, mockProcessVersion}) => {
-            test(`checkRequire; engines: ${mockEnginesVersion}; process: ${mockProcessVersion}`, () => {
-                jest.doMock('process', () => ({
-                    version: mockProcessVersion,
-                }));
+        ].forEach(({expectedCheckRequire, mockEnginesVersion}) => {
+            test(`checkRequire; engines: ${mockEnginesVersion}`, () => {
                 jest.doMock('./utils/files/contents', () => ({
                     packageJson: {engines: {node: mockEnginesVersion}},
                 }));
@@ -65,7 +56,7 @@ describe('unicorn', () => {
 
         test('should remove rule when using next', () => {
             jest.doMock('./utils/dependencies', () => ({
-                next: true,
+                next: '12.0.0',
             }));
 
             const {rules} = require('./unicorn');
