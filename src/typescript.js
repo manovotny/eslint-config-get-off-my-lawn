@@ -288,6 +288,7 @@ const config = {
     },
     settings: {
         ...imprt.settings,
+        // https://github.com/alexgorbatchev/eslint-import-resolver-typescript
         'import/resolver': {
             typescript: {
                 alwaysTryTypes: true,
