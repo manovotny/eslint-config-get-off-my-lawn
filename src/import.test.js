@@ -1,31 +1,19 @@
-describe('import/extensions', () => {
+describe('import/no-useless-path-segments', () => {
     beforeEach(() => {
         jest.resetModules();
     });
 
-    [
-        {
-            expectedConfiguration: 'never',
-            expectedExtensions: {mjs: 'ignorePackages'},
-            mockType: undefined,
-        },
-        {
-            expectedConfiguration: 'ignorePackages',
-            expectedExtensions: {cjs: 'never'},
-            mockType: 'module',
-        },
-    ].forEach(({expectedConfiguration, expectedExtensions, mockType}) => {
-        test(`packageJson.type: ${mockType}`, () => {
-            jest.doMock('./utils/files/contents', () => ({
-                packageJson: {type: mockType},
-            }));
+    test('packageJson.type = "module"', () => {
+        jest.doMock('./utils/files/contents', () => ({
+            packageJson: {type: 'module'},
+        }));
 
-            const {rules} = require('./import');
+        const {rules} = require('./import');
 
-            const [, configuraton, extensions] = rules['import/extensions'];
+        const [, options] = rules['import/no-useless-path-segments'];
+        const {commonjs, noUselessIndex} = options;
 
-            expect(configuraton).toBe(expectedConfiguration);
-            expect(extensions).toStrictEqual(expectedExtensions);
-        });
+        expect(commonjs).toBe(false);
+        expect(noUselessIndex).toBe(false);
     });
 });

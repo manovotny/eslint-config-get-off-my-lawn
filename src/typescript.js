@@ -4,8 +4,8 @@ const semver = require('semver');
 const imprt = require('eslint-plugin-import/config/typescript');
 
 const eslint = require('./eslint');
-const {jest, prettier, react, typescript} = require('./utils/dependencies');
-const {jestConfig, tsConfig} = require('./utils/files/contents');
+const {jest: jestDependency, prettier, react, typescript} = require('./utils/dependencies');
+const {jestConfig, packageJson, tsConfig} = require('./utils/files/contents');
 
 const prettierRules = prettier ? require('./prettier').rules : {};
 
@@ -332,9 +332,20 @@ if (!tsConfig.compilerOptions?.strict && !tsConfig.compilerOptions?.strictNullCh
     delete config.rules['@typescript-eslint/no-unnecessary-boolean-literal-compare'];
 }
 
+if (packageJson.type === 'module') {
+    // Need to disable this rule for TypeScript because `.ts` / `.tsx`
+    // files actually require `.js` extensions in ESM and `eslint-plugin-import`
+    // does not support this.
+    // https://github.com/import-js/eslint-plugin-import/issues/2104
+    // https://github.com/import-js/eslint-plugin-import/issues/2111
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/1194
+    // https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-make-my-typescript-project-output-esm
+    config.rules['import/extensions'] = 'off';
+}
+
 const overrides = [config];
 
-if (jest) {
+if (jestDependency) {
     const testMatch = jestConfig?.testMatch || ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'];
 
     overrides.push({
