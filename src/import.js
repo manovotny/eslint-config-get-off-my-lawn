@@ -46,6 +46,7 @@ const config = {
         'import/no-useless-path-segments': [
             'error',
             {
+                commonjs: true,
                 noUselessIndex: true,
             },
         ],
@@ -61,13 +62,13 @@ const config = {
 };
 
 if (packageJson.type === 'module') {
-    // Supporting this interally until the issue is fixed natively.
-    // https://github.com/import-js/eslint-plugin-import/issues/2104
-    config.rules['import/extensions'] = [
+    // Need to modify rule as file extensions are mandatory in ESM.
+    // https://nodejs.org/api/esm.html#mandatory-file-extensions
+    config.rules['import/no-useless-path-segments'] = [
         'error',
-        'ignorePackages',
         {
-            cjs: 'never',
+            commonjs: false,
+            noUselessIndex: false,
         },
     ];
 }
