@@ -14,6 +14,6 @@ describe('import/no-useless-path-segments', () => {
         const {commonjs, noUselessIndex} = options;
 
         expect(commonjs).toBe(false);
-        expect(noUselessIndex).toStrictEqual(false);
+        expect(noUselessIndex).toBe(false);
     });
 });
