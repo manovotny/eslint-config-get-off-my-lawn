@@ -356,12 +356,8 @@ if (jestDependency) {
             // `expect` calls.
             // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/unbound-method.md
             '@typescript-eslint/unbound-method': 'off',
-            'jest/unbound-method': [
-                'error',
-                {
-                    ignoreStatic: true,
-                },
-            ],
+            // Purposely not enabling `jest/unbound-method` because it will complain about third-party packages that improperly use
+            // `this` and there's nothing you can do to fix it yourself.
         },
     });
 }
