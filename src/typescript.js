@@ -346,7 +346,10 @@ if (packageJson.type === 'module') {
 const overrides = [config];
 
 if (jestDependency) {
-    const testMatch = jestConfig?.testMatch || ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'];
+    const testMatch = jestConfig?.testMatch?.map((path) => path.replace('<rootDir>', '.')) || [
+        '**/__tests__/**/*.[jt]s?(x)',
+        '**/?(*.)+(spec|test).[jt]s?(x)',
+    ];
 
     overrides.push({
         files: testMatch,
