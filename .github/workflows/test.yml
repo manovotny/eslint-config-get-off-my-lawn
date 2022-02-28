@@ -14,7 +14,7 @@ jobs:
               id: nvm
               run: echo "::set-output name=version::$(cat .nvmrc)"
             - name: Set node version
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v3
               with:
                   node-version: ${{ steps.nvm.outputs.version }}
             - name: Cache node_modules
