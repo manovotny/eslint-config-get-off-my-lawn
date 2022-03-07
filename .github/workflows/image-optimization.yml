@@ -23,7 +23,7 @@ jobs:
         if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         steps:
             - name: Checkout repo
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
             - name: Optimize images
               id: images
               uses: calibreapp/image-actions@main

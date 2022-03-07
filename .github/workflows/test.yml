@@ -9,7 +9,7 @@ jobs:
               with:
                   access_token: ${{ github.token }}
             - name: Checkout repo
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
             - name: Read node version
               id: nvm
               run: echo "::set-output name=version::$(cat .nvmrc)"
