@@ -62,8 +62,15 @@ const config = {
 };
 
 if (packageJson.type === 'module') {
-    // Need to modify rule as file extensions are mandatory in ESM.
+    // Need to modify rules as file extensions are mandatory in ESM.
     // https://nodejs.org/api/esm.html#mandatory-file-extensions
+    config.rules['import/extensions'] = [
+        'error',
+        'ignorePackages',
+        {
+            cjs: 'never',
+        },
+    ];
     config.rules['import/no-useless-path-segments'] = [
         'error',
         {
