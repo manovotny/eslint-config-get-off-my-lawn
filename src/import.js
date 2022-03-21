@@ -61,9 +61,11 @@ const config = {
     },
 };
 
-if (packageJson.type === 'module') {
-    // Need to modify rules as file extensions are mandatory in ESM.
+if (packageJson.type === 'module' && !packageJson.scripts?.start?.includes('--es-module-specifier-resolution=node')) {
+    // Need to modify rules as file extensions are mandatory in ESM, except when
+    // using the experimental custom ESM specifier resolution algorithm.
     // https://nodejs.org/api/esm.html#mandatory-file-extensions
+    // https://nodejs.org/api/esm.html#customizing-esm-specifier-resolution-algorithm
     config.rules['import/extensions'] = [
         'error',
         'ignorePackages',
