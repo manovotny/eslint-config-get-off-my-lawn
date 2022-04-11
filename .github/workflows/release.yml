@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repo
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
             - name: Validate and extract release information
               id: release
               uses: manovotny/github-releases-for-automated-package-publishing-action@v1.0.0
@@ -15,14 +15,14 @@ jobs:
               id: nvm
               run: echo "::set-output name=version::$(cat .nvmrc)"
             - name: Set node version
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v3
               with:
                   always-auth: true
                   node-version: ${{ steps.nvm.outputs.version }}
                   registry-url: 'https://registry.npmjs.org'
             - name: Cache node_modules
               id: node-modules-cache
-              uses: actions/cache@v2
+              uses: actions/cache@v3
               with:
                   path: '**/node_modules'
                   key: node-modules-cache-${{ hashFiles('**/package-lock.json') }}

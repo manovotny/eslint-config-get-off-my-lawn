@@ -23,7 +23,7 @@ jobs:
         if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         steps:
             - name: Checkout repo
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
             - name: Optimize images
               id: images
               uses: calibreapp/image-actions@main
@@ -32,7 +32,7 @@ jobs:
                   githubToken: ${{ secrets.GITHUB_TOKEN }}
             - name: Create pull request
               if: github.event_name != 'pull_request' && steps.images.outputs.markdown != ''
-              uses: peter-evans/create-pull-request@v3
+              uses: peter-evans/create-pull-request@v4
               with:
                   title: Optimizes images.
                   branch-suffix: timestamp

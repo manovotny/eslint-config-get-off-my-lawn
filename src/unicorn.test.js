@@ -1,8 +1,4 @@
 describe('unicorn', () => {
-    beforeEach(() => {
-        jest.resetModules();
-    });
-
     describe('no-null', () => {
         test('should remove rule when using graphql', () => {
             jest.doMock('./utils/dependencies', () => ({

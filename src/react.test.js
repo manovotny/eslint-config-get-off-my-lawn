@@ -1,8 +1,4 @@
 describe('react-hooks', () => {
-    beforeEach(() => {
-        jest.resetModules();
-    });
-
     [
         {
             expectedIncludes: true,
@@ -45,10 +41,6 @@ describe('react-hooks', () => {
 });
 
 describe('jsx-transform', () => {
-    beforeEach(() => {
-        jest.resetModules();
-    });
-
     [
         {
             expectedValue: undefined,

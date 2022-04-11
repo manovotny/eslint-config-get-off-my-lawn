@@ -1,8 +1,4 @@
 describe('import/extensions', () => {
-    beforeEach(() => {
-        jest.resetModules();
-    });
-
     test('commonjs', () => {
         jest.doMock('./utils/dependencies', () => ({
             typescript: '4.0.0',
