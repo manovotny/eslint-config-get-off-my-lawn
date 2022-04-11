@@ -6,29 +6,11 @@ jobs:
     release:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout repo
-              uses: actions/checkout@v3
+            - name: Checkout and install dependencies
+              uses: manovotny/eslint-config-get-off-my-lawn@${{ github.head_ref }}
             - name: Validate and extract release information
               id: release
               uses: manovotny/github-releases-for-automated-package-publishing-action@v1.0.0
-            - name: Read node version
-              id: nvm
-              run: echo "::set-output name=version::$(cat .nvmrc)"
-            - name: Set node version
-              uses: actions/setup-node@v3
-              with:
-                  always-auth: true
-                  node-version: ${{ steps.nvm.outputs.version }}
-                  registry-url: 'https://registry.npmjs.org'
-            - name: Cache node_modules
-              id: node-modules-cache
-              uses: actions/cache@v3
-              with:
-                  path: '**/node_modules'
-                  key: node-modules-cache-${{ hashFiles('**/package-lock.json') }}
-            - name: Install dependencies
-              if: steps.node-modules-cache.outputs.cache-hit != 'true'
-              run: npm ci
             - name: Publish version
               if: steps.release.outputs.tag == ''
               run: npm publish
