@@ -16,6 +16,11 @@ describe('react-hooks', () => {
             mockVersion: '16.7.9',
         },
         {
+            expectedIncludes: true,
+            expectedValue: 'error',
+            mockVersion: '^16.0.0',
+        },
+        {
             expectedIncludes: false,
             expectedValue: undefined,
             mockVersion: '15.1.2',
