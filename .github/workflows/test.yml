@@ -9,6 +9,6 @@ jobs:
               with:
                   access_token: ${{ github.token }}
             - name: Checkout and install dependencies
-              uses: manovotny/eslint-config-get-off-my-lawn@${{ github.head_ref }}
+              uses: ${{ github.repository }}/.github/workflows/checkout-and-install-dependencies.yml@${{ github.head_ref }}
             - name: Run tests
               run: npm test
