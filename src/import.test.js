@@ -3,10 +3,6 @@ const Chance = require('chance');
 const chance = new Chance();
 
 describe('import/extensions', () => {
-    beforeEach(() => {
-        jest.resetModules();
-    });
-
     test('cjs', () => {
         jest.doMock('./utils/files/contents', () => ({
             packageJson: {},
@@ -52,10 +48,6 @@ describe('import/extensions', () => {
 });
 
 describe('import/no-useless-path-segments', () => {
-    beforeEach(() => {
-        jest.resetModules();
-    });
-
     test('esm', () => {
         jest.doMock('./utils/files/contents', () => ({
             packageJson: {type: 'module'},
