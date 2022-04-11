@@ -304,26 +304,26 @@ if (!react) {
     delete config.rules['react/jsx-filename-extension'];
 }
 
-if (typescript && semver.lt(typescript, '3.4.0')) {
+if (typescript && semver.satisfies(typescript, '<3.4.0')) {
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-as-const.md#when-not-to-use-it
     delete config.rules['@typescript-eslint/prefer-as-const'];
 }
 
-if (typescript && semver.lt(typescript, '3.7.0')) {
+if (typescript && semver.satisfies(typescript, '<3.7.0')) {
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-nullish-coalescing.md#when-not-to-use-it
     delete config.rules['@typescript-eslint/prefer-nullish-coalescing'];
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-optional-chain.md#when-not-to-use-it
     delete config.rules['@typescript-eslint/prefer-optional-chain'];
 }
 
-if (typescript && semver.lt(typescript, '3.8.0')) {
+if (typescript && semver.satisfies(typescript, '<3.8.0')) {
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-type-exports.md#when-not-to-use-it
     delete config.rules['@typescript-eslint/consistent-type-exports'];
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-type-imports.md#when-not-to-use-it
     delete config.rules['@typescript-eslint/consistent-type-imports'];
 }
 
-if (typescript && semver.lt(typescript, '3.9.0')) {
+if (typescript && semver.satisfies(typescript, '<3.9.0')) {
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-ts-expect-error.md#when-not-to-use-it
     delete config.rules['@typescript-eslint/prefer-ts-expect-error'];
 }

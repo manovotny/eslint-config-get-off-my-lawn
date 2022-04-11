@@ -257,7 +257,7 @@ const config = {
 
 // React version when hooks were added.
 // https://reactjs.org/docs/hooks-intro.html
-if (react && semver.lt(react, '16.8.0')) {
+if (react && semver.satisfies(react, '<16.8.0')) {
     config.plugins = config.plugins.filter((plugin) => plugin !== 'react-hooks');
     delete config.rules['react-hooks/exhaustive-deps'];
     delete config.rules['react-hooks/rules-of-hooks'];
