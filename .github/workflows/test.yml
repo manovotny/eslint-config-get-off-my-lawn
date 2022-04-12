@@ -8,7 +8,9 @@ jobs:
               uses: styfle/cancel-workflow-action@0.9.1
               with:
                   access_token: ${{ github.token }}
-            - name: Checkout and install dependencies
-              uses: ${{ github.repository }}/.github/workflows/checkout-and-install-dependencies.yml@${{ github.head_ref }}
+            - name: Checkout repo
+              uses: actions/checkout@v3
+            - name: Set node version and install dependencies
+              uses: ${{ github.repository }}/.github/workflows/set-node-version-and-install-dependencies.yml@${{ github.head_ref }}
             - name: Run tests
               run: npm test
