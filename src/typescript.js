@@ -72,7 +72,8 @@ const config = {
     files: ['*.ts', '*.tsx'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        project: ['./tsconfig.json'],
+        ecmaVersion: 'latest',
+        project: ['./**/tsconfig.json'],
         tsconfigRootDir: cwd(),
     },
     plugins: ['@typescript-eslint'],
