@@ -109,7 +109,7 @@ describe('jsx-transform', () => {
 });
 
 describe('next', () => {
-    describe('jsx-a11y/anchor-is-valid', () => {
+    test('jsx-a11y/anchor-is-valid', () => {
         jest.doMock('./utils/dependencies', () => ({
             next: '12.0.0',
             react: '18.0.0',
