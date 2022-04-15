@@ -283,12 +283,6 @@ const config = {
         '@typescript-eslint/space-infix-ops': eslint.rules['space-infix-ops'],
         '@typescript-eslint/triple-slash-reference': 'error',
         '@typescript-eslint/type-annotation-spacing': 'error',
-        '@typescript-eslint/unbound-method': [
-            'error',
-            {
-                ignoreStatic: true,
-            },
-        ],
         '@typescript-eslint/unified-signatures': 'error',
         // Since rules from `overrides` come after the base rules specified in the ESLint
         // config, we need to reapply the prettier rules.
