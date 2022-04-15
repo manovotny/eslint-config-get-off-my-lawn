@@ -107,3 +107,16 @@ describe('jsx-transform', () => {
         });
     });
 });
+
+describe('next', () => {
+    describe('jsx-a11y/anchor-is-valid', () => {
+        jest.doMock('./utils/dependencies', () => ({
+            next: '12.0.0',
+            react: '18.0.0',
+        }));
+
+        const {rules} = require('./react');
+
+        expect(rules['jsx-a11y/anchor-is-valid']).toBeUndefined();
+    });
+});

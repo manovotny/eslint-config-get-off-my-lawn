@@ -1,7 +1,7 @@
 const semver = require('semver');
 const imprt = require('eslint-plugin-import/config/react');
 
-const {react} = require('./utils/dependencies');
+const {next, react} = require('./utils/dependencies');
 
 const config = {
     parserOptions: {
@@ -254,6 +254,14 @@ const config = {
         },
     },
 };
+
+if (next) {
+    // Known issue with Next and accessible links.
+    // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/402
+    // https://github.com/vercel/next.js/discussions/8207
+    // https://github.com/vercel/next.js/discussions/32233
+    delete config.rules['jsx-a11y/anchor-is-valid'];
+}
 
 // React version when hooks were added.
 // https://reactjs.org/docs/hooks-intro.html
