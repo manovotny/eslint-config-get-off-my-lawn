@@ -96,7 +96,6 @@ module.exports = {
             },
         ],
         'no-constructor-return': 'error',
-        'no-continue': 'error',
         'no-control-regex': 'error',
         'no-debugger': 'error',
         'no-delete-var': 'error',
