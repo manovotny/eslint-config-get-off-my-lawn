@@ -150,7 +150,7 @@ const config = {
         '@typescript-eslint/no-floating-promises': [
             'error',
             {
-                ignoreIIFE: false,
+                ignoreIIFE: true,
                 ignoreVoid: true,
             },
         ],
