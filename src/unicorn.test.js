@@ -151,6 +151,9 @@ describe('unicorn', () => {
                         'https://test.localhost',
                         'https://test.localhost/',
                         'https://test.localhost/path',
+                        // These are valid urls when working with html and svg.
+                        'http://www.w3.org/1999/xhtml',
+                        'http://www.w3.org/2000/svg',
                     ].forEach((url) => {
                         test(`valid url: ${url}`, () => {
                             const result = regex.test(url);
