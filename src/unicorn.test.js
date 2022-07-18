@@ -152,6 +152,9 @@ describe('unicorn', () => {
                         'https://test.localhost/',
                         'https://test.localhost/path',
                         // Valid namespace urls when working with html and svg.
+                        // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html#attr-xmlns
+                        // https://www.w3.org/TR/xml-names/#ns-decl
+                        // https://www.w3.org/2000/svg
                         'http://www.w3.org/1999/xhtml',
                         'http://www.w3.org/2000/svg',
                     ].forEach((url) => {
