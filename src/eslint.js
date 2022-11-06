@@ -37,6 +37,7 @@ module.exports = {
             'error',
             {
                 ignoreDestructuring: true,
+                ignoreGlobals: true,
                 ignoreImports: true,
             },
         ],

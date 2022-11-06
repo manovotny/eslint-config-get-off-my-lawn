@@ -1,5 +1,6 @@
 const semver = require('semver');
 
+const eslint = require('./eslint');
 const {packageJson} = require('./utils/files/contents');
 const {graphql, next} = require('./utils/dependencies');
 
@@ -125,7 +126,12 @@ const config = {
                 },
             },
         ],
-        'unicorn/template-indent': 'error',
+        'unicorn/template-indent': [
+            'error',
+            {
+                indent: eslint.rules['indent'][1],
+            },
+        ],
         'unicorn/throw-new-error': 'error',
     },
 };
