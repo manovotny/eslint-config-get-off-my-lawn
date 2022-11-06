@@ -129,7 +129,7 @@ const config = {
         'unicorn/template-indent': [
             'error',
             {
-                indent: eslint.rules['indent'][1],
+                indent: eslint.rules.indent[1],
             },
         ],
         'unicorn/throw-new-error': 'error',
