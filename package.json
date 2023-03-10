@@ -63,13 +63,13 @@
         "@babel/core": "7.17.0",
         "@babel/eslint-parser": "7.17.0",
         "@babel/preset-react": "7.16.7",
-        "@next/eslint-plugin-next": "12.0.10",
+        "@next/eslint-plugin-next": "13.2.4",
         "@rushstack/eslint-patch": "1.1.0",
-        "@typescript-eslint/eslint-plugin": "5.10.2",
-        "@typescript-eslint/parser": "5.10.2",
+        "@typescript-eslint/eslint-plugin": "5.54.1",
+        "@typescript-eslint/parser": "5.54.1",
         "confusing-browser-globals": "1.0.11",
         "eslint-config-prettier": "8.3.0",
-        "eslint-import-resolver-typescript": "2.5.0",
+        "eslint-import-resolver-typescript": "3.5.3",
         "eslint-plugin-eslint-comments": "3.2.0",
         "eslint-plugin-get-off-my-lawn": "3.0.0",
         "eslint-plugin-import": "2.25.4",
@@ -87,7 +87,7 @@
         "fs-extra": "10.0.0",
         "merge-anything": "4.0.5",
         "semver": "7.3.5",
-        "typescript": "4.5.5"
+        "typescript": "4.9.5"
     },
     "devDependencies": {
         "@vercel/git-hooks": "1.0.0",
