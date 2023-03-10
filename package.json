@@ -72,7 +72,7 @@
         "eslint-import-resolver-typescript": "3.5.3",
         "eslint-plugin-eslint-comments": "3.2.0",
         "eslint-plugin-get-off-my-lawn": "3.0.0",
-        "eslint-plugin-import": "2.25.4",
+        "eslint-plugin-import": "2.27.5",
         "eslint-plugin-jest": "26.0.0",
         "eslint-plugin-jest-formatting": "3.1.0",
         "eslint-plugin-jsonc": "2.1.0",
